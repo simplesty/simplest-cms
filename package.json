@@ -1,0 +1,16 @@
+{
+  "private": true,
+  "name": "simplest-cms",
+  "version": "0.1.0",
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ],
+    "nohoist": [
+      "**/jest"
+    ]
+  },
+  "scripts": {
+    "php-server": "cd packages/create-cms-app && php -S localhost:8000;"
+  }
+}
