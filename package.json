@@ -2,6 +2,9 @@
   "private": true,
   "name": "simplest-cms",
   "version": "0.1.0",
+  "bin": {
+    "simplest-cms": "./packages/cli/cli.js"
+  },
   "workspaces": {
     "packages": [
       "packages/*"
@@ -11,6 +14,8 @@
     ]
   },
   "scripts": {
-    "php-server": "cd packages/create-cms-app && php -S localhost:8000;"
+    "start": "cd packages/app && npm run start",
+    "build": "cd packages/app && npm run build:bundle",
+    "php-server": "cd packages/simplest-cms && php -S localhost:8001;"
   }
 }
