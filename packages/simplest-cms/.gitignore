@@ -1,0 +1,4 @@
+*.yaml
+data-*.json
+bundle.js
+bundle.css
