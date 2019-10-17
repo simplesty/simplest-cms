@@ -25,35 +25,6 @@ class Structure {
     })
   }
 
-  // [deprecate] used within loadAllData()
-  _loadData(collectionName) {
-    return fetch(window.baseurl + `/data-${collectionName}.json`)
-      .then(res => res.json())
-      .then(result => {
-        return result.data
-      })
-  }
-
-  // [deprecate] now we have only one file (data.json)
-  loadAllData() {
-    const dictionary = Object.keys(this.structure).map(key => key)
-    const promises = Object.keys(this.structure).map(key => {
-      return this._loadData(key)
-    })
-
-    return new Promise((res, rej) => {
-      Promise.all(promises).then(values => {
-        const result = {}
-        values.forEach((data, index) => {
-          const key = dictionary[index]
-          this.collections[key].data = data
-          result[key] = data
-        })
-        res(result)
-      })
-    })
-  }
-
   loadData() {
     return fetch(window.baseurl + `/data.json`)
       .then(res => res.json())
