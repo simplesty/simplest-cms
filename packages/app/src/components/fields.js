@@ -1,12 +1,10 @@
 import React from 'react'
-import useForm, { useFormContext } from 'react-hook-form'
-
-const View = React.memo(({ name }) => `Hi, I'm ${name}`)
+import { useFormContext } from 'react-hook-form'
 
 const Input2 = props => {
   const {
     register,
-    formState: { dirty },
+    // formState: { dirty },
   } = useFormContext()
   const { info, defaultValue } = props
   const renderc = React.useMemo(
@@ -16,27 +14,30 @@ const Input2 = props => {
           {info.name}
           <input type="text" defaultValue={defaultValue} name={info.name} ref={register} />
         </label>
+        <ErrorMessage {...props} />
       </div>
     ),
-    [defaultValue, info.name, register]
+    [defaultValue, info.name, props, register]
   )
 
   return renderc
 }
 
-const Input = props => {
-  const { info, defaultValue } = props
+// [deprecate]
+// const Input = props => {
+//   const { info, defaultValue } = props
+//   return (
+//     <div>
+//       <label>
+//         {info.name}
+//         <input type="text" defaultValue={defaultValue} name={info.name} ref={props.register} />
+//       </label>
+//       <ErrorMessage {...props} />
+//     </div>
+//   )
+// }
 
-  return (
-    <div>
-      <label>
-        {info.name}
-        <input type="text" defaultValue={defaultValue} name={info.name} ref={props.register} />
-      </label>
-      <ErrorMessage {...props} />
-    </div>
-  )
-}
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 const ErrorMessage = props => {
   const { info, errors } = props

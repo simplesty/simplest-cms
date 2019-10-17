@@ -30,7 +30,7 @@ class Structure {
       .then(res => res.json())
       .then(result => {
         const data = result.data
-        Object.keys(this.structure).map(key => {
+        Object.keys(this.structure).forEach(key => {
           this.collections[key].data = data[key]
         })
         return data

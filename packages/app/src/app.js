@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter as Router, Switch, Route, NavLink } from 'react-router-dom'
+import { BrowserRouter as Router, Switch, Route, NavLink, Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import Form from './components/form'
 import actions from './redux/actions'
@@ -61,7 +61,9 @@ const Layout = props => {
   return (
     <div className="wrapper">
       <header>
-        <h1>Simplest CMS</h1>
+        <h1>
+          <Link to="/">Simplest CMS</Link>
+        </h1>
       </header>
       <div className="middle">
         <nav>
@@ -120,9 +122,9 @@ const CollectionIndexPage = connect(
           return (
             <li key={item._uid}>
               {JSON.stringify(item)}{' '}
-              <NavLink to={`/collections/${props.match.params.collection}/${item._uid}`}>
-                Edit
-              </NavLink>
+              <Link to={`/collections/${props.match.params.collection}/${item._uid}`}>
+                <button>Edit</button>
+              </Link>
               <button onClick={handleDelete(item)}>Delete</button>
             </li>
           )

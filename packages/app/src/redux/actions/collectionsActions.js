@@ -1,5 +1,4 @@
 import t from '../types'
-import yaml from 'js-yaml'
 import Structure from '../../share/structure'
 
 export default {
