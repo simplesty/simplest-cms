@@ -15,7 +15,7 @@ class Structure {
         fields.push(this._generateInfo(k, field))
       })
 
-      this.collections[key] = { fields, data: null }
+      this.collections[key] = { fields, data: {} }
     })
   }
 
@@ -25,6 +25,7 @@ class Structure {
     })
   }
 
+  // [deprecate] used within loadAllData()
   _loadData(collectionName) {
     return fetch(window.baseurl + `/data-${collectionName}.json`)
       .then(res => res.json())
@@ -33,6 +34,7 @@ class Structure {
       })
   }
 
+  // [deprecate] now we have only one file (data.json)
   loadAllData() {
     const dictionary = Object.keys(this.structure).map(key => key)
     const promises = Object.keys(this.structure).map(key => {
@@ -50,6 +52,18 @@ class Structure {
         res(result)
       })
     })
+  }
+
+  loadData() {
+    return fetch(window.baseurl + `/data.json`)
+      .then(res => res.json())
+      .then(result => {
+        const data = result.data
+        Object.keys(this.structure).map(key => {
+          this.collections[key].data = data[key]
+        })
+        return data
+      })
   }
 
   _generateInfo(prop, value) {

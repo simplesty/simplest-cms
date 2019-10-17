@@ -6,10 +6,18 @@ import App from './app'
 import './style.css'
 
 window.baseurl = window.baseurl || 'http://localhost:3000'
+window.collections = window.collections || null
 
-ReactDOM.render(
-  <Provider store={store}>
-    <App />
-  </Provider>,
-  document.getElementById('root')
-)
+if (window.collections === null) {
+  ReactDOM.render(
+    <div>Please, include the collections configuration</div>,
+    document.getElementById('root')
+  )
+} else {
+  ReactDOM.render(
+    <Provider store={store}>
+      <App />
+    </Provider>,
+    document.getElementById('root')
+  )
+}
