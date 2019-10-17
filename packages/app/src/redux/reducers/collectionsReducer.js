@@ -7,6 +7,38 @@ export default (state = initialState, action) => {
     case t.COLLECTIONS_INCLUDE:
       return { ...state, ...action.payload }
 
+    case t.COLLECTIONS_ITEM_SAVE:
+      return {
+        ...state,
+        items: {
+          ...state.items,
+          [action.payload.collectionName]: {
+            ...state.items[action.payload.collectionName],
+            data: {
+              ...state.items[action.payload.collectionName].data,
+              [action.payload.data._uid]: action.payload.data,
+            },
+          },
+        },
+      }
+
+    case t.COLLECTIONS_ITEM_DELETE:
+      return {
+        ...state,
+        items: {
+          ...state.items,
+          [action.payload.collectionName]: {
+            ...state.items[action.payload.collectionName],
+            data: Object.keys(state.items[action.payload.collectionName].data)
+              .filter(itemUid => String(itemUid) !== String(action.payload.uid))
+              .reduce((acc, key) => {
+                acc[key] = state.items[action.payload.collectionName].data[key]
+                return acc
+              }, {}),
+          },
+        },
+      }
+
     default: {
       return state
     }

@@ -8,48 +8,30 @@ const Input2 = props => {
     register,
     formState: { dirty },
   } = useFormContext()
-  const { info } = props
+  const { info, defaultValue } = props
   const renderc = React.useMemo(
     () => (
       <div>
         <label>
           {info.name}
-          <input type="text" name={info.name} ref={register} />
+          <input type="text" defaultValue={defaultValue} name={info.name} ref={register} />
         </label>
       </div>
     ),
-    [info.name, register]
+    [defaultValue, info.name, register]
   )
-
-  console.log(info)
 
   return renderc
-
-  return (
-    <div>
-      <View name="pora" />
-      <label>
-        {info.name}
-        <input type="text" name={info.name} ref={register} />
-      </label>
-    </div>
-  )
-
-  return React.memo(() => (
-    <div>
-      <label></label>
-    </div>
-  ))
 }
 
 const Input = props => {
-  const { info } = props
+  const { info, defaultValue } = props
 
   return (
     <div>
       <label>
         {info.name}
-        <input type="text" name={info.name} ref={props.register} />
+        <input type="text" defaultValue={defaultValue} name={info.name} ref={props.register} />
       </label>
       <ErrorMessage {...props} />
     </div>

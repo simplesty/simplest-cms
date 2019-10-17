@@ -17,15 +17,20 @@ export const ConnectForm = ({ children }) => {
   })
 }
 
-const Form = ({ fields }) => {
+const Form = ({ fields, initValues, onSubmit }) => {
   const methods = useForm({ validationSchema: schema })
-  const onSubmit = data => console.log(data)
 
   return (
     <FormContext {...methods}>
       <form onSubmit={methods.handleSubmit(onSubmit)}>
         {fields.map((field, index) => (
-          <Field key={index} info={field} register={methods.register} errors={methods.errors} />
+          <Field
+            key={index}
+            defaultValue={initValues && initValues[field.name]}
+            info={field}
+            register={methods.register}
+            errors={methods.errors}
+          />
         ))}
 
         <input type="submit" />
