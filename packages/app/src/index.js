@@ -1,11 +1,15 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './app';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import { Provider } from 'react-redux'
+import store from './redux/store'
+import App from './app'
+import './style.css'
 
-const renderMethod = module.hot ? ReactDOM.render : ReactDOM.hydrate;
+window.baseurl = window.baseurl || 'http://localhost:3000'
 
-renderMethod(
-  <App />,
-  document.getElementById("root")
-);
+ReactDOM.render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById('root')
+)
