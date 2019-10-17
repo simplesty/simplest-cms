@@ -1,0 +1,18 @@
+{
+  "data": {
+    "people": {
+      "1571239845637": {
+        "_uid": "1571239845637",
+        "firstname": "Ricardo",
+        "lastname": "Canelas",
+        "work": "Software Developer"
+      },
+      "1571239878937": {
+        "_uid": "1571239878937",
+        "firstname": "Carolina",
+        "lastname": "Sartire",
+        "work": "Nutritionist"
+      }
+    }
+  }
+}

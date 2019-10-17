@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@material-ui/icons": "^4.5.1",
+    "js-yaml": "^3.13.1",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
     "react-hook-form": "^3.24.0",
@@ -11,15 +12,16 @@
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.2.0",
     "redux": "^4.0.4",
+    "redux-thunk": "^2.3.0",
     "yup": "^0.27.0"
   },
   "scripts": {
     "dev": "react-toolkit dev",
-    "build2": "react-toolkit build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "build:bundle": "npm run build && node build.js"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -39,6 +41,7 @@
   "devDependencies": {
     "eslint-config-prettier": "^6.4.0",
     "eslint-plugin-prettier": "^3.1.1",
+    "merge-files": "^0.1.2",
     "prettier": "^1.18.2",
     "sinon": "^7.5.0"
   }
