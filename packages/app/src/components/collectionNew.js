@@ -17,11 +17,9 @@ const CollectionNew = props => {
   const classes = useStyles()
 
   const handleSubmit = values => {
-    props
-      .save(props.match.params.collection, { ...values, _uid: props.match.params.uid })
-      .then(() => {
-        props.history.push('/collections/' + props.match.params.collection)
-      })
+    props.save(props.match.params.collection, { ...values, _uid: +new Date() }).then(() => {
+      props.history.push('/collections/' + props.match.params.collection)
+    })
   }
 
   const handleCancel = () => {
