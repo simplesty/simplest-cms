@@ -1,10 +1,10 @@
 import { createMuiTheme } from '@material-ui/core'
 
 const theme = createMuiTheme({
-  transitions: {
-    // So we have `transition: none;` everywhere
-    create: () => 'none',
-  },
+  // transitions: {
+  //   // So we have `transition: none;` everywhere
+  //   create: () => 'none',
+  // },
   overrides: {
     // Name of the component ⚛️
     CssBasline: {

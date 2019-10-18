@@ -12,7 +12,8 @@ import SaveIcon from '@material-ui/icons/Save'
 import ListItemText from '@material-ui/core/ListItemText'
 import Toolbar from '@material-ui/core/Toolbar'
 import Typography from '@material-ui/core/Typography'
-import CollisionNavLink from './navlink'
+import NavLinkMui from './navlinkMui'
+import SaveModal from './saveModal'
 
 const drawerWidth = 240
 
@@ -27,34 +28,22 @@ const useStyles = makeStyles(theme => ({
   toolbar: {
     ...theme.mixins.toolbar,
   },
+  modal: {
+    position: 'absolute',
+    width: 400,
+    backgroundColor: theme.palette.background.paper,
+    border: '2px solid #000',
+    boxShadow: theme.shadows[5],
+    padding: theme.spacing(2, 4, 3),
+  },
 }))
 
-const Nav = props => {
+const Menu = props => {
   const classes = useStyles()
+  const [open, setOpen] = React.useState(true)
 
-  const handleSaveAll = () => {
-    const normalize = {}
-    Object.keys(props.collections).forEach(key => {
-      const collectionName = props.collections[key].name
-      normalize[collectionName] = props.items[collectionName].data
-    })
-    console.log('NORMALIZE')
-    console.log(JSON.stringify(normalize))
-
-    // fetch(window.baseurl + '/index.php', {
-    fetch('http://localhost:8001/api.php', {
-      method: 'POST',
-      headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ colletions: normalize }),
-    })
-      .catch(error => console.log('Error:', error))
-      .then(res => res.json())
-      .then(result => {
-        console.log('RESULT', result)
-      })
+  const handleOpen = () => {
+    setOpen(true)
   }
 
   return (
@@ -66,6 +55,8 @@ const Nav = props => {
       }}
       anchor="left"
     >
+      <SaveModal open={open} setOpen={setOpen} />
+
       <div className={classes.toolbar}>
         <Toolbar>
           <Typography variant="h6" noWrap>
@@ -82,7 +73,12 @@ const Nav = props => {
             button
             key={collection.name}
             to={`/collections/${collection.name}/`}
-            component={CollisionNavLink}
+            component={NavLinkMui}
+            activeStyle={{
+              fontWeight: 'bold',
+              color: '#000',
+              backgroundColor: '#dbdbdb',
+            }}
           >
             <ListItemIcon>
               <LabelIcon />
@@ -93,11 +89,11 @@ const Nav = props => {
       </List>
       <Divider />
       <List>
-        <ListItem button onClick={handleSaveAll}>
+        <ListItem button onClick={handleOpen}>
           <ListItemIcon>
             <SaveIcon />
           </ListItemIcon>
-          <ListItemText primary="Save Changed" />
+          <ListItemText primary="Save All Changed" />
         </ListItem>
       </List>
     </Drawer>
@@ -111,4 +107,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps)(Nav)
+export default connect(mapStateToProps)(Menu)

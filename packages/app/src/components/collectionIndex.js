@@ -43,7 +43,10 @@ const CollectionIndex = props => {
         <Table className={classes.table} aria-label="simple table">
           <TableHead>
             <TableRow>
-              <TableCell>Data</TableCell>
+              <TableCell>UID</TableCell>
+              {props.collection.fields.map(field => {
+                return <TableCell key={field.name}>{field.name}</TableCell>
+              })}
               <TableCell align="right"></TableCell>
             </TableRow>
           </TableHead>
@@ -53,14 +56,24 @@ const CollectionIndex = props => {
               return (
                 <TableRow key={item._uid}>
                   <TableCell component="th" scope="row">
-                    {JSON.stringify(item)}{' '}
+                    {item['_uid']}
                   </TableCell>
+
+                  {props.collection.fields.map(field => {
+                    return (
+                      <TableCell key={field.name} component="th" scope="row">
+                        {item[field.name]}
+                      </TableCell>
+                    )
+                  })}
+
                   <TableCell align="right">
                     <Button
                       size="small"
                       variant="outlined"
                       to={`/collections/${props.match.params.collection}/${item._uid}`}
                       component={Link}
+                      style={{ marginRight: 6 }}
                     >
                       Edit
                     </Button>

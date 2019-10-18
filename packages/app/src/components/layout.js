@@ -4,7 +4,7 @@ import { makeStyles } from '@material-ui/core/styles'
 import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
 import Typography from '@material-ui/core/Typography'
-import Nav from './nav'
+import Menu from './menu'
 import { pathnameToTitle } from '../share/helpers'
 
 const drawerWidth = 240
@@ -33,7 +33,7 @@ const Layout = props => {
 
   return (
     <div className={classes.root}>
-      <Nav />
+      <Menu />
       <div>
         <AppBar position="fixed" className={classes.appBar}>
           <Toolbar>
