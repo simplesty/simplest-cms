@@ -2,9 +2,6 @@
   "private": true,
   "name": "simplest-cms",
   "version": "0.1.0",
-  "bin": {
-    "simplest-cms": "./packages/cli/cli.js"
-  },
   "workspaces": {
     "packages": [
       "packages/*"
