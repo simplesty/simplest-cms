@@ -1,6 +1,9 @@
 import t from '../types'
 
-const initialState = {}
+const initialState = {
+  items: {}, // collections
+  names: [], // names of collection in array
+}
 
 export default (state = initialState, action) => {
   switch (action.type) {

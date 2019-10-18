@@ -11,6 +11,8 @@ const drawerWidth = 240
 
 const useStyles = makeStyles(theme => ({
   root: {
+    zIndex: 1,
+    position: 'relative',
     display: 'flex',
   },
   appBar: {
@@ -34,19 +36,17 @@ const Layout = props => {
   return (
     <div className={classes.root}>
       <Menu />
-      <div>
-        <AppBar position="fixed" className={classes.appBar}>
-          <Toolbar>
-            <Typography variant="h6" noWrap>
-              {title}
-            </Typography>
-          </Toolbar>
-        </AppBar>
-        <main className={classes.content}>
-          <div className={classes.toolbar} />
-          <div>{props.children}</div>
-        </main>
-      </div>
+      <AppBar position="fixed" className={classes.appBar}>
+        <Toolbar>
+          <Typography variant="h6" noWrap>
+            {title}
+          </Typography>
+        </Toolbar>
+      </AppBar>
+      <main className={classes.content}>
+        <div className={classes.toolbar} />
+        <div>{props.children}</div>
+      </main>
     </div>
   )
 }

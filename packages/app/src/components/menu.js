@@ -19,6 +19,7 @@ const drawerWidth = 240
 
 const useStyles = makeStyles(theme => ({
   drawer: {
+    zIndex: 1,
     width: drawerWidth,
     flexShrink: 0,
   },
@@ -40,7 +41,7 @@ const useStyles = makeStyles(theme => ({
 
 const Menu = props => {
   const classes = useStyles()
-  const [open, setOpen] = React.useState(true)
+  const [open, setOpen] = React.useState(false)
 
   const handleOpen = () => {
     setOpen(true)
@@ -89,12 +90,14 @@ const Menu = props => {
       </List>
       <Divider />
       <List>
-        <ListItem button onClick={handleOpen}>
-          <ListItemIcon>
-            <SaveIcon />
-          </ListItemIcon>
-          <ListItemText primary="Save All Changed" />
-        </ListItem>
+        {!window.config.autosave && (
+          <ListItem button onClick={handleOpen}>
+            <ListItemIcon>
+              <SaveIcon />
+            </ListItemIcon>
+            <ListItemText primary="Save All Changed" />
+          </ListItem>
+        )}
       </List>
     </Drawer>
   )
