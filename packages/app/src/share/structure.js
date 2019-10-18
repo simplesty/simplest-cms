@@ -46,7 +46,7 @@ class Structure {
     }
 
     // Types
-    if (actions.indexOf('text') >= 0) info.type = 'input'
+    if (actions.indexOf('text') >= 0) info.type = 'text'
     if (actions.indexOf('textarea') >= 0) info.type = 'textarea'
     if (actions.indexOf('number') >= 0) info.type = 'number'
 

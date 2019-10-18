@@ -1,15 +1,12 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 import { FormContext, useFormContext } from 'react-hook-form'
 import useForm from 'react-hook-form'
-import Field from './fields'
-import * as yup from 'yup'
 import Button from '@material-ui/core/Button'
+import Grid from '@material-ui/core/Grid'
+import Divider from '@material-ui/core/Divider'
 import { makeStyles } from '@material-ui/core/styles'
-
-const schema = yup.object().shape({
-  firstname: yup.string().required(),
-  lastname: yup.string().required(),
-})
+import Field from './fields'
+import Validation from '../share/validation'
 
 export const ConnectForm = ({ children }) => {
   const methods = useFormContext()
@@ -27,22 +24,31 @@ const useStyles = makeStyles(theme => ({
 }))
 
 const Form = ({ fields, initValues, onSubmit, onCancel }) => {
+  const schema = useMemo(() => Validation.getSchema(fields), [fields])
   const methods = useForm({ validationSchema: schema })
   const classes = useStyles()
 
   return (
     <FormContext {...methods}>
       <form onSubmit={methods.handleSubmit(onSubmit)} className={classes.container}>
-        {fields.map((field, index) => (
-          <Field key={index} defaultValue={initValues && initValues[field.name]} info={field} />
-        ))}
+        <Grid container spacing={2}>
+          {fields.map((field, index) => (
+            <Field key={index} defaultValue={initValues && initValues[field.name]} info={field} />
+          ))}
 
-        <Button type="submit" variant="outlined" color="primary">
-          Save
-        </Button>
-        <Button type="button" variant="outlined" onClick={onCancel}>
-          Cancel
-        </Button>
+          <Grid item xs={12}>
+            <Divider />
+          </Grid>
+
+          <Grid item xs={12}>
+            <Button type="submit" variant="outlined" color="primary" style={{ marginRight: 10 }}>
+              Save
+            </Button>
+            <Button type="button" variant="outlined" onClick={onCancel}>
+              Cancel
+            </Button>
+          </Grid>
+        </Grid>
       </form>
     </FormContext>
   )

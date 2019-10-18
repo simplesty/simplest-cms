@@ -1,5 +1,6 @@
 import React from 'react'
 import { useFormContext } from 'react-hook-form'
+import Grid from '@material-ui/core/Grid'
 import TextField from '@material-ui/core/TextField'
 import FormHelperText from '@material-ui/core/FormHelperText'
 
@@ -14,13 +15,12 @@ const Input = props => {
 
   const renderc = React.useMemo(
     () => (
-      <div>
+      <Grid item xs={12}>
         <TextField
           variant="outlined"
-          margin="normal"
-          fullWidth
           type="text"
-          required={info.required}
+          fullWidth
+          // required={info.required}
           id={info.name}
           name={info.name}
           label={info.name}
@@ -29,9 +29,9 @@ const Input = props => {
           error={!!error}
         />
         <ErrorMessage error={error} />
-      </div>
+      </Grid>
     ),
-    [defaultValue, error, info.name, info.required, register]
+    [defaultValue, error, info.name, register]
   )
 
   return renderc
@@ -47,7 +47,7 @@ const ErrorMessage = ({ error }) => {
 |-----------------------------------------------------------------------------*/
 
 const Field = props => {
-  if (props.info.type === 'input') return <Input {...props} />
+  if (props.info.type === 'text') return <Input {...props} />
   return <>Not Found Field</>
 }
 
