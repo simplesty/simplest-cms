@@ -4,7 +4,6 @@ import { Provider } from 'react-redux'
 import store from './redux/store'
 import CssBaseline from '@material-ui/core/CssBaseline'
 import App from './app'
-import './style.css'
 
 window.baseurl = window.baseurl || 'http://localhost:3000'
 window.collections = window.collections || null
