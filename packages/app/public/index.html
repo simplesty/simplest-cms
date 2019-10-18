@@ -29,11 +29,23 @@
   </head>
   <body>
     <script>
+      window.config = {
+        version: 'dev',
+        name: 'Simplest CMS',
+        datafile: 'data.json',
+        autosave: true,
+        loggedin: undefined,
+      }
       window.collections = {
         "people": {
           "firstname": "text",
-          "lastname": "text",
-          "work": "text",
+          "lastname": "text not-required",
+          "work": "text not-required",
+          "experiences": "text",
+        },
+        "posts": {
+          "title": "text",
+          "body": "text",
         }
       }
     </script>
