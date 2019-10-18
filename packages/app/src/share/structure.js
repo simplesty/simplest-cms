@@ -45,7 +45,12 @@ class Structure {
       name: prop,
     }
 
-    if (actions.indexOf('string') >= 0) info.type = 'input'
+    // Types
+    if (actions.indexOf('text') >= 0) info.type = 'input'
+    if (actions.indexOf('textarea') >= 0) info.type = 'textarea'
+    if (actions.indexOf('number') >= 0) info.type = 'number'
+
+    // Options
     if (actions.indexOf('required') >= 0) info.required = true
     if (actions.indexOf('not-required') >= 0) info.required = false
 

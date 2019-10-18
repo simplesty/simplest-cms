@@ -3,6 +3,7 @@ import { FormContext, useFormContext } from 'react-hook-form'
 import useForm from 'react-hook-form'
 import Field from './fields'
 import * as yup from 'yup'
+import { getThemeProps } from '@material-ui/styles'
 
 const schema = yup.object().shape({
   firstname: yup.string().required(),
@@ -17,7 +18,7 @@ export const ConnectForm = ({ children }) => {
   })
 }
 
-const Form = ({ fields, initValues, onSubmit }) => {
+const Form = ({ fields, initValues, onSubmit, onCancel }) => {
   const methods = useForm({ validationSchema: schema })
 
   return (
@@ -34,6 +35,7 @@ const Form = ({ fields, initValues, onSubmit }) => {
         ))}
 
         <input type="submit" />
+        <button type="button" onClick={onCancel}>Cancel</button>
       </form>
     </FormContext>
   )

@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@material-ui/core": "^4.5.1",
     "@material-ui/icons": "^4.5.1",
-    "js-yaml": "^3.13.1",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
     "react-hook-form": "^3.24.0",
