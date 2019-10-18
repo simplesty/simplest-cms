@@ -31,7 +31,7 @@ class Structure {
       .then(result => {
         const data = result.data
         Object.keys(this.structure).forEach(key => {
-          this.collections[key].data = data[key]
+          this.collections[key].data = data[key] ? data[key] : {}
         })
         return data
       })
