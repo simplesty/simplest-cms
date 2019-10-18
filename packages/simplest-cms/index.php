@@ -15,7 +15,7 @@
  * Also be careful with new language features.
  * This file must work on PHP 5.4+
  *
- * If you found any issues, please report here:
+ * If you find any issues, please report them here:
  * https://github.com/ricardocanelas/simplest-cms/issues
  *
  * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -23,10 +23,11 @@
  * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  */
 
-/*----------------------------------------------------------------------------
+/*-----------------------------------------------------------------------------
 | Constants
-|----------------------------------------------------------------------------*/
+|-----------------------------------------------------------------------------*/
 
+const VERSION = '0.1.0';
 const ACTION_NONE = 'none';
 const ACTION_AUTH_FAILURE = 'auth';
 const ACTION_LOGOUT = 'logout';
@@ -47,16 +48,16 @@ else {
     "password" => "admin", // =TODO in hash, password_hash
     "collections" => [
       "people" => [
-        "firstname" => "string",
-        "lastname" => "string not-required",
-        "work" => "string"
+        "firstname" => "text",
+        "lastname" => "text not-required",
+        "work" => "text"
       ],
     ]
   ];
 }
 
 /*-----------------------------------------------------------------------------
-| Get config information
+| Set HTTP Headers
 |-----------------------------------------------------------------------------*/
 
 $allow_origin = isset($config['header_allow_origin']) ? $config['header_allow_origin'] : '*';
@@ -65,9 +66,9 @@ header('Access-Control-Allow-Origin: ' . $allow_origin);
 header('Access-Control-Allow-Methods: POST, GET');
 header('Access-Control-Allow-Headers: Content-Type, Content-Range, Content-Disposition, Content-Description');
 
-/*----------------------------------------------------------------------------
+/*-----------------------------------------------------------------------------
 | Helper Functions
-|----------------------------------------------------------------------------*/
+|-----------------------------------------------------------------------------*/
 
 function verifCredential() {
   global $config;
@@ -186,8 +187,12 @@ function viewApp () {
   global $config;
   $baseurl = getCurrentDiretory();
   $title = $config['name'];
-  $jsconfig = json_encode([
-    "data" =>  "data.json",
+  $appconfig = json_encode([
+    "version" => VERSION,
+    "name" => $config['name'],
+    "datafile" =>  "data.json",
+    "autosave" => $config['autosave'],
+    "loggedin" => $_SESSION['loggedin'],
   ]);
 
   $collections = json_encode($config['collections']);
@@ -198,14 +203,13 @@ function viewApp () {
       <meta charset="utf-8"/><link rel="icon" href="/favicon.ico"/>
       <meta name="viewport" content="width=device-width,initial-scale=1"/>
       <title>$title</title>
-      <link href="bundle.css" rel="stylesheet">
       </head>
       <body>
         <noscript>You need to enable JavaScript to run this app.</noscript><div id="root"></div>
         <script>
           window.baseurl = "$baseurl";
           window.collections = $collections;
-          window.config = '$jsconfig';
+          window.config = '$appconfig';
         </script>
         <script src="/bundle.js"></script>
       </body>
@@ -217,12 +221,12 @@ EOD;
 
 
 /*----------------------------------------------------------------------------
-| Store / Update data.json
+| Store / Updating data.json
 |----------------------------------------------------------------------------*/
 
 function storeNoLogged() {
   header('Content-type: application/json');
-  echo json_encode([ "status" => "error", "message" => "You are not log in" ]);
+  echo json_encode([ "status" => "error", "message" => "You are not log in.", "code" => "no-loggedin" ]);
   exit(0);
 }
 
@@ -236,7 +240,7 @@ function storeUpdateData() {
 
   // If json_decode failed, the JSON is invalid.
   if(! is_array($decoded)) {
-    echo json_encode([ "status" => "error" ]);
+    echo json_encode([ "status" => "error", "message" => "the JSON is invalid.",  "code" => "is-not-array" ]);
     exit(0);
   }
 
@@ -246,7 +250,7 @@ function storeUpdateData() {
   $json_indented_by_2 = preg_replace('/^(  +?)\\1(?=[^ ])/m', '$1', $json_indented_by_4);
   file_put_contents('data.json', $json_indented_by_2);
 
-  echo json_encode([ "status" => "ok" ]);
+  echo json_encode([ "status" => "ok", "message" => "Has saved with success!", "code" => "success" ]);
   exit(0);
 }
 

@@ -17,7 +17,7 @@ return [
 
   /*
   |--------------------------------------------------------------------------
-  | CREDENTIALS
+  | Credentials
   |--------------------------------------------------------------------------
   |
   | Here you define username and password to edit the data
@@ -30,11 +30,21 @@ return [
 
   /*
   |--------------------------------------------------------------------------
-  | HEADER
+  | Autosave
   |--------------------------------------------------------------------------
   |
-  | Here you define the schema of your collections.
-  | The data will be in 'data.json'
+  | If on each changes should save or not
+  |
+  */
+
+  "autosave" => false,
+
+  /*
+  |--------------------------------------------------------------------------
+  | Header
+  |--------------------------------------------------------------------------
+  |
+  | Here some configuration for the HTTP header
   |
   */
 
@@ -42,7 +52,7 @@ return [
 
   /*
   |--------------------------------------------------------------------------
-  | COLLECTIONS
+  | Collections
   |--------------------------------------------------------------------------
   |
   | Here you define the schema of your collections.
@@ -52,9 +62,9 @@ return [
 
   "collections" => [
     "people" => [
-      "firstname" => "string",
-      "lastname" => "string not-required",
-      "work" => "string"
+      "firstname" => "text",
+      "lastname" => "text not-required",
+      "work" => "text"
     ],
   ]
 ];
