@@ -1,53 +1,53 @@
 import React from 'react'
 import { useFormContext } from 'react-hook-form'
+import TextField from '@material-ui/core/TextField'
+import FormHelperText from '@material-ui/core/FormHelperText'
 
-const Input2 = props => {
-  const {
-    register,
-    // formState: { dirty },
-  } = useFormContext()
+/*-----------------------------------------------------------------------------
+| Input
+|-----------------------------------------------------------------------------*/
+
+const Input = props => {
+  const { register, errors } = useFormContext()
   const { info, defaultValue } = props
+  const error = errors[info.name]
+
   const renderc = React.useMemo(
     () => (
       <div>
-        <label>
-          {info.name}
-          <input type="text" defaultValue={defaultValue} name={info.name} ref={register} />
-        </label>
-        <ErrorMessage {...props} />
+        <TextField
+          variant="outlined"
+          margin="normal"
+          fullWidth
+          type="text"
+          required={info.required}
+          id={info.name}
+          name={info.name}
+          label={info.name}
+          defaultValue={defaultValue}
+          inputRef={register}
+          error={!!error}
+        />
+        <ErrorMessage error={error} />
       </div>
     ),
-    [defaultValue, info.name, props, register]
+    [defaultValue, error, info.name, info.required, register]
   )
 
   return renderc
 }
 
-// [deprecate]
-// const Input = props => {
-//   const { info, defaultValue } = props
-//   return (
-//     <div>
-//       <label>
-//         {info.name}
-//         <input type="text" defaultValue={defaultValue} name={info.name} ref={props.register} />
-//       </label>
-//       <ErrorMessage {...props} />
-//     </div>
-//   )
-// }
-
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-const ErrorMessage = props => {
-  const { info, errors } = props
-  return <>{errors[info.name] && <p>{errors[info.name].message}</p>}</>
+const ErrorMessage = ({ error }) => {
+  if (!error) return null
+  return <FormHelperText error>{error.message}</FormHelperText>
 }
 
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/*-----------------------------------------------------------------------------
+| Global
+|-----------------------------------------------------------------------------*/
 
 const Field = props => {
-  if (props.info.type === 'input') return <Input2 {...props} />
+  if (props.info.type === 'input') return <Input {...props} />
   return <>Not Found Field</>
 }
 
