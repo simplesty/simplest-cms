@@ -23,6 +23,12 @@
     "prettier": "prettier",
     "start": "yarn workspace @simplest-cms/app start"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
   "lint-staged": {
     "*.{ts,tsx,js}": [
       "yarn prettier --write",
@@ -37,6 +43,8 @@
   },
   "dependencies": {},
   "devDependencies": {
+    "@commitlint/cli": "^8.2.0",
+    "@commitlint/config-conventional": "^8.2.0",
     "eslint-config-prettier": "^6.4.0",
     "eslint-plugin-prettier": "^3.1.1",
     "husky": "^3.0.9",
