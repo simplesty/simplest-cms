@@ -1,7 +1,7 @@
 {
-  "private": true,
   "name": "simplest-cms",
   "version": "0.1.0",
+  "private": true,
   "repository": {
     "type": "git",
     "url": "https://github.com/FotonTech/golden-stack"
@@ -15,8 +15,32 @@
     ]
   },
   "scripts": {
-    "start": "cd packages/app && yarn start",
-    "build": "cd packages/app && yarn build:bundle",
-    "php-server": "cd dist && php -S localhost:8001"
+    "build": "yarn workspace @simplest-cms/app build:bundle",
+    "lint": "eslint --fix --ext .js,.ts,.tsx",
+    "lint:ci": "eslint --quiet --ext .js,.ts,.tsx .",
+    "lint:fix": "eslint --fix --ext .js,.ts,.tsx .",
+    "php-server": "cd dist && php -S localhost:8001",
+    "prettier": "prettier",
+    "start": "yarn workspace @simplest-cms/app start"
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js}": [
+      "yarn prettier --write",
+      "yarn lint",
+      "git add"
+    ],
+    "package.json": [
+      "yarn prettier --write",
+      "yarn sort-package-json",
+      "git add"
+    ]
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "eslint-config-prettier": "^6.4.0",
+    "eslint-plugin-prettier": "^3.1.1",
+    "husky": "^3.0.9",
+    "lint-staged": "^9.4.2",
+    "sort-package-json": "^1.22.1"
   }
 }

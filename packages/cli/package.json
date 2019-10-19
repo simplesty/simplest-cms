@@ -1,14 +1,14 @@
 {
   "name": "simplest-cms",
   "version": "0.1.0",
-  "main": "cli.js",
-  "author": "Ricardo Canelas",
-  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/ricardocanelas/simplest-cms.git",
     "directory": "packages/cli"
   },
+  "license": "MIT",
+  "author": "Ricardo Canelas",
+  "main": "cli.js",
   "bin": {
     "simplest-cms": "./cli.js"
   },

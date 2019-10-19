@@ -7,7 +7,7 @@ import CollectionIndex from './components/collectionIndex'
 import CollectionNew from './components/collectionNew'
 import CollectionEdit from './components/collectionEdit'
 import Dashboard from './components/dashboard'
-import AutoSave from './components/autosave'
+import AutoSave from './components/autosave';
 
 function App(props) {
   const [loading, setLoading] = React.useState(true)

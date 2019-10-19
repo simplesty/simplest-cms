@@ -1,30 +1,14 @@
 {
+  "private": true,
   "name": "@simplest-cms/app",
   "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@material-ui/core": "^4.5.1",
-    "@material-ui/icons": "^4.5.1",
-    "react": "^16.10.2",
-    "react-dom": "^16.10.2",
-    "react-hook-form": "^3.24.0",
-    "react-redux": "^7.1.1",
-    "react-router-dom": "^5.1.2",
-    "react-scripts": "3.2.0",
-    "redux": "^4.0.4",
-    "redux-thunk": "^2.3.0",
-    "yup": "^0.27.0"
-  },
   "scripts": {
-    "dev": "react-toolkit dev",
-    "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "build:bundle": "npm run build && node buildbundle.js",
+    "dev": "react-toolkit dev",
     "eject": "react-scripts eject",
-    "build:bundle": "npm run build && node buildbundle.js"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
+    "start": "react-scripts start",
+    "test": "react-scripts test"
   },
   "browserslist": {
     "production": [
@@ -37,6 +21,22 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "dependencies": {
+    "@material-ui/core": "^4.5.1",
+    "@material-ui/icons": "^4.5.1",
+    "react": "^16.10.2",
+    "react-dom": "^16.10.2",
+    "react-hook-form": "^3.24.0",
+    "react-redux": "^7.1.1",
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "3.2.0",
+    "redux": "^4.0.4",
+    "redux-thunk": "^2.3.0",
+    "yup": "^0.27.0"
   },
   "devDependencies": {
     "eslint-config-prettier": "^6.4.0",
