@@ -7,7 +7,7 @@ import CollectionIndex from './components/collectionIndex'
 import CollectionNew from './components/collectionNew'
 import CollectionEdit from './components/collectionEdit'
 import Dashboard from './components/dashboard'
-import AutoSave from './components/autosave';
+import AutoSave from './components/autosave'
 
 function App(props) {
   const [loading, setLoading] = React.useState(true)
@@ -20,7 +20,7 @@ function App(props) {
     }
   })
 
-  if (loading) return <div>Loading...</div>
+  if (loading) return <div>Loading data...</div>
 
   return (
     <div className="app">
