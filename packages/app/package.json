@@ -21,7 +21,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "build:bundle": "npm run build && node build.js"
+    "build:bundle": "npm run build && node buildbundle.js"
   },
   "eslintConfig": {
     "extends": "react-app"

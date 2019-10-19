@@ -2,6 +2,10 @@
   "private": true,
   "name": "simplest-cms",
   "version": "0.1.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FotonTech/golden-stack"
+  },
   "workspaces": {
     "packages": [
       "packages/*"
@@ -11,8 +15,8 @@
     ]
   },
   "scripts": {
-    "start": "cd packages/app && npm run start",
-    "build": "cd packages/app && npm run build:bundle",
-    "php-server": "cd packages/simplest-cms && php -S localhost:8001;"
+    "start": "cd packages/app && yarn start",
+    "build": "cd packages/app && yarn build:bundle",
+    "php-server": "cd dist && php -S localhost:8001"
   }
 }
