@@ -5,9 +5,12 @@ const fs = require('fs')
 const chalk = require('chalk')
 const program = require('commander')
 const log = console.log
+
+const packageJson = require('./package.json')
+
 let projectName
 
-program.version('0.1.2')
+program.version(packageJson.version)
 program.arguments('<project-directory>')
 program.usage(`${chalk.green('<project-directory>')} [options]`)
 program.action(name => {
