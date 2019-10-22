@@ -27422,10 +27422,11 @@
               Object.keys(a).forEach(function(e) {
                 n[e] = a[e].data
               }),
-              fetch('http://localhost:8001', {
+              fetch(window.baseurl + '/index.php', {
                 method: 'POST',
                 headers: { Accept: 'application/json', 'Content-Type': 'application/json' },
                 body: JSON.stringify({ colletions: n }),
+                redirect: 'follow',
               })
                 .then(function(e) {
                   return e.json ? e.json() : { status: 'error', message: e, code: 'no-json()' }

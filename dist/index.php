@@ -161,7 +161,7 @@ function viewAuthForm ($error = false) {
       </head>
       <body>
         {$alert}
-        <form action="$baseurl" method="post">
+        <form action="" method="post">
           <label>
             Username:
             <input placeholder="username" name="username" type="text">
@@ -211,7 +211,7 @@ function viewApp () {
           window.collections = $collections;
           window.config = '$appconfig';
         </script>
-        <script src="/bundle.js"></script>
+        <script src="./bundle.js"></script>
       </body>
     </html>
 EOD;
@@ -225,15 +225,14 @@ EOD;
 |----------------------------------------------------------------------------*/
 
 function storeNoLogged() {
-  header('Content-type: application/json');
   echo json_encode([ "status" => "error", "message" => "You are not log in.", "code" => "no-loggedin" ]);
   exit(0);
 }
 
 function storeUpdateData() {
+  header('Content-type: application/json');
   if(!$_SESSION['loggedin']) return storeNoLogged();
 
-  header('Content-type: application/json');
   //Receive the RAW post data.
   $content = trim(file_get_contents("php://input"));
   $decoded = json_decode($content, true);
