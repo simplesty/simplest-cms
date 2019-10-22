@@ -14,6 +14,8 @@ You will need to make sure your server meets the following requirements:
 - PHP >= 5.4.0
 - JSON PHP Extension
 
+![](screencast.gif)
+
 ## 🔹 Get Started
 
 ### Install
