@@ -60,13 +60,14 @@ const saveInJson = function() {
       normalize[collectionName] = items[collectionName].data
     })
 
-    return fetch('http://localhost:8001', {
+    return fetch(window.baseurl + '/index.php', {
       method: 'POST',
       headers: {
         Accept: 'application/json',
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({ colletions: normalize }),
+      redirect: 'follow',
     })
       .then(res => {
         return res.json ? res.json() : { status: 'error', message: res, code: 'no-json()' }
