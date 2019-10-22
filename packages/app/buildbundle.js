@@ -12,4 +12,4 @@ const jsFiles = glob.sync('build/static/?(js)/*.?(js)').map(filepath => {
 // })
 // // mergeFiles(cssFiles, __dirname + '/../simplest-cms/bundle.css').then(status => {})
 
-mergeFiles(jsFiles, __dirname + '/../simplest-cms/bundle.js').then(status => {})
+mergeFiles(jsFiles, __dirname + '/../../dist/bundle.js').then(status => {})
