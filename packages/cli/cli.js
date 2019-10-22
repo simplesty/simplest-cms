@@ -7,7 +7,7 @@ const program = require('commander')
 const log = console.log
 let projectName
 
-program.version('0.1.1')
+program.version('0.1.2')
 program.arguments('<project-directory>')
 program.usage(`${chalk.green('<project-directory>')} [options]`)
 program.action(name => {
@@ -39,10 +39,10 @@ if (!fs.existsSync(dir)) {
 }
 
 const files = [
-  { filename: __dirname + '/../simplest-cms/index.php', output: 'index.php' },
-  { filename: __dirname + '/../simplest-cms/config.php', output: 'config.php' },
-  { filename: __dirname + '/../app/dist/bundle.js', output: 'bundle.js' },
-  { filename: __dirname + '/../app/dist/bundle.css', output: 'bundle.css' },
+  { filename: __dirname + '/../../dist/index.php', output: 'index.php' },
+  { filename: __dirname + '/../../dist/config.php', output: 'config.php' },
+  { filename: __dirname + '/../../dist/bundle.js', output: 'bundle.js' },
+  { filename: __dirname + '/../../dist/data.json', output: 'data.json' },
 ]
 
 files.forEach(file => {
