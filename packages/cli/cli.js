@@ -1,10 +1,13 @@
+#!/usr/bin/env node
+
 const path = require('path')
 const fs = require('fs')
 const chalk = require('chalk')
 const program = require('commander')
 const log = console.log
+let projectName
 
-program.version('0.0.1')
+program.version('0.1.0')
 program.arguments('<project-directory>')
 program.usage(`${chalk.green('<project-directory>')} [options]`)
 program.action(name => {
