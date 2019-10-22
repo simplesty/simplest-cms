@@ -24,9 +24,11 @@ You will need to make sure your server meets the following requirements:
 npx github:ricardocanelas/simplest-cms <your-directory>
 ```
 
+or copy [these files](https://github.com/ricardocanelas/simplest-cms/tree/master/dist) from the `/dist` directory.
+
 ### Config
 
-After install, edit the file "**config.php**":
+After install/copy, you need to edit the file "**config.php**".
 
 ### To Access
 
