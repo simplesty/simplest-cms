@@ -17,3 +17,8 @@ export const pathnameToTitle = pathname => {
 
   return title
 }
+
+export const getPathname = url => {
+  const parts = RegExp(/.+?:\/\/.+?(\/.+?)?(?:#|\?|)?$/).exec(url)
+  return parts[1] ? parts[1] : '/'
+}

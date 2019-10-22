@@ -66,7 +66,7 @@ const saveInJson = function() {
         Accept: 'application/json',
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ colletions: normalize }),
+      body: JSON.stringify(normalize),
       redirect: 'follow',
     })
       .then(res => {

@@ -12,7 +12,7 @@ window.collections = window.collections || null
 
 if (window.collections === null) {
   ReactDOM.render(
-    <div>Please, include the collections configuration</div>,
+    <div>Please, include the collections configuration.</div>,
     document.getElementById('root')
   )
 } else {
