@@ -1956,27 +1956,21 @@
         u = n(27),
         l = (n(5), n(1)),
         c = n(14),
-        s = n(22),
-        f = (function(e) {
-          function t() {
-            for (var t, n = arguments.length, r = new Array(n), o = 0; o < n; o++)
-              r[o] = arguments[o]
-            return (
-              ((t = e.call.apply(e, [this].concat(r)) || this).history = Object(u.a)(t.props)), t
-            )
-          }
-          return (
-            Object(o.a)(t, e),
-            (t.prototype.render = function() {
-              return i.a.createElement(r.b, {
-                history: this.history,
-                children: this.props.children,
-              })
-            }),
-            t
-          )
-        })(i.a.Component)
+        s = n(22)
       i.a.Component
+      var f = (function(e) {
+        function t() {
+          for (var t, n = arguments.length, r = new Array(n), o = 0; o < n; o++) r[o] = arguments[o]
+          return ((t = e.call.apply(e, [this].concat(r)) || this).history = Object(u.b)(t.props)), t
+        }
+        return (
+          Object(o.a)(t, e),
+          (t.prototype.render = function() {
+            return i.a.createElement(r.b, { history: this.history, children: this.props.children })
+          }),
+          t
+        )
+      })(i.a.Component)
       var d = function(e, t) {
           return 'function' === typeof e ? e(t) : e
         },
@@ -27425,7 +27419,7 @@
               fetch(window.baseurl + '/index.php', {
                 method: 'POST',
                 headers: { Accept: 'application/json', 'Content-Type': 'application/json' },
-                body: JSON.stringify({ colletions: n }),
+                body: JSON.stringify(n),
                 redirect: 'follow',
               })
                 .then(function(e) {
@@ -28259,7 +28253,7 @@
         (window.collections = window.collections || null),
         null === window.collections
           ? c.a.render(
-              r.a.createElement('div', null, 'Please, include the collections configuration'),
+              r.a.createElement('div', null, 'Please, include the collections configuration.'),
               document.getElementById('root')
             )
           : c.a.render(

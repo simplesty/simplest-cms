@@ -27,7 +27,7 @@
 | Constants
 |-----------------------------------------------------------------------------*/
 
-const VERSION = '0.1.0';
+const VERSION = '0.1.2';
 const ACTION_NONE = 'none';
 const ACTION_AUTH_FAILURE = 'auth';
 const ACTION_LOGOUT = 'logout';
