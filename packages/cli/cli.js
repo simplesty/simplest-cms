@@ -20,7 +20,7 @@ program.parse(process.argv)
 program.on('--help', function() {
   console.log('')
   console.log('Examples:')
-  console.log('  npx ricardocanelas@simplest-csm admin')
+  console.log('  npx github:ricardocanelas/simplest-cms myadmin')
   console.log('')
 })
 
