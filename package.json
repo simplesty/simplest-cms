@@ -6,6 +6,9 @@
     "type": "git",
     "url": "https://github.com/FotonTech/golden-stack"
   },
+  "bin": {
+    "simplest-cms": "./packages/cli/cli.js"
+  },
   "workspaces": {
     "packages": [
       "packages/*"
@@ -41,7 +44,10 @@
       "git add"
     ]
   },
-  "dependencies": {},
+  "dependencies": {
+    "chalk": "^2.4.2",
+    "commander": "^3.0.2"
+  },
   "devDependencies": {
     "@commitlint/cli": "^8.2.0",
     "@commitlint/config-conventional": "^8.2.0",
