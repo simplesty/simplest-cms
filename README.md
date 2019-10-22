@@ -19,7 +19,7 @@ You will need to make sure your server meets the following requirements:
 ### Install
 
 ```
-npx simplest-cms <your-directory>
+npx github:ricardocanelas/simplest-cms <your-directory>
 ```
 
 ### Config
