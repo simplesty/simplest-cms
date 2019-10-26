@@ -28,7 +28,7 @@ class Info {
     if (parse.hasOwnProperty('not-required')) data.required = false
 
     // Default
-    if (parse.hasOwnProperty('default')) data.default = parse.default[0]
+    if (parse.hasOwnProperty('default')) data.default = this._normalizeString(parse.default)
 
     return data
   }
