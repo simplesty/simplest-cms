@@ -9,7 +9,7 @@ class Validation {
       validator = null
       if (field.required) {
         validator = yup
-        if (field.type === 'text') {
+        if (field.component === 'text') {
           schema[field.name] = validator.string().required()
         }
       }
