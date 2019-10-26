@@ -23,7 +23,7 @@ const Input = props => {
           // required={info.required}
           id={info.name}
           name={info.name}
-          label={info.name}
+          label={info.label || info.name}
           defaultValue={defaultValue}
           inputRef={register}
           error={!!error}
@@ -31,7 +31,7 @@ const Input = props => {
         <ErrorMessage error={error} />
       </Grid>
     ),
-    [defaultValue, error, info.name, register]
+    [defaultValue, error, info.label, info.name, register]
   )
 
   return renderc
@@ -47,7 +47,7 @@ const ErrorMessage = ({ error }) => {
 |-----------------------------------------------------------------------------*/
 
 const Field = props => {
-  if (props.info.type === 'text') return <Input {...props} />
+  if (props.info.component === 'text') return <Input {...props} />
   return <>Not Found Field</>
 }
 
