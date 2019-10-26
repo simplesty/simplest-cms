@@ -9,8 +9,10 @@ class Info {
   }
 
   getData() {
-    const data = {}
     const parse = this.parse
+    const data = {
+      required: true,
+    }
 
     // Component
     data.component = this._getComponent()
@@ -49,7 +51,7 @@ class Info {
    * @return {array|object}
    */
   _parse(row, inObject = true) {
-    const extractWordsRegex = /\w+(\(.*?\))?/gm
+    const extractWordsRegex = /[\w-]+(\(.*?\))?/gm
     const words = []
     let match, str, name, args
 

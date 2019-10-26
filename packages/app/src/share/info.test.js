@@ -30,4 +30,16 @@ describe('Info', () => {
     info = new Info(`text label('"First Name'")`)
     expect(info.getData().label).toBe(`'"First Name'"`)
   })
+
+  it('checks required ', () => {
+    let info
+    info = new Info(`text`)
+    expect(info.getData().required).toBe(true)
+
+    info = new Info(`text required`)
+    expect(info.getData().required).toBe(true)
+
+    info = new Info(`text not-required`)
+    expect(info.getData().required).toBe(false)
+  })
 })
