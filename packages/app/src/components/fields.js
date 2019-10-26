@@ -27,11 +27,12 @@ const Input = props => {
           defaultValue={defaultValue}
           inputRef={register}
           error={!!error}
+          helperText={info.description}
         />
         <ErrorMessage error={error} />
       </Grid>
     ),
-    [defaultValue, error, info.label, info.name, register]
+    [defaultValue, error, info.description, info.label, info.name, register]
   )
 
   return renderc
