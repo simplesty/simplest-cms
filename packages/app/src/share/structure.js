@@ -1,3 +1,5 @@
+import Info from './info'
+
 class Structure {
   constructor(structure) {
     this.structure = structure
@@ -37,24 +39,13 @@ class Structure {
       })
   }
 
-  _generateInfo(prop, value) {
-    const actions = String(value).split(' ')
-    const info = {
-      type: undefined,
-      required: true,
-      name: prop,
+  _generateInfo(propName, propValue) {
+    const info = new Info(propValue)
+
+    return {
+      name: propName,
+      ...info.getData(),
     }
-
-    // Types
-    if (actions.indexOf('text') >= 0) info.type = 'text'
-    if (actions.indexOf('textarea') >= 0) info.type = 'textarea'
-    if (actions.indexOf('number') >= 0) info.type = 'number'
-
-    // Options
-    if (actions.indexOf('required') >= 0) info.required = true
-    if (actions.indexOf('not-required') >= 0) info.required = false
-
-    return info
   }
 }
 
