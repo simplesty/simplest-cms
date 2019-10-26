@@ -1,19 +1,17 @@
-import { getInfoType } from './helpers'
+import { extractArguments } from './helpers'
 
-describe('getInfoType', () => {
-  it('checks the result', () => {
-    const info = getInfoType('text default(y, z) another("myparam")')
+describe('extractArguments', () => {
+  it('checks the args', () => {
+    let args
+    args = extractArguments('range(y, z)')
+    expect(args.length).toBe(2)
 
-    expect(info.length).toBe(3)
+    args = extractArguments('range (y, z)')
+    expect(args.length).toBe(2)
 
-    expect(info[0].type).toBe('text')
-    expect(info[0].args).toBe(null)
-
-    expect(info[1].type).toBe('default')
-    expect(Array.isArray(info[1].args)).toBe(true)
-    expect(info[1].args[0]).toBe('y')
-    expect(info[1].args[1]).toBe('z')
-
-    expect(info[2].args[0]).toBe('"myparam"')
+    args = extractArguments(`range ( 'y', "z")`)
+    expect(args.length).toBe(2)
+    expect(args[0]).toBe(`'y'`)
+    expect(args[1]).toBe(`"z"`)
   })
 })

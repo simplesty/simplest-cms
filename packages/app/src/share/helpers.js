@@ -1,13 +1,13 @@
-export const capitalize = str => {
-  return str.charAt(0).toUpperCase() + str.slice(1)
-}
+import capitalize from 'lodash/capitalize'
+import trim from 'lodash/trim'
 
 export const pathnameToTitle = pathname => {
   const arr = pathname.split('/')
   let title = arr.reduce((acc, cur) => {
-    if (cur.trim() === '') return acc
+    const str = trim(cur)
+    if (str === '') return acc
 
-    acc.push(capitalize(cur.trim()))
+    acc.push(capitalize(str))
     return acc
   }, [])
 
@@ -33,20 +33,4 @@ export const extractArguments = str => {
   }
 
   return null
-}
-
-export const getInfoType = row => {
-  const extractWordsRegex = /\w+(\(.*?\))?/gm
-  const words = []
-  let match, str, type, args
-
-  while ((match = extractWordsRegex.exec(row)) !== null) {
-    if (match.index === extractWordsRegex.lastIndex) extractWordsRegex.lastIndex++
-    str = match[0]
-    type = match[1] ? str.replace(match[1], '') : str
-    args = extractArguments(str)
-    words.push({ type, args })
-  }
-
-  return words
 }
