@@ -8,11 +8,11 @@ import theme from './share/theme'
 import App from './app'
 
 window.baseurl = window.baseurl || 'http://localhost:3000'
-window.collections = window.collections || null
+window.schema = window.schema || null
 
-if (window.collections === null) {
+if (window.schema === null) {
   ReactDOM.render(
-    <div>Please, include the collections configuration.</div>,
+    <div>Please, include the schema configuration.</div>,
     document.getElementById('root')
   )
 } else {

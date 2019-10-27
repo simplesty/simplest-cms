@@ -27,7 +27,7 @@
 | Constants
 |-----------------------------------------------------------------------------*/
 
-const VERSION = '0.1.2';
+const BACKEND_VERSION = '1.0.0';
 const ACTION_NONE = 'none';
 const ACTION_AUTH_FAILURE = 'auth';
 const ACTION_LOGOUT = 'logout';
@@ -45,8 +45,8 @@ else {
     'name' => 'Simplest CMS',
     "hash" => "",
     "username" => "admin", // =TODO in hash
-    "password" => "admin", // =TODO in hash, password_hash
-    "collections" => [
+    "password" => "admin", // =TODO in hash,
+    "schema" => [
       "people" => [
         "firstname" => "text",
         "lastname" => "text not-required",
@@ -188,14 +188,14 @@ function viewApp () {
   $baseurl = getCurrentDiretory();
   $title = $config['name'];
   $appconfig = json_encode([
-    "version" => VERSION,
+    "version" => BACKEND_VERSION,
     "name" => $config['name'],
     "datafile" =>  "data.json",
     "autosave" => $config['autosave'],
     "loggedin" => $_SESSION['loggedin'],
   ]);
 
-  $collections = json_encode($config['collections']);
+  $schema = json_encode($config['schema']);
 
   echo <<<EOD
     <!doctype html>
@@ -208,7 +208,7 @@ function viewApp () {
         <noscript>You need to enable JavaScript to run this app.</noscript><div id="root"></div>
         <script>
           window.baseurl = "$baseurl";
-          window.collections = $collections;
+          window.schema = $schema;
           window.config = '$appconfig';
         </script>
         <script src="./bundle.js"></script>

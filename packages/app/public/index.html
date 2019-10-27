@@ -36,16 +36,20 @@
         autosave: true,
         loggedin: undefined,
       }
-      window.collections = {
+      window.schema = {
         "people": {
-          "firstname": "text",
+          "firstname": "text label('First Name')",
           "lastname": "text not-required",
           "work": "text not-required",
-          "experiences": "text",
+          "experiences": "text default('developer') description('what do you do?')",
         },
         "posts": {
           "title": "text",
           "body": "text",
+        },
+        "@myconfig": {
+          "title": "text default(Title of my website)",
+          "email": "text default(mymail@domain.com)",
         }
       }
     </script>

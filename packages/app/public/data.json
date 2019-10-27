@@ -13,6 +13,10 @@
         "lastname": "Sartire",
         "work": "Nutritionist"
       }
+    },
+    "config": {
+      "site": "text default(My Blog)",
+      "email": "text default(myemail@domain.com)"
     }
   }
 }

@@ -52,7 +52,7 @@ return [
 
   /*
   |--------------------------------------------------------------------------
-  | Collections
+  | Schema
   |--------------------------------------------------------------------------
   |
   | Here you define the schema of your collections.
@@ -60,9 +60,9 @@ return [
   |
   */
 
-  "collections" => [
+  "schema" => [
     "people" => [
-      "firstname" => "text",
+      "firstname" => "text label(Your First Name)",
       "lastname" => "text not-required",
       "work" => "text"
     ],

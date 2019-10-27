@@ -3,7 +3,7 @@ import Structure from '../../share/structure'
 
 const all = function() {
   return dispatch => {
-    const st = new Structure(window.collections)
+    const st = new Structure(window.schema)
     return st.loadData().then(() => {
       dispatch({
         type: t.COLLECTIONS_INCLUDE,
