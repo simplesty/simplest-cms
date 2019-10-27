@@ -74,10 +74,14 @@ By standard the file is *data.json*
 - [ ] unique
 - [x] required
 - [x] not-required
-- [ ] default
+- [x] default
 - [ ] min
 - [ ] max
 - [ ] mask
+- [x] label
+- [x] description
+- [ ] dateFormat
+- [ ] colorFormat
 
 ### Schema
 
