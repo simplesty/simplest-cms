@@ -25,6 +25,18 @@ export default (state = initialState, action) => {
         },
       }
 
+    case t.VALUES_ITEM_SAVE:
+      return {
+        ...state,
+        items: {
+          ...state.items,
+          [action.payload.valueName]: {
+            ...state.items[action.payload.valueName],
+            data: action.payload.data,
+          },
+        },
+      }
+
     case t.COLLECTIONS_ITEM_DELETE:
       return {
         ...state,

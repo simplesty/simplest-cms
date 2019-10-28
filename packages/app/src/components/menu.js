@@ -69,11 +69,11 @@ const Menu = props => {
       </div>
       <Divider />
       <List>
-        {props.collections.map(collection => (
+        {props.collections.map(item => (
           <ListItem
             button
-            key={collection.name}
-            to={`/collections/${collection.name}/`}
+            key={item.name}
+            to={`${item.isCollection ? '/collections' : '/values'}/${item.name}/`}
             component={NavLinkMui}
             activeStyle={{
               fontWeight: 'bold',
@@ -84,7 +84,7 @@ const Menu = props => {
             <ListItemIcon>
               <LabelIcon />
             </ListItemIcon>
-            <ListItemText primary={collection.name} />
+            <ListItemText primary={item.name} />
           </ListItem>
         ))}
       </List>

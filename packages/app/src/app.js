@@ -6,6 +6,7 @@ import Layout from './components/layout'
 import CollectionIndex from './components/collectionIndex'
 import CollectionNew from './components/collectionNew'
 import CollectionEdit from './components/collectionEdit'
+import ValueEdit from './components/valueEdit'
 import Dashboard from './components/dashboard'
 import AutoSave from './components/autosave'
 
@@ -29,6 +30,7 @@ function App(props) {
         <Layout>
           <Switch>
             <Route exact path="/" component={Dashboard} />
+            <Route exact path="/values/:key" component={ValueEdit} />
             <Route exact path="/collections/:collection" component={CollectionIndex} />
             <Route exact path="/collections/:collection/new" component={CollectionNew} />
             <Route exact path="/collections/:collection/:uid" component={CollectionEdit} />

@@ -17,20 +17,34 @@ const all = function() {
   }
 }
 
-const save = function(collectionName, data) {
+const saveCore = function(action) {
   return dispatch => {
-    dispatch({
-      type: t.COLLECTIONS_ITEM_SAVE,
-      payload: {
-        collectionName: collectionName,
-        data: data,
-      },
-    })
+    dispatch(action)
     if (window.config.autosave) {
       dispatch(saveInJson())
     }
-    return Promise.resolve(data)
+    return Promise.resolve(action.payload.data)
   }
+}
+
+const save = function(collectionName, data) {
+  return saveCore({
+    type: t.COLLECTIONS_ITEM_SAVE,
+    payload: {
+      collectionName,
+      data: data,
+    },
+  })
+}
+
+const saveValue = function(valueName, data) {
+  return saveCore({
+    type: t.VALUES_ITEM_SAVE,
+    payload: {
+      valueName,
+      data: data,
+    },
+  })
 }
 
 const remove = function(collectionName, uid) {
@@ -57,7 +71,8 @@ const saveInJson = function() {
     dispatch({ type: t.STORE_SAVING })
 
     Object.keys(items).forEach(collectionName => {
-      normalize[collectionName] = items[collectionName].data
+      const name = collectionName.slice(0, 1) === '@' ? collectionName.slice(1) : collectionName
+      normalize[name] = items[collectionName].data
     })
 
     return fetch(window.baseurl + '/index.php', {
@@ -90,6 +105,7 @@ const saveInJson = function() {
 export default {
   all,
   save,
+  saveValue,
   delete: remove,
   saveInJson,
 }
