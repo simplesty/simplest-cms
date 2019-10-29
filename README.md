@@ -65,6 +65,7 @@ By standard the file is *data.json*
 - [ ] image
 - [ ] created_at
 - [ ] updated_at
+- [ ] color
 - [ ] one
 - [ ] many
 - [ ] slug
@@ -75,19 +76,42 @@ By standard the file is *data.json*
 - [x] required
 - [x] not-required
 - [x] default
-- [ ] min
-- [ ] max
-- [ ] mask
 - [x] label
 - [x] description
-- [ ] dateFormat
-- [ ] colorFormat
 
 ### Schema
 
-**Config**
+**No Collection**
 
-- [ ] limit
+If don't want the values should be a collection, add '@' before the name. Example:
+
+
+*(in config.php)*
+
+```php
+// ...
+
+"collections" => [
+  "@config" => [
+    "title" => "text default(Inc Company)",
+    "email" => "text default(myemail@domain.com)",
+  ],
+]
+```
+
+then will be *(in data.json)*
+
+```
+{
+  "data": {
+    ...
+    "config": {
+      "title": "Inc Company",
+      "email": "myemail@domain.com"
+    }
+  }
+}
+```
 
 ---
 
@@ -98,11 +122,15 @@ In config.php
 ```php
 // ...
 
-"collections" => [
+"schema" => [
   "people" => [
     "firstname" => "text",
     "lastname" => "text not-required",
     "work" => "text"
+  ],
+  "@config" => [
+    "title" => "text default(Inc Company)",
+    "email" => "text default(myemail@domain.com)",
   ],
 ]
 ```
