@@ -91,7 +91,7 @@ If don't want the values should be a collection, add '@' before the name. Exampl
 ```php
 // ...
 
-"collections" => [
+"schema" => [
   "@config" => [
     "title" => "text default(Inc Company)",
     "email" => "text default(myemail@domain.com)",
