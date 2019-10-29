@@ -1,3 +1,22 @@
+## 1.1.0 (2019-10-29)
+
+#### :rocket: New Feature
+
+- Now you can create schema that don't be necessary a collection, using the prefix '@'
+
+#### :house: Internal
+
+- improve the menu
+- add valueEdit component
+- add new type: values_item_save
+- add new action: savevalue
+- improve structure
+- improve backend to get data.json
+
+#### :memo: Documentation
+
+- improve the section 'api/schema'
+
 ## 1.0.0 (2019-10-27)
 
 #### :rocket: New Feature
