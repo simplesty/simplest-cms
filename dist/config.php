@@ -66,6 +66,10 @@ return [
       "lastname" => "text not-required",
       "work" => "text"
     ],
+    "@config" => [
+      "title" => "text label(Title of the website) default(My Website)",
+      "email" => "text",
+    ]
   ]
 ];
 

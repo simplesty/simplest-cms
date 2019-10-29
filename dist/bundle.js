@@ -69,7 +69,7 @@
         o = n(2),
         a = n(0),
         i = n.n(a),
-        u = (n(5), n(48)),
+        u = (n(5), n(49)),
         l = n.n(u),
         c = n(336),
         s = n(382),
@@ -162,6 +162,25 @@
           [e, t]
         )
       }
+    },
+    function(e, t, n) {
+      'use strict'
+      function r(e, t, n) {
+        return (
+          t in e
+            ? Object.defineProperty(e, t, {
+                value: n,
+                enumerable: !0,
+                configurable: !0,
+                writable: !0,
+              })
+            : (e[t] = n),
+          e
+        )
+      }
+      n.d(t, 'a', function() {
+        return r
+      })
     },
     function(e, t, n) {
       'use strict'
@@ -302,25 +321,6 @@
         n.d(t, 'e', function() {
           return f
         })
-    },
-    function(e, t, n) {
-      'use strict'
-      function r(e, t, n) {
-        return (
-          t in e
-            ? Object.defineProperty(e, t, {
-                value: n,
-                enumerable: !0,
-                configurable: !0,
-                writable: !0,
-              })
-            : (e[t] = n),
-          e
-        )
-      }
-      n.d(t, 'a', function() {
-        return r
-      })
     },
     function(e, t) {
       e.exports = function(e) {
@@ -537,11 +537,11 @@
       var h = p,
         v = n(1),
         m = n(14),
-        b = n(48),
+        b = n(49),
         y = n.n(b),
         g = n(34),
         x = n.n(g),
-        w = n(84),
+        w = n(85),
         O = [],
         E = [null, null]
       function k(e, t) {
@@ -773,7 +773,7 @@
         for (var o = 0; o < n.length; o++) if (!_.call(t, n[o]) || !T(e[n[o]], t[n[o]])) return !1
         return !0
       }
-      var R = n(51)
+      var R = n(52)
       function F(e) {
         return function(t, n) {
           var r = e(t, n)
@@ -1902,7 +1902,7 @@
       }
     },
     function(e, t, n) {
-      var r = n(127),
+      var r = n(128),
         o = 'object' == typeof self && self && self.Object === Object && self,
         a = r || o || Function('return this')()
       e.exports = a
@@ -1918,7 +1918,7 @@
       })
       var r = n(0),
         o = n.n(r),
-        a = n(49)
+        a = n(50)
       function i() {
         return o.a.useContext(a.a)
       }
@@ -1949,7 +1949,7 @@
         n.d(t, 'c', function() {
           return x
         })
-      var r = n(41),
+      var r = n(42),
         o = n(19),
         a = n(0),
         i = n.n(a),
@@ -2107,6 +2107,7 @@
         }
       }
     },
+    ,
     function(e, t) {
       e.exports = function(e) {
         return null != e && 'object' == typeof e
@@ -2259,7 +2260,7 @@
         i = n(5),
         u = n.n(i),
         l = n(27),
-        c = n(115),
+        c = n(116),
         s = n.n(c),
         f = n(173),
         d = n.n(f),
@@ -2367,10 +2368,10 @@
           },
         v = n(22),
         m = n(1),
-        b = n(116),
+        b = n(117),
         y = n.n(b),
-        g = (n(84), n(14))
-      n(48)
+        g = (n(85), n(14))
+      n(49)
       n.d(t, 'a', function() {
         return S
       }),
@@ -2600,19 +2601,19 @@
       'use strict'
       var r = n(11)
       ;(t.__esModule = !0), (t.default = y)
-      var o = r(n(43)),
+      var o = r(n(44)),
         a = r(n(58)),
         i = r(n(243)),
         u = r(n(282)),
-        l = n(46),
+        l = n(47),
         c = r(n(287)),
-        s = r(n(110)),
+        s = r(n(111)),
         f = r(n(288)),
-        d = r(n(47)),
+        d = r(n(48)),
         p = r(n(289)),
-        h = r(n(81)),
+        h = r(n(82)),
         v = r(n(72)),
-        m = n(165),
+        m = n(166),
         b = (function() {
           function e() {
             ;(this.list = new Set()), (this.refs = new Map())
@@ -3060,7 +3061,7 @@
       var r = n(11)
       ;(t.__esModule = !0),
         (t.default = t.array = t.object = t.boolean = t.date = t.number = t.string = t.mixed = void 0)
-      var o = r(n(81)),
+      var o = r(n(82)),
         a = {
           default: '${path} is invalid',
           required: '${path} is a required field',
@@ -3139,7 +3140,7 @@
     },
     function(e, t, n) {
       'use strict'
-      var r = n(84),
+      var r = n(85),
         o = {
           childContextTypes: !0,
           contextType: !0,
@@ -3247,7 +3248,7 @@
           })()
         )
       }
-      var u = n(10),
+      var u = n(9),
         l = n(15),
         c = n(0)
       n.d(t, 'a', function() {
@@ -4619,7 +4620,7 @@
         n.d(t, 'e', function() {
           return u
         })
-      var r = n(114),
+      var r = n(115),
         o = function() {
           return Math.random()
             .toString(36)
@@ -5020,19 +5021,12 @@
         { name: 'MuiTypography' }
       )(f)
     },
-    ,
-    function(e, t, n) {
-      var r = n(126)
-      e.exports = function(e) {
-        return null == e ? '' : r(e)
-      }
-    },
     function(e, t, n) {
       var r = n(28).Symbol
       e.exports = r
     },
     function(e, t, n) {
-      var r = n(56),
+      var r = n(55),
         o = n(204),
         a = n(205),
         i = '[object Null]',
@@ -5043,8 +5037,14 @@
       }
     },
     function(e, t, n) {
+      var r = n(127)
+      e.exports = function(e) {
+        return null == e ? '' : r(e)
+      }
+    },
+    function(e, t, n) {
       var r = n(217),
-        o = n(134)
+        o = n(135)
       e.exports = function(e, t) {
         return null != e && o(e, t, r)
       }
@@ -5056,9 +5056,9 @@
       }
     },
     function(e, t, n) {
-      var r = n(141),
+      var r = n(142),
         o = n(256),
-        a = n(107)
+        a = n(108)
       e.exports = function(e) {
         return a(e) ? r(e) : o(e)
       }
@@ -5073,7 +5073,7 @@
           })),
             (0, o.default)(e.prototype, n)
         })
-      var o = r(n(43))
+      var o = r(n(44))
       e.exports = t.default
     },
     function(e, t, n) {
@@ -5177,12 +5177,12 @@
     ,
     function(e, t, n) {
       var r = n(266),
-        o = n(99),
+        o = n(100),
         a = n(267),
         i = n(268),
         u = n(269),
-        l = n(57),
-        c = n(137),
+        l = n(56),
+        c = n(138),
         s = c(r),
         f = c(o),
         d = c(a),
@@ -5219,8 +5219,8 @@
       'use strict'
       var r = n(11)
       ;(t.__esModule = !0), (t.default = void 0)
-      var o = r(n(43)),
-        a = n(82),
+      var o = r(n(44)),
+        a = n(83),
         i = { context: '$', value: '.' },
         u = (function() {
           function e(e, t) {
@@ -5263,6 +5263,24 @@
       ;(t.default = u), (u.prototype.__isYupRef = !0), (e.exports = t.default)
     },
     function(e, t, n) {
+      var r = n(127),
+        o = n(130),
+        a = n(207),
+        i = n(211),
+        u = n(95),
+        l = n(57),
+        c = /^\s+|\s+$/g
+      e.exports = function(e, t, n) {
+        if ((e = l(e)) && (n || void 0 === t)) return e.replace(c, '')
+        if (!e || !(t = r(t))) return e
+        var s = u(e),
+          f = u(t),
+          d = i(s, f),
+          p = a(s, f) + 1
+        return o(s, d, p).join('')
+      }
+    },
+    function(e, t, n) {
       'use strict'
       var r = n(21)
       t.a = function(e) {
@@ -5270,7 +5288,7 @@
       }
     },
     function(e, t, n) {
-      var r = n(45)(Object, 'create')
+      var r = n(46)(Object, 'create')
       e.exports = r
     },
     function(e, t, n) {
@@ -5295,7 +5313,7 @@
         (e.exports = l)
     },
     function(e, t, n) {
-      var r = n(98)
+      var r = n(99)
       e.exports = function(e, t) {
         for (var n = e.length; n--; ) if (r(e[n][0], t)) return n
         return -1
@@ -5309,7 +5327,7 @@
       }
     },
     function(e, t, n) {
-      var r = n(93),
+      var r = n(94),
         o = 1 / 0
       e.exports = function(e) {
         if ('string' == typeof e || r(e)) return e
@@ -5326,8 +5344,8 @@
       }
     },
     function(e, t, n) {
-      var r = n(140),
-        o = n(79)
+      var r = n(141),
+        o = n(80)
       e.exports = function(e, t, n, a) {
         var i = !n
         n || (n = {})
@@ -5600,17 +5618,17 @@
       e.exports = n
     },
     function(e, t, n) {
-      var r = n(57),
-        o = n(35),
+      var r = n(56),
+        o = n(36),
         a = '[object Symbol]'
       e.exports = function(e) {
         return 'symbol' == typeof e || (o(e) && r(e) == a)
       }
     },
     function(e, t, n) {
-      var r = n(209),
-        o = n(130),
-        a = n(210)
+      var r = n(212),
+        o = n(132),
+        a = n(213)
       e.exports = function(e) {
         return o(e) ? a(e) : r(e)
       }
@@ -5628,13 +5646,13 @@
           0
           return (n.muiName = i.default.muiName), n
         })
-      var o = r(n(43)),
+      var o = r(n(44)),
         a = r(n(0)),
-        i = r(n(132))
+        i = r(n(133))
     },
     function(e, t, n) {
       var r = n(29),
-        o = n(93),
+        o = n(94),
         a = /\.|\[(?:[^[\]]*|(["'])(?:(?!\1)[^\\]|\\.)*?\1)\]/,
         i = /^\w*$/
       e.exports = function(e, t) {
@@ -5673,7 +5691,7 @@
       }
     },
     function(e, t, n) {
-      var r = n(45)(n(28), 'Map')
+      var r = n(46)(n(28), 'Map')
       e.exports = r
     },
     function(e, t) {
@@ -5683,7 +5701,7 @@
       }
     },
     function(e, t, n) {
-      var r = n(75),
+      var r = n(76),
         o = n(245),
         a = n(246),
         i = n(247),
@@ -5709,7 +5727,7 @@
           u = i && i.exports === a ? r.Buffer : void 0,
           l = (u ? u.isBuffer : void 0) || o
         e.exports = l
-      }.call(this, n(103)(e)))
+      }.call(this, n(104)(e)))
     },
     function(e, t) {
       e.exports = function(e) {
@@ -5744,7 +5762,7 @@
     },
     function(e, t, n) {
       ;(function(e) {
-        var r = n(127),
+        var r = n(128),
           o = t && !t.nodeType && t,
           a = o && 'object' == typeof e && e && !e.nodeType && e,
           i = a && a.exports === o && r.process,
@@ -5755,7 +5773,7 @@
             } catch (t) {}
           })()
         e.exports = u
-      }.call(this, n(103)(e)))
+      }.call(this, n(104)(e)))
     },
     function(e, t) {
       var n = Object.prototype
@@ -5765,15 +5783,15 @@
       }
     },
     function(e, t, n) {
-      var r = n(136),
-        o = n(100)
+      var r = n(137),
+        o = n(101)
       e.exports = function(e) {
         return null != e && o(e.length) && !r(e)
       }
     },
     function(e, t, n) {
       var r = n(263),
-        o = n(146),
+        o = n(147),
         a = Object.prototype.propertyIsEnumerable,
         i = Object.getOwnPropertySymbols,
         u = i
@@ -5789,7 +5807,7 @@
       e.exports = u
     },
     function(e, t, n) {
-      var r = n(152)
+      var r = n(153)
       e.exports = function(e) {
         var t = new e.constructor(e.byteLength)
         return new r(t).set(new r(e)), t
@@ -5824,9 +5842,9 @@
               })(n.validations, n.value, n.sync)
             : s(n)
         })
-      var o = r(n(155)),
-        a = n(156),
-        i = r(n(111)),
+      var o = r(n(156)),
+        a = n(157),
+        i = r(n(112)),
         u = function(e) {
           return e ? a.SynchronousPromise : Promise
         },
@@ -5877,7 +5895,7 @@
       'use strict'
       var r = n(11)
       ;(t.__esModule = !0), (t.default = u)
-      var o = r(n(81)),
+      var o = r(n(82)),
         a = /\$\{\s*(\w+)\s*\}/g,
         i = function(e) {
           return function(t) {
@@ -5918,8 +5936,8 @@
         (e.exports = t.default)
     },
     function(e, t, n) {
-      var r = n(55),
-        o = n(206)
+      var r = n(57),
+        o = n(214)
       e.exports = function(e) {
         return o(r(e).toLowerCase())
       }
@@ -5964,7 +5982,7 @@
       'use strict'
       ;(function(e, r) {
         var o,
-          a = n(170)
+          a = n(171)
         o =
           'undefined' !== typeof self
             ? self
@@ -5975,7 +5993,7 @@
             : r
         var i = Object(a.a)(o)
         t.a = i
-      }.call(this, n(92), n(202)(e)))
+      }.call(this, n(93), n(202)(e)))
     },
     function(e, t) {
       e.exports = function(e, t) {
@@ -6207,7 +6225,7 @@
           e.prototype[t] = n
         }),
         (t.lazy = t.ref = t.boolean = void 0)
-      var o = r(n(44))
+      var o = r(n(45))
       t.mixed = o.default
       var a = r(n(311))
       t.bool = a.default
@@ -6223,11 +6241,11 @@
       t.array = s.default
       var f = r(n(72)),
         d = r(n(332)),
-        p = r(n(111))
+        p = r(n(112))
       t.ValidationError = p.default
-      var h = r(n(165))
+      var h = r(n(166))
       t.reach = h.default
-      var v = r(n(47))
+      var v = r(n(48))
       t.isSchema = v.default
       var m = r(n(333))
       t.setLocale = m.default
@@ -6391,11 +6409,11 @@
           }, []),
         }
       }
-      var j = n(39),
+      var j = n(40),
         S = n(14),
         C = n(19),
         _ = n(67),
-        T = n(52)
+        T = n(53)
       function P(e, t) {
         var n = Object.create(null)
         return (
@@ -7055,10 +7073,10 @@
           }
     },
     function(e, t, n) {
-      var r = n(56),
-        o = n(128),
+      var r = n(55),
+        o = n(129),
         a = n(29),
-        i = n(93),
+        i = n(94),
         u = 1 / 0,
         l = r ? r.prototype : void 0,
         c = l ? l.toString : void 0
@@ -7074,7 +7092,7 @@
       ;(function(t) {
         var n = 'object' == typeof t && t && t.Object === Object && t
         e.exports = n
-      }.call(this, n(92)))
+      }.call(this, n(93)))
     },
     function(e, t) {
       e.exports = function(e, t) {
@@ -7083,10 +7101,18 @@
       }
     },
     function(e, t, n) {
-      var r = n(208)
+      var r = n(206)
       e.exports = function(e, t, n) {
         var o = e.length
         return (n = void 0 === n ? o : n), !t && n >= o ? e : r(e, t, n)
+      }
+    },
+    function(e, t, n) {
+      var r = n(208),
+        o = n(209),
+        a = n(210)
+      e.exports = function(e, t, n) {
+        return t === t ? a(e, t, n) : r(e, o, n)
       }
     },
     function(e, t) {
@@ -7098,17 +7124,9 @@
       }
     },
     function(e, t, n) {
-      var r = n(212),
-        o = n(213),
-        a = n(214)
-      e.exports = function(e, t, n) {
-        return t === t ? a(e, t, n) : r(e, o, n)
-      }
-    },
-    function(e, t, n) {
       'use strict'
       n.r(t)
-      var r = n(133)
+      var r = n(134)
       n.d(t, 'default', function() {
         return r.a
       })
@@ -7200,12 +7218,12 @@
         )(s))
     },
     function(e, t, n) {
-      var r = n(135),
-        o = n(138),
+      var r = n(136),
+        o = n(139),
         a = n(29),
-        i = n(139),
-        u = n(100),
-        l = n(78)
+        i = n(140),
+        u = n(101),
+        l = n(79)
       e.exports = function(e, t, n) {
         for (var c = -1, s = (t = r(t, e)).length, f = !1; ++c < s; ) {
           var d = l(t[c])
@@ -7219,15 +7237,15 @@
     },
     function(e, t, n) {
       var r = n(29),
-        o = n(96),
+        o = n(97),
         a = n(218),
-        i = n(55)
+        i = n(57)
       e.exports = function(e, t) {
         return r(e) ? e : o(e, t) ? [e] : a(i(e))
       }
     },
     function(e, t, n) {
-      var r = n(57),
+      var r = n(56),
         o = n(59),
         a = '[object AsyncFunction]',
         i = '[object Function]',
@@ -7255,7 +7273,7 @@
     },
     function(e, t, n) {
       var r = n(242),
-        o = n(35),
+        o = n(36),
         a = Object.prototype,
         i = a.hasOwnProperty,
         u = a.propertyIsEnumerable,
@@ -7285,8 +7303,8 @@
       }
     },
     function(e, t, n) {
-      var r = n(79),
-        o = n(98),
+      var r = n(80),
+        o = n(99),
         a = Object.prototype.hasOwnProperty
       e.exports = function(e, t, n) {
         var i = e[t]
@@ -7295,11 +7313,11 @@
     },
     function(e, t, n) {
       var r = n(253),
-        o = n(138),
+        o = n(139),
         a = n(29),
-        i = n(102),
-        u = n(139),
-        l = n(142),
+        i = n(103),
+        u = n(140),
+        l = n(143),
         c = Object.prototype.hasOwnProperty
       e.exports = function(e, t) {
         var n = a(e),
@@ -7322,8 +7340,8 @@
     },
     function(e, t, n) {
       var r = n(255),
-        o = n(104),
-        a = n(105),
+        o = n(105),
+        a = n(106),
         i = a && a.isTypedArray,
         u = i ? o(i) : r
       e.exports = u
@@ -7336,9 +7354,9 @@
       }
     },
     function(e, t, n) {
-      var r = n(141),
+      var r = n(142),
         o = n(259),
-        a = n(107)
+        a = n(108)
       e.exports = function(e) {
         return a(e) ? r(e, !0) : o(e)
       }
@@ -7357,10 +7375,10 @@
       }
     },
     function(e, t, n) {
-      var r = n(148),
-        o = n(149),
-        a = n(108),
-        i = n(146),
+      var r = n(149),
+        o = n(150),
+        a = n(109),
+        i = n(147),
         u = Object.getOwnPropertySymbols
           ? function(e) {
               for (var t = []; e; ) r(t, a(e)), (e = o(e))
@@ -7376,19 +7394,19 @@
       }
     },
     function(e, t, n) {
-      var r = n(143)(Object.getPrototypeOf, Object)
+      var r = n(144)(Object.getPrototypeOf, Object)
       e.exports = r
     },
     function(e, t, n) {
-      var r = n(151),
-        o = n(108),
+      var r = n(152),
+        o = n(109),
         a = n(60)
       e.exports = function(e) {
         return r(e, a, o)
       }
     },
     function(e, t, n) {
-      var r = n(148),
+      var r = n(149),
         o = n(29)
       e.exports = function(e, t, n) {
         var a = t(e)
@@ -7681,9 +7699,9 @@
         (e.exports = { SynchronousPromise: a })
     },
     function(e, t, n) {
-      var r = n(79),
-        o = n(158),
-        a = n(159)
+      var r = n(80),
+        o = n(159),
+        a = n(160)
       e.exports = function(e, t) {
         var n = {}
         return (
@@ -7722,7 +7740,7 @@
     },
     function(e, t, n) {
       var r = n(294),
-        o = n(35)
+        o = n(36)
       e.exports = function e(t, n, a, i, u) {
         return (
           t === n ||
@@ -7786,8 +7804,8 @@
       }
     },
     function(e, t, n) {
-      var r = n(135),
-        o = n(78)
+      var r = n(136),
+        o = n(79)
       e.exports = function(e, t) {
         for (var n = 0, a = (t = r(t, e)).length; null != e && n < a; ) e = e[o(t[n++])]
         return n && n == a ? e : void 0
@@ -7797,7 +7815,7 @@
       'use strict'
       var r = n(11)
       ;(t.__esModule = !0), (t.getIn = u), (t.default = void 0)
-      var o = n(82),
+      var o = n(83),
         a = r(n(58)),
         i = function(e) {
           return e.substr(0, e.length - 1).substr(1)
@@ -7946,31 +7964,13 @@
       ;(o.withExtraArgument = r), (t.a = o)
     },
     function(e, t, n) {
-      var r = n(126),
-        o = n(129),
-        a = n(211),
-        i = n(215),
-        u = n(94),
-        l = n(55),
-        c = /^\s+|\s+$/g
-      e.exports = function(e, t, n) {
-        if ((e = l(e)) && (n || void 0 === t)) return e.replace(c, '')
-        if (!e || !(t = r(t))) return e
-        var s = u(e),
-          f = u(t),
-          d = i(s, f),
-          p = a(s, f) + 1
-        return o(s, d, p).join('')
-      }
-    },
-    function(e, t, n) {
       'use strict'
       ;(function(t) {
         var n = '__global_unique_id__'
         e.exports = function() {
           return (t[n] = (t[n] || 0) + 1)
         }
-      }.call(this, n(92)))
+      }.call(this, n(93)))
     },
     function(e, t, n) {
       'use strict'
@@ -8000,7 +8000,7 @@
       var r = n(11)
       Object.defineProperty(t, '__esModule', { value: !0 }), (t.default = void 0)
       var o = r(n(0)),
-        a = (0, r(n(95)).default)(
+        a = (0, r(n(96)).default)(
           o.default.createElement('path', {
             d:
               'M17.63 5.84C17.27 5.33 16.67 5 16 5L5 5.01C3.9 5.01 3 5.9 3 7v10c0 1.1.9 1.99 2 1.99L16 19c.67 0 1.27-.33 1.63-.84L22 12l-4.37-6.16z',
@@ -8014,7 +8014,7 @@
       var r = n(11)
       Object.defineProperty(t, '__esModule', { value: !0 }), (t.default = void 0)
       var o = r(n(0)),
-        a = (0, r(n(95)).default)(
+        a = (0, r(n(96)).default)(
           o.default.createElement('path', {
             d:
               'M17 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V7l-4-4zm-5 16c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3zm3-10H5V5h10v4z',
@@ -8028,7 +8028,7 @@
       var r = n(11)
       Object.defineProperty(t, '__esModule', { value: !0 }), (t.default = void 0)
       var o = r(n(0)),
-        a = (0, r(n(95)).default)(
+        a = (0, r(n(96)).default)(
           o.default.createElement('path', {
             d:
               'M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z',
@@ -8042,7 +8042,7 @@
       var r = n(12),
         o = n(1),
         a = n(2),
-        i = n(37),
+        i = n(38),
         u = n.n(i)
       function l(e) {
         return (
@@ -8152,7 +8152,7 @@
           A700: '#d50000',
         },
         m = { black: '#000', white: '#fff' },
-        b = n(9),
+        b = n(10),
         y = {
           text: {
             primary: 'rgba(0, 0, 0, 0.87)',
@@ -8336,7 +8336,7 @@
         ],
         P = { borderRadius: 4 }
       var R = n(18),
-        F = n(85)
+        F = n(86)
       t.a = function() {
         var e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : {},
           t = e.breakpoints,
@@ -8515,7 +8515,7 @@
       })
       var r = n(0),
         o = n.n(r),
-        a = n(86)
+        a = n(87)
       function i() {
         return o.a.useContext(a.a)
       }
@@ -8599,7 +8599,7 @@
         u = n(7),
         l = n.n(u),
         c = !1,
-        s = n(52),
+        s = n(53),
         f = 'unmounted',
         d = 'exited',
         p = 'entering',
@@ -8798,7 +8798,7 @@
     ,
     function(e, t, n) {
       'use strict'
-      var r = n(125),
+      var r = n(126),
         o = 'function' === typeof Symbol && Symbol.for,
         a = o ? Symbol.for('react.element') : 60103,
         i = o ? Symbol.for('react.portal') : 60106,
@@ -9157,7 +9157,7 @@
     function(e, t, n) {
       'use strict'
       var r = n(0),
-        o = n(125),
+        o = n(126),
         a = n(197)
       function i(e) {
         for (
@@ -16732,7 +16732,7 @@
       }
     },
     function(e, t, n) {
-      var r = n(56),
+      var r = n(55),
         o = Object.prototype,
         a = o.hasOwnProperty,
         i = o.toString,
@@ -16754,25 +16754,6 @@
         return n.call(e)
       }
     },
-    function(e, t, n) {
-      var r = n(207)('toUpperCase')
-      e.exports = r
-    },
-    function(e, t, n) {
-      var r = n(129),
-        o = n(130),
-        a = n(94),
-        i = n(55)
-      e.exports = function(e) {
-        return function(t) {
-          t = i(t)
-          var n = o(t) ? a(t) : void 0,
-            u = n ? n[0] : t.charAt(0),
-            l = n ? r(n, 1).join('') : t.slice(1)
-          return u[e]() + l
-        }
-      }
-    },
     function(e, t) {
       e.exports = function(e, t, n) {
         var r = -1,
@@ -16783,29 +16764,6 @@
           (t >>>= 0)
         for (var a = Array(o); ++r < o; ) a[r] = e[r + t]
         return a
-      }
-    },
-    function(e, t) {
-      e.exports = function(e) {
-        return e.split('')
-      }
-    },
-    function(e, t) {
-      var n = '[\\ud800-\\udfff]',
-        r = '[\\u0300-\\u036f\\ufe20-\\ufe2f\\u20d0-\\u20ff]',
-        o = '\\ud83c[\\udffb-\\udfff]',
-        a = '[^\\ud800-\\udfff]',
-        i = '(?:\\ud83c[\\udde6-\\uddff]){2}',
-        u = '[\\ud800-\\udbff][\\udc00-\\udfff]',
-        l = '(?:' + r + '|' + o + ')' + '?',
-        c =
-          '[\\ufe0e\\ufe0f]?' +
-          l +
-          ('(?:\\u200d(?:' + [a, i, u].join('|') + ')[\\ufe0e\\ufe0f]?' + l + ')*'),
-        s = '(?:' + [a + r + '?', r, i, u, n].join('|') + ')',
-        f = RegExp(o + '(?=' + o + ')|' + s + c, 'g')
-      e.exports = function(e) {
-        return e.match(f) || []
       }
     },
     function(e, t, n) {
@@ -16838,6 +16796,48 @@
       e.exports = function(e, t) {
         for (var n = -1, o = e.length; ++n < o && r(t, e[n], 0) > -1; );
         return n
+      }
+    },
+    function(e, t) {
+      e.exports = function(e) {
+        return e.split('')
+      }
+    },
+    function(e, t) {
+      var n = '[\\ud800-\\udfff]',
+        r = '[\\u0300-\\u036f\\ufe20-\\ufe2f\\u20d0-\\u20ff]',
+        o = '\\ud83c[\\udffb-\\udfff]',
+        a = '[^\\ud800-\\udfff]',
+        i = '(?:\\ud83c[\\udde6-\\uddff]){2}',
+        u = '[\\ud800-\\udbff][\\udc00-\\udfff]',
+        l = '(?:' + r + '|' + o + ')' + '?',
+        c =
+          '[\\ufe0e\\ufe0f]?' +
+          l +
+          ('(?:\\u200d(?:' + [a, i, u].join('|') + ')[\\ufe0e\\ufe0f]?' + l + ')*'),
+        s = '(?:' + [a + r + '?', r, i, u, n].join('|') + ')',
+        f = RegExp(o + '(?=' + o + ')|' + s + c, 'g')
+      e.exports = function(e) {
+        return e.match(f) || []
+      }
+    },
+    function(e, t, n) {
+      var r = n(215)('toUpperCase')
+      e.exports = r
+    },
+    function(e, t, n) {
+      var r = n(130),
+        o = n(132),
+        a = n(95),
+        i = n(57)
+      e.exports = function(e) {
+        return function(t) {
+          t = i(t)
+          var n = o(t) ? a(t) : void 0,
+            u = n ? n[0] : t.charAt(0),
+            l = n ? r(n, 1).join('') : t.slice(1)
+          return u[e]() + l
+        }
       }
     },
     function(e, t) {
@@ -16881,7 +16881,7 @@
       }
     },
     function(e, t, n) {
-      var r = n(97),
+      var r = n(98),
         o = 'Expected a function'
       function a(e, t) {
         if ('function' != typeof e || (null != t && 'function' != typeof t)) throw new TypeError(o)
@@ -16899,8 +16899,8 @@
     },
     function(e, t, n) {
       var r = n(222),
-        o = n(75),
-        a = n(99)
+        o = n(76),
+        a = n(100)
       e.exports = function() {
         ;(this.size = 0), (this.__data__ = { hash: new r(), map: new (a || o)(), string: new r() })
       }
@@ -16927,16 +16927,16 @@
         (e.exports = l)
     },
     function(e, t, n) {
-      var r = n(74)
+      var r = n(75)
       e.exports = function() {
         ;(this.__data__ = r ? r(null) : {}), (this.size = 0)
       }
     },
     function(e, t, n) {
-      var r = n(136),
+      var r = n(137),
         o = n(225),
         a = n(59),
-        i = n(137),
+        i = n(138),
         u = /^\[object .+?Constructor\]$/,
         l = Function.prototype,
         c = Object.prototype,
@@ -16980,7 +16980,7 @@
       }
     },
     function(e, t, n) {
-      var r = n(74),
+      var r = n(75),
         o = '__lodash_hash_undefined__',
         a = Object.prototype.hasOwnProperty
       e.exports = function(e) {
@@ -16993,7 +16993,7 @@
       }
     },
     function(e, t, n) {
-      var r = n(74),
+      var r = n(75),
         o = Object.prototype.hasOwnProperty
       e.exports = function(e) {
         var t = this.__data__
@@ -17001,7 +17001,7 @@
       }
     },
     function(e, t, n) {
-      var r = n(74),
+      var r = n(75),
         o = '__lodash_hash_undefined__'
       e.exports = function(e, t) {
         var n = this.__data__
@@ -17014,7 +17014,7 @@
       }
     },
     function(e, t, n) {
-      var r = n(76),
+      var r = n(77),
         o = Array.prototype.splice
       e.exports = function(e) {
         var t = this.__data__,
@@ -17023,7 +17023,7 @@
       }
     },
     function(e, t, n) {
-      var r = n(76)
+      var r = n(77)
       e.exports = function(e) {
         var t = this.__data__,
           n = r(t, e)
@@ -17031,13 +17031,13 @@
       }
     },
     function(e, t, n) {
-      var r = n(76)
+      var r = n(77)
       e.exports = function(e) {
         return r(this.__data__, e) > -1
       }
     },
     function(e, t, n) {
-      var r = n(76)
+      var r = n(77)
       e.exports = function(e, t) {
         var n = this.__data__,
           o = r(n, e)
@@ -17045,7 +17045,7 @@
       }
     },
     function(e, t, n) {
-      var r = n(77)
+      var r = n(78)
       e.exports = function(e) {
         var t = r(this, e).delete(e)
         return (this.size -= t ? 1 : 0), t
@@ -17060,19 +17060,19 @@
       }
     },
     function(e, t, n) {
-      var r = n(77)
+      var r = n(78)
       e.exports = function(e) {
         return r(this, e).get(e)
       }
     },
     function(e, t, n) {
-      var r = n(77)
+      var r = n(78)
       e.exports = function(e) {
         return r(this, e).has(e)
       }
     },
     function(e, t, n) {
-      var r = n(77)
+      var r = n(78)
       e.exports = function(e, t) {
         var n = r(this, e),
           o = n.size
@@ -17080,8 +17080,8 @@
       }
     },
     function(e, t, n) {
-      var r = n(57),
-        o = n(35),
+      var r = n(56),
+        o = n(36),
         a = '[object Arguments]'
       e.exports = function(e) {
         return o(e) && r(e) == a
@@ -17096,23 +17096,23 @@
       }
     },
     function(e, t, n) {
-      var r = n(101),
+      var r = n(102),
         o = n(250),
-        a = n(140),
+        a = n(141),
         i = n(252),
         u = n(258),
         l = n(261),
-        c = n(145),
+        c = n(146),
         s = n(262),
         f = n(264),
-        d = n(150),
+        d = n(151),
         p = n(265),
         h = n(71),
         v = n(270),
         m = n(271),
         b = n(276),
         y = n(29),
-        g = n(102),
+        g = n(103),
         x = n(278),
         w = n(59),
         O = n(280),
@@ -17181,7 +17181,7 @@
         })
     },
     function(e, t, n) {
-      var r = n(75)
+      var r = n(76)
       e.exports = function() {
         ;(this.__data__ = new r()), (this.size = 0)
       }
@@ -17204,9 +17204,9 @@
       }
     },
     function(e, t, n) {
-      var r = n(75),
-        o = n(99),
-        a = n(97),
+      var r = n(76),
+        o = n(100),
+        a = n(98),
         i = 200
       e.exports = function(e, t) {
         var n = this.__data__
@@ -17225,7 +17225,7 @@
       }
     },
     function(e, t, n) {
-      var r = n(45),
+      var r = n(46),
         o = (function() {
           try {
             var e = r(Object, 'defineProperty')
@@ -17235,7 +17235,7 @@
       e.exports = o
     },
     function(e, t, n) {
-      var r = n(80),
+      var r = n(81),
         o = n(60)
       e.exports = function(e, t) {
         return e && r(t, o(t), e)
@@ -17253,9 +17253,9 @@
       }
     },
     function(e, t, n) {
-      var r = n(57),
-        o = n(100),
-        a = n(35),
+      var r = n(56),
+        o = n(101),
+        a = n(36),
         i = {}
       ;(i['[object Float32Array]'] = i['[object Float64Array]'] = i['[object Int8Array]'] = i[
         '[object Int16Array]'
@@ -17274,7 +17274,7 @@
         })
     },
     function(e, t, n) {
-      var r = n(106),
+      var r = n(107),
         o = n(257),
         a = Object.prototype.hasOwnProperty
       e.exports = function(e) {
@@ -17285,19 +17285,19 @@
       }
     },
     function(e, t, n) {
-      var r = n(143)(Object.keys, Object)
+      var r = n(144)(Object.keys, Object)
       e.exports = r
     },
     function(e, t, n) {
-      var r = n(80),
-        o = n(144)
+      var r = n(81),
+        o = n(145)
       e.exports = function(e, t) {
         return e && r(t, o(t), e)
       }
     },
     function(e, t, n) {
       var r = n(59),
-        o = n(106),
+        o = n(107),
         a = n(260),
         i = Object.prototype.hasOwnProperty
       e.exports = function(e) {
@@ -17328,11 +17328,11 @@
             r = u ? u(n) : new e.constructor(n)
           return e.copy(r), r
         }
-      }.call(this, n(103)(e)))
+      }.call(this, n(104)(e)))
     },
     function(e, t, n) {
-      var r = n(80),
-        o = n(108)
+      var r = n(81),
+        o = n(109)
       e.exports = function(e, t) {
         return r(e, o(e), t)
       }
@@ -17347,34 +17347,34 @@
       }
     },
     function(e, t, n) {
-      var r = n(80),
-        o = n(147)
+      var r = n(81),
+        o = n(148)
       e.exports = function(e, t) {
         return r(e, o(e), t)
       }
     },
     function(e, t, n) {
-      var r = n(151),
-        o = n(147),
-        a = n(144)
+      var r = n(152),
+        o = n(148),
+        a = n(145)
       e.exports = function(e) {
         return r(e, a, o)
       }
     },
     function(e, t, n) {
-      var r = n(45)(n(28), 'DataView')
+      var r = n(46)(n(28), 'DataView')
       e.exports = r
     },
     function(e, t, n) {
-      var r = n(45)(n(28), 'Promise')
+      var r = n(46)(n(28), 'Promise')
       e.exports = r
     },
     function(e, t, n) {
-      var r = n(45)(n(28), 'Set')
+      var r = n(46)(n(28), 'Set')
       e.exports = r
     },
     function(e, t, n) {
-      var r = n(45)(n(28), 'WeakMap')
+      var r = n(46)(n(28), 'WeakMap')
       e.exports = r
     },
     function(e, t) {
@@ -17392,7 +17392,7 @@
       }
     },
     function(e, t, n) {
-      var r = n(109),
+      var r = n(110),
         o = n(272),
         a = n(273),
         i = n(274),
@@ -17451,7 +17451,7 @@
       }
     },
     function(e, t, n) {
-      var r = n(109)
+      var r = n(110)
       e.exports = function(e, t) {
         var n = t ? r(e.buffer) : e.buffer
         return new e.constructor(n, e.byteOffset, e.byteLength)
@@ -17465,7 +17465,7 @@
       }
     },
     function(e, t, n) {
-      var r = n(56),
+      var r = n(55),
         o = r ? r.prototype : void 0,
         a = o ? o.valueOf : void 0
       e.exports = function(e) {
@@ -17473,7 +17473,7 @@
       }
     },
     function(e, t, n) {
-      var r = n(109)
+      var r = n(110)
       e.exports = function(e, t) {
         var n = t ? r(e.buffer) : e.buffer
         return new e.constructor(n, e.byteOffset, e.length)
@@ -17481,8 +17481,8 @@
     },
     function(e, t, n) {
       var r = n(277),
-        o = n(149),
-        a = n(106)
+        o = n(150),
+        a = n(107)
       e.exports = function(e) {
         return 'function' != typeof e.constructor || a(e) ? {} : r(o(e))
       }
@@ -17504,15 +17504,15 @@
     },
     function(e, t, n) {
       var r = n(279),
-        o = n(104),
-        a = n(105),
+        o = n(105),
+        a = n(106),
         i = a && a.isMap,
         u = i ? o(i) : r
       e.exports = u
     },
     function(e, t, n) {
       var r = n(71),
-        o = n(35),
+        o = n(36),
         a = '[object Map]'
       e.exports = function(e) {
         return o(e) && r(e) == a
@@ -17520,30 +17520,30 @@
     },
     function(e, t, n) {
       var r = n(281),
-        o = n(104),
-        a = n(105),
+        o = n(105),
+        a = n(106),
         i = a && a.isSet,
         u = i ? o(i) : r
       e.exports = u
     },
     function(e, t, n) {
       var r = n(71),
-        o = n(35),
+        o = n(36),
         a = '[object Set]'
       e.exports = function(e) {
         return o(e) && r(e) == a
       }
     },
     function(e, t, n) {
-      var r = n(56),
-        o = n(145),
+      var r = n(55),
+        o = n(146),
         a = n(71),
-        i = n(107),
+        i = n(108),
         u = n(283),
         l = n(284),
-        c = n(153),
-        s = n(154),
-        f = n(94),
+        c = n(154),
+        s = n(155),
+        f = n(95),
         d = n(285),
         p = '[object Map]',
         h = '[object Set]',
@@ -17557,9 +17557,9 @@
       }
     },
     function(e, t, n) {
-      var r = n(57),
+      var r = n(56),
         o = n(29),
-        a = n(35),
+        a = n(36),
         i = '[object String]'
       e.exports = function(e) {
         return 'string' == typeof e || (!o(e) && a(e) && r(e) == i)
@@ -17579,7 +17579,7 @@
       }
     },
     function(e, t, n) {
-      var r = n(128)
+      var r = n(129)
       e.exports = function(e, t) {
         return r(t, function(t) {
           return e[t]
@@ -17591,7 +17591,7 @@
       var r = n(11)
       ;(t.__esModule = !0), (t.default = void 0)
       var o = r(n(58)),
-        a = r(n(47)),
+        a = r(n(48)),
         i = (function() {
           function e(e, t) {
             if (((this.refs = e), 'function' !== typeof t)) {
@@ -17661,7 +17661,7 @@
           return t
         })
       var o = r(n(58)),
-        a = r(n(47)),
+        a = r(n(48)),
         i = function(e) {
           return '[object Object]' === Object.prototype.toString.call(e)
         }
@@ -17722,12 +17722,12 @@
           }
           return (s.OPTIONS = e), s
         })
-      var o = r(n(155)),
-        a = r(n(43)),
-        i = r(n(157)),
-        u = r(n(111)),
+      var o = r(n(156)),
+        a = r(n(44)),
+        i = r(n(158)),
+        u = r(n(112)),
         l = r(n(72)),
-        c = n(156),
+        c = n(157),
         s = u.default.formatError,
         f = function(e) {
           return e && 'function' === typeof e.then && 'function' === typeof e.catch
@@ -17777,7 +17777,7 @@
     function(e, t, n) {
       var r = n(293),
         o = n(302),
-        a = n(163)
+        a = n(164)
       e.exports = function(e) {
         var t = o(e)
         return 1 == t.length && t[0][2]
@@ -17788,8 +17788,8 @@
       }
     },
     function(e, t, n) {
-      var r = n(101),
-        o = n(160),
+      var r = n(102),
+        o = n(161),
         a = 1,
         i = 2
       e.exports = function(e, t, n, u) {
@@ -17817,14 +17817,14 @@
       }
     },
     function(e, t, n) {
-      var r = n(101),
-        o = n(161),
+      var r = n(102),
+        o = n(162),
         a = n(300),
         i = n(301),
         u = n(71),
         l = n(29),
-        c = n(102),
-        s = n(142),
+        c = n(103),
+        s = n(143),
         f = 1,
         d = '[object Arguments]',
         p = '[object Array]',
@@ -17857,7 +17857,7 @@
       }
     },
     function(e, t, n) {
-      var r = n(97),
+      var r = n(98),
         o = n(296),
         a = n(297)
       function i(e) {
@@ -17890,12 +17890,12 @@
       }
     },
     function(e, t, n) {
-      var r = n(56),
-        o = n(152),
-        a = n(98),
-        i = n(161),
-        u = n(153),
-        l = n(154),
+      var r = n(55),
+        o = n(153),
+        a = n(99),
+        i = n(162),
+        u = n(154),
+        l = n(155),
         c = 1,
         s = 2,
         f = '[object Boolean]',
@@ -17944,7 +17944,7 @@
       }
     },
     function(e, t, n) {
-      var r = n(150),
+      var r = n(151),
         o = 1,
         a = Object.prototype.hasOwnProperty
       e.exports = function(e, t, n, i, u, l) {
@@ -17988,7 +17988,7 @@
       }
     },
     function(e, t, n) {
-      var r = n(162),
+      var r = n(163),
         o = n(60)
       e.exports = function(e) {
         for (var t = o(e), n = t.length; n--; ) {
@@ -18000,13 +18000,13 @@
       }
     },
     function(e, t, n) {
-      var r = n(160),
+      var r = n(161),
         o = n(304),
         a = n(305),
-        i = n(96),
-        u = n(162),
-        l = n(163),
-        c = n(78),
+        i = n(97),
+        u = n(163),
+        l = n(164),
+        c = n(79),
         s = 1,
         f = 2
       e.exports = function(e, t) {
@@ -18019,7 +18019,7 @@
       }
     },
     function(e, t, n) {
-      var r = n(164)
+      var r = n(165)
       e.exports = function(e, t, n) {
         var o = null == e ? void 0 : r(e, t)
         return void 0 === o ? n : o
@@ -18027,7 +18027,7 @@
     },
     function(e, t, n) {
       var r = n(306),
-        o = n(134)
+        o = n(135)
       e.exports = function(e, t) {
         return null != e && o(e, t, r)
       }
@@ -18045,8 +18045,8 @@
     function(e, t, n) {
       var r = n(309),
         o = n(310),
-        a = n(96),
-        i = n(78)
+        a = n(97),
+        i = n(79)
       e.exports = function(e) {
         return a(e) ? r(i(e)) : o(e)
       }
@@ -18059,7 +18059,7 @@
       }
     },
     function(e, t, n) {
-      var r = n(164)
+      var r = n(165)
       e.exports = function(e) {
         return function(t) {
           return r(t, e)
@@ -18071,7 +18071,7 @@
       var r = n(11)
       ;(t.__esModule = !0), (t.default = void 0)
       var o = r(n(61)),
-        a = r(n(44)),
+        a = r(n(45)),
         i = u
       function u() {
         var e = this
@@ -18100,9 +18100,9 @@
       var r = n(11)
       ;(t.__esModule = !0), (t.default = f)
       var o = r(n(61)),
-        a = r(n(44)),
-        i = n(46),
-        u = r(n(83)),
+        a = r(n(45)),
+        i = n(47),
+        u = r(n(84)),
         l = /^((([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+(\.([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+)*)|((\x22)((((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(([\x01-\x08\x0b\x0c\x0e-\x1f\x7f]|\x21|[\x23-\x5b]|[\x5d-\x7e]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(\\([\x01-\x09\x0b\x0c\x0d-\x7f]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]))))*(((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(\x22)))@((([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.)+(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))$/i,
         c = /^((https?|ftp):)?\/\/(((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:)*@)?(((\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5]))|((([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.)+(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.?)(:\d*)?)(\/((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)+(\/(([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)*)*)?)?(\?((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)|[\uE000-\uF8FF]|\/|\?)*)?(\#((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)|\/|\?)*)?$/i,
         s = function(e) {
@@ -18247,9 +18247,9 @@
       var r = n(11)
       ;(t.__esModule = !0), (t.default = c)
       var o = r(n(61)),
-        a = r(n(44)),
-        i = n(46),
-        u = r(n(83)),
+        a = r(n(45)),
+        i = n(47),
+        u = r(n(84)),
         l = function(e) {
           return (0, u.default)(e) || e === (0 | e)
         }
@@ -18367,11 +18367,11 @@
       'use strict'
       var r = n(11)
       ;(t.__esModule = !0), (t.default = void 0)
-      var o = r(n(44)),
+      var o = r(n(45)),
         a = r(n(61)),
         i = r(n(315)),
-        u = n(46),
-        l = r(n(83)),
+        u = n(47),
+        l = r(n(84)),
         c = r(n(72)),
         s = new Date(''),
         f = d
@@ -18453,24 +18453,24 @@
     },
     function(e, t, n) {
       'use strict'
-      var r = n(166),
+      var r = n(167),
         o = n(11)
       ;(t.__esModule = !0), (t.default = E)
-      var a = o(n(167)),
-        i = o(n(43)),
+      var a = o(n(168)),
+        i = o(n(44)),
         u = o(n(58)),
         l = o(n(317)),
         c = o(n(326)),
         s = o(n(327)),
-        f = o(n(157)),
-        d = n(82),
-        p = o(n(44)),
-        h = n(46),
+        f = o(n(158)),
+        d = n(83),
+        p = o(n(45)),
+        h = n(47),
         v = o(n(328)),
         m = o(n(330)),
         b = o(n(61)),
-        y = o(n(169)),
-        g = r(n(110))
+        y = o(n(170)),
+        g = r(n(111))
       function x() {
         var e = (0, a.default)(['', '.', ''])
         return (
@@ -18694,7 +18694,7 @@
         (e.exports = t.default)
     },
     function(e, t, n) {
-      var r = n(168)(function(e, t, n) {
+      var r = n(169)(function(e, t, n) {
         return e + (n ? '_' : '') + t.toLowerCase()
       })
       e.exports = r
@@ -18709,7 +18709,7 @@
     },
     function(e, t, n) {
       var r = n(320),
-        o = n(55),
+        o = n(57),
         a = /[\xc0-\xd6\xd8-\xf6\xf8-\xff\u0100-\u017f]/g,
         i = RegExp('[\\u0300-\\u036f\\ufe20-\\ufe2f\\u20d0-\\u20ff]', 'g')
       e.exports = function(e) {
@@ -18921,7 +18921,7 @@
     function(e, t, n) {
       var r = n(323),
         o = n(324),
-        a = n(55),
+        a = n(57),
         i = n(325)
       e.exports = function(e, t, n) {
         return (e = a(e)), void 0 === (t = n ? void 0 : t) ? (o(e) ? i(e) : r(e)) : e.match(t) || []
@@ -18984,16 +18984,16 @@
       }
     },
     function(e, t, n) {
-      var r = n(112),
-        o = n(168)(function(e, t, n) {
+      var r = n(113),
+        o = n(169)(function(e, t, n) {
           return (t = t.toLowerCase()), e + (n ? r(t) : t)
         })
       e.exports = o
     },
     function(e, t, n) {
-      var r = n(79),
-        o = n(158),
-        a = n(159)
+      var r = n(80),
+        o = n(159),
+        a = n(160)
       e.exports = function(e, t) {
         var n = {}
         return (
@@ -19033,9 +19033,9 @@
         })
       var o = r(n(58)),
         a = r(n(329)),
-        i = n(82),
+        i = n(83),
         u = r(n(72)),
-        l = r(n(47))
+        l = r(n(48))
       e.exports = t.default
     },
     function(e, t) {
@@ -19133,19 +19133,19 @@
     },
     function(e, t, n) {
       'use strict'
-      var r = n(166),
+      var r = n(167),
         o = n(11)
       ;(t.__esModule = !0), (t.default = void 0)
-      var a = o(n(43)),
-        i = o(n(167)),
+      var a = o(n(44)),
+        i = o(n(168)),
         u = o(n(61)),
-        l = o(n(83)),
-        c = o(n(47)),
-        s = o(n(169)),
-        f = o(n(81)),
-        d = o(n(44)),
-        p = n(46),
-        h = r(n(110))
+        l = o(n(84)),
+        c = o(n(48)),
+        s = o(n(170)),
+        f = o(n(82)),
+        d = o(n(45)),
+        p = n(47),
+        h = r(n(111))
       function v() {
         var e = (0, i.default)(['', '[', ']'])
         return (
@@ -19294,7 +19294,7 @@
       'use strict'
       var r = n(11)
       ;(t.__esModule = !0), (t.default = void 0)
-      var o = r(n(47)),
+      var o = r(n(48)),
         a = (function() {
           function e(e) {
             this._resolve = function(t, n) {
@@ -19342,7 +19342,7 @@
             })
           })
         })
-      var o = r(n(46))
+      var o = r(n(47))
       e.exports = t.default
     },
     ,
@@ -19425,7 +19425,7 @@
           'object' === ('undefined' === typeof window ? 'undefined' : u(window)) &&
           'object' === ('undefined' === typeof document ? 'undefined' : u(document)) &&
           9 === document.nodeType,
-        c = (n(36), n(66)),
+        c = (n(37), n(66)),
         s = n(19),
         f = n(67),
         d = n(14),
@@ -20487,7 +20487,7 @@
           },
         },
         we = n(180),
-        Oe = (n(5), n(87)),
+        Oe = (n(5), n(88)),
         Ee = [
           'checked',
           'disabled',
@@ -20852,7 +20852,7 @@
             },
           }
         },
-        Ze = n(39),
+        Ze = n(40),
         et = '',
         tt = '',
         nt = '',
@@ -21210,8 +21210,8 @@
         },
         Xt = i.a.createContext(Qt)
       var Jt = -1e9
-      n(113)
-      var Zt = n(37),
+      n(114)
+      var Zt = n(38),
         en = n.n(Zt)
       function tn(e, t) {
         return t
@@ -21450,13 +21450,13 @@
               : s
           )
         }),
-        m = n(40),
+        m = n(41),
         b = n(25),
-        y = n(85)
+        y = n(86)
       var g = n(66),
-        x = n(39),
-        w = n(88),
-        O = n(73)
+        x = n(40),
+        w = n(89),
+        O = n(74)
       function E(e, t) {
         t ? e.setAttribute('aria-hidden', 'true') : e.removeAttribute('aria-hidden')
       }
@@ -21960,7 +21960,7 @@
         d = n(335),
         p = n(181),
         h = n(18),
-        v = n(118),
+        v = n(119),
         m = { enter: h.b.enteringScreen, exit: h.b.leavingScreen },
         b = u.a.forwardRef(function(e, t) {
           var n = e.BackdropProps,
@@ -22219,7 +22219,7 @@
         i = n.n(a),
         u = (n(5), n(3)),
         l = n(4),
-        c = n(53),
+        c = n(54),
         s = i.a.forwardRef(function(e, t) {
           var n = e.children,
             a = e.classes,
@@ -22417,7 +22417,7 @@
         o = n(0),
         a = n.n(o),
         i = (n(5), n(4)),
-        u = n(53),
+        u = n(54),
         l = a.a.forwardRef(function(e, t) {
           return a.a.createElement(
             u.a,
@@ -22467,8 +22467,8 @@
         i = n.n(a),
         u = (n(5), n(3)),
         l = n(4),
-        c = n(9),
-        s = n(119),
+        c = n(10),
+        s = n(120),
         f = n(6),
         d = i.a.forwardRef(function(e, t) {
           var n = e.children,
@@ -22731,7 +22731,7 @@
         i = n.n(a),
         u = (n(5), n(3)),
         l = n(4),
-        c = n(9),
+        c = n(10),
         s = i.a.forwardRef(function(e, t) {
           var n = e.absolute,
             a = void 0 !== n && n,
@@ -22872,7 +22872,7 @@
         i = n.n(a),
         u = (n(5), n(3)),
         l = n(4),
-        c = n(119),
+        c = n(120),
         s = n(68),
         f = n(8),
         d = n(32),
@@ -23079,7 +23079,7 @@
         i = n.n(a),
         u = (n(5), n(3)),
         l = n(4),
-        c = n(53),
+        c = n(54),
         s = n(32),
         f = i.a.forwardRef(function(e, t) {
           var n = e.children,
@@ -23171,7 +23171,7 @@
         u = (n(5), n(3)),
         l = n(4),
         c = n(6),
-        s = n(118),
+        s = n(119),
         f = i.a.forwardRef(function(e, t) {
           var n = e.classes,
             a = e.className,
@@ -23239,7 +23239,7 @@
         i = n.n(a),
         u = (n(5), n(3)),
         l = n(4),
-        c = n(89),
+        c = n(90),
         s = i.a.forwardRef(function(e, t) {
           var n = e.classes,
             a = e.className,
@@ -23303,7 +23303,7 @@
         i = n.n(a),
         u = (n(5), n(3)),
         l = n(4),
-        c = n(38),
+        c = n(39),
         s = { variant: 'head' },
         f = i.a.forwardRef(function(e, t) {
           var n = e.classes,
@@ -23327,7 +23327,7 @@
         i = n.n(a),
         u = (n(5), n(3)),
         l = n(4),
-        c = n(38),
+        c = n(39),
         s = i.a.forwardRef(function(e, t) {
           var n = e.classes,
             a = e.className,
@@ -23391,9 +23391,9 @@
         u = (n(5), n(3)),
         l = n(4),
         c = n(6),
-        s = n(9),
-        f = n(89),
-        d = n(38),
+        s = n(10),
+        f = n(90),
+        d = n(39),
         p = i.a.forwardRef(function(e, t) {
           var n,
             a = e.align,
@@ -23518,7 +23518,7 @@
         i = n.n(a),
         u = (n(5), n(3)),
         l = n(4),
-        c = n(38),
+        c = n(39),
         s = { variant: 'body' },
         f = i.a.forwardRef(function(e, t) {
           var n = e.classes,
@@ -23899,7 +23899,7 @@
         u = (n(5), n(3)),
         l = n(6),
         c = n(4),
-        s = n(9),
+        s = n(10),
         f = n(20),
         d = i.a.forwardRef(function(e, t) {
           var n = e.classes,
@@ -24069,9 +24069,9 @@
         u = n.n(i),
         l = (n(5), n(3)),
         c = n(4),
-        s = n(118),
-        f = n(53),
-        d = n(9),
+        s = n(119),
+        f = n(54),
+        d = n(10),
         p = u.a.forwardRef(function(e, t) {
           var n = e.action,
             a = e.classes,
@@ -24137,8 +24137,8 @@
         i = n.n(a),
         u = (n(5), n(3)),
         l = n(4),
-        c = n(9),
-        s = n(119),
+        c = n(10),
+        s = n(120),
         f = n(6),
         d = i.a.forwardRef(function(e, t) {
           var n = e.edge,
@@ -24247,9 +24247,9 @@
       var r = n(1),
         o = n(0),
         a = n.n(o),
-        i = (n(5), n(86)),
+        i = (n(5), n(87)),
         u = n(180),
-        l = n(87)
+        l = n(88)
       t.a = function(e) {
         var t = e.children,
           n = e.theme,
@@ -24316,7 +24316,7 @@
         l = n.n(u),
         c = (n(5), n(3)),
         s = n(24),
-        f = n(49),
+        f = n(50),
         d = n(4),
         p = n(8),
         h = n(65)
@@ -25422,14 +25422,14 @@
         )(W),
         B = n(403),
         V = n(381),
-        H = n(39),
-        q = n(113),
+        H = n(40),
+        q = n(114),
         K = n(21),
-        Y = n(73),
-        G = n(40),
+        Y = n(74),
+        G = n(41),
         Q = n(337),
         X = n(402),
-        J = n(118)
+        J = n(119)
       function Z(e, t) {
         var n = 0
         return (
@@ -25695,7 +25695,7 @@
           { name: 'MuiPopover' }
         )(re),
         ae = n(391),
-        ie = n(88)
+        ie = n(89)
       function ue(e, t, n) {
         return e === t
           ? e.firstChild
@@ -26196,7 +26196,7 @@
             )
           )
         }),
-        xe = n(133)
+        xe = n(134)
       var we = (function(e, t) {
           var n = i.a.memo(
             i.a.forwardRef(function(t, n) {
@@ -26729,7 +26729,7 @@
             )
           )
         }),
-        O = n(118),
+        O = n(119),
         E = n(6),
         k = { left: 'right', right: 'left', top: 'down', bottom: 'up' }
       var j = { enter: b.b.enteringScreen, exit: b.b.leavingScreen },
@@ -26971,7 +26971,7 @@
           )
         }),
         g = n(6),
-        x = n(40),
+        x = n(41),
         w = n(402),
         O = n(405),
         E = u.a.forwardRef(function(e, t) {
@@ -27210,101 +27210,102 @@
 ;(this['webpackJsonp@simplest-cms/app'] = this['webpackJsonp@simplest-cms/app'] || []).push([
   [0],
   {
-    194: function(e, t, n) {
-      e.exports = n(334)
+    194: function(e, t, a) {
+      e.exports = a(334)
     },
-    334: function(e, t, n) {
+    334: function(e, t, a) {
       'use strict'
-      n.r(t)
-      var a = n(0),
-        r = n.n(a),
-        o = n(7),
-        c = n.n(o),
-        l = n(407),
-        i = n(17),
-        s = n(51),
-        u = n(171),
-        m = n(10),
+      a.r(t)
+      var n = a(0),
+        r = a.n(n),
+        o = a(7),
+        c = a.n(o),
+        l = a(407),
+        i = a(17),
+        s = a(52),
+        u = a(172),
+        m = a(9),
         p = 'COLLECTIONS_INCLUDE',
         d = 'COLLECTIONS_ITEM_SAVE',
         f = 'COLLECTIONS_ITEM_DELETE',
-        b = 'STORE_SAVING',
-        h = 'STORE_SUCCESS',
+        b = 'VALUES_ITEM_SAVE',
+        h = 'STORE_SAVING',
+        y = 'STORE_SUCCESS',
         O = 'STORE_FAILURE'
-      function y(e, t) {
-        var n = Object.keys(e)
+      function E(e, t) {
+        var a = Object.keys(e)
         if (Object.getOwnPropertySymbols) {
-          var a = Object.getOwnPropertySymbols(e)
+          var n = Object.getOwnPropertySymbols(e)
           t &&
-            (a = a.filter(function(t) {
+            (n = n.filter(function(t) {
               return Object.getOwnPropertyDescriptor(e, t).enumerable
             })),
-            n.push.apply(n, a)
+            a.push.apply(a, n)
         }
-        return n
+        return a
       }
-      function E(e) {
+      function v(e) {
         for (var t = 1; t < arguments.length; t++) {
-          var n = null != arguments[t] ? arguments[t] : {}
+          var a = null != arguments[t] ? arguments[t] : {}
           t % 2
-            ? y(n, !0).forEach(function(t) {
-                Object(m.a)(e, t, n[t])
+            ? E(a, !0).forEach(function(t) {
+                Object(m.a)(e, t, a[t])
               })
             : Object.getOwnPropertyDescriptors
-            ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(n))
-            : y(n).forEach(function(t) {
-                Object.defineProperty(e, t, Object.getOwnPropertyDescriptor(n, t))
+            ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(a))
+            : E(a).forEach(function(t) {
+                Object.defineProperty(e, t, Object.getOwnPropertyDescriptor(a, t))
               })
         }
         return e
       }
       var g = { items: {}, names: [] }
-      function v(e, t) {
-        var n = Object.keys(e)
+      function j(e, t) {
+        var a = Object.keys(e)
         if (Object.getOwnPropertySymbols) {
-          var a = Object.getOwnPropertySymbols(e)
+          var n = Object.getOwnPropertySymbols(e)
           t &&
-            (a = a.filter(function(t) {
+            (n = n.filter(function(t) {
               return Object.getOwnPropertyDescriptor(e, t).enumerable
             })),
-            n.push.apply(n, a)
+            a.push.apply(a, n)
         }
-        return n
+        return a
       }
-      function j(e) {
+      function w(e) {
         for (var t = 1; t < arguments.length; t++) {
-          var n = null != arguments[t] ? arguments[t] : {}
+          var a = null != arguments[t] ? arguments[t] : {}
           t % 2
-            ? v(n, !0).forEach(function(t) {
-                Object(m.a)(e, t, n[t])
+            ? j(a, !0).forEach(function(t) {
+                Object(m.a)(e, t, a[t])
               })
             : Object.getOwnPropertyDescriptors
-            ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(n))
-            : v(n).forEach(function(t) {
-                Object.defineProperty(e, t, Object.getOwnPropertyDescriptor(n, t))
+            ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(a))
+            : j(a).forEach(function(t) {
+                Object.defineProperty(e, t, Object.getOwnPropertyDescriptor(a, t))
               })
         }
         return e
       }
-      var w = { status: { store: { saving: null, error: null } } },
-        P = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || s.d,
-        S = Object(s.c)({
+      var S = { status: { store: { saving: null, error: null } } },
+        k = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || s.d,
+        P = Object(s.c)({
           collections: function() {
             var e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : g,
               t = arguments.length > 1 ? arguments[1] : void 0
             switch (t.type) {
               case p:
-                return E({}, e, {}, t.payload)
+                return v({}, e, {}, t.payload)
               case d:
-                return E({}, e, {
-                  items: E(
+                return v({}, e, {
+                  items: v(
                     {},
                     e.items,
                     Object(m.a)(
                       {},
                       t.payload.collectionName,
-                      E({}, e.items[t.payload.collectionName], {
-                        data: E(
+                      v({}, e.items[t.payload.collectionName], {
+                        data: v(
                           {},
                           e.items[t.payload.collectionName].data,
                           Object(m.a)({}, t.payload.data._uid, t.payload.data)
@@ -27313,21 +27314,33 @@
                     )
                   ),
                 })
+              case b:
+                return v({}, e, {
+                  items: v(
+                    {},
+                    e.items,
+                    Object(m.a)(
+                      {},
+                      t.payload.valueName,
+                      v({}, e.items[t.payload.valueName], { data: t.payload.data })
+                    )
+                  ),
+                })
               case f:
-                return E({}, e, {
-                  items: E(
+                return v({}, e, {
+                  items: v(
                     {},
                     e.items,
                     Object(m.a)(
                       {},
                       t.payload.collectionName,
-                      E({}, e.items[t.payload.collectionName], {
+                      v({}, e.items[t.payload.collectionName], {
                         data: Object.keys(e.items[t.payload.collectionName].data)
                           .filter(function(e) {
                             return String(e) !== String(t.payload.uid)
                           })
-                          .reduce(function(n, a) {
-                            return (n[a] = e.items[t.payload.collectionName].data[a]), n
+                          .reduce(function(a, n) {
+                            return (a[n] = e.items[t.payload.collectionName].data[n]), a
                           }, {}),
                       })
                     )
@@ -27338,26 +27351,26 @@
             }
           },
           app: function() {
-            var e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : w,
+            var e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : S,
               t = arguments.length > 1 ? arguments[1] : void 0
             switch (t.type) {
-              case b:
-                return j({}, e, { status: j({}, e.status, { store: { saving: !0, error: null } }) })
               case h:
-                return j({}, e, { status: j({}, e.status, { store: { saving: !1, error: null } }) })
+                return w({}, e, { status: w({}, e.status, { store: { saving: !0, error: null } }) })
+              case y:
+                return w({}, e, { status: w({}, e.status, { store: { saving: !1, error: null } }) })
               case O:
-                return j({}, e, {
-                  status: j({}, e.status, { store: { saving: !1, error: t.payload } }),
+                return w({}, e, {
+                  status: w({}, e.status, { store: { saving: !1, error: t.payload } }),
                 })
               default:
                 return e
             }
           },
         }),
-        k = Object(s.e)(S, P(Object(s.a)(u.a))),
-        C = n(408),
-        D = n(179),
-        x = Object(D.a)({
+        C = Object(s.e)(P, k(Object(s.a)(u.a))),
+        _ = a(408),
+        N = a(179),
+        x = Object(N.a)({
           overrides: {
             CssBasline: {
               '@global': {
@@ -27370,26 +27383,26 @@
           },
           props: { MuiButtonBase: { disableRipple: !0 } },
         }),
-        N = n(15),
-        _ = n(33),
-        I = n(41),
-        T = n(13),
-        L = n.n(T),
-        z = n(23),
-        R = n(62),
-        A = n(63),
-        W = n(112),
-        B = n.n(W),
-        V = n(172),
-        F = n.n(V),
-        M = function(e) {
+        D = a(15),
+        I = a(33),
+        z = a(42),
+        R = a(13),
+        T = a.n(R),
+        L = a(23),
+        V = a(62),
+        A = a(63),
+        W = a(73),
+        B = a.n(W),
+        M = a(113),
+        F = a.n(M),
+        q = function(e) {
           var t = /\(\s*([^)]+?)\s*\)/gm.exec(e)
           return t && t[1] ? t[1].split(/\s*,\s*/) : null
         },
-        q = ['text', 'textarea', 'select'],
-        J = (function() {
+        U = ['text', 'textarea', 'select'],
+        X = (function() {
           function e(t) {
-            Object(R.a)(this, e),
+            Object(V.a)(this, e),
               (this.parseArr = this._parse(t, !1)),
               (this.parse = this._parse(t))
           }
@@ -27416,8 +27429,8 @@
                 value: function(e) {
                   for (
                     var t,
-                      n,
                       a,
+                      n,
                       r,
                       o = !(arguments.length > 1 && void 0 !== arguments[1]) || arguments[1],
                       c = /[\w-]+(\(.*?\))?/gm,
@@ -27426,10 +27439,10 @@
 
                   )
                     t.index === c.lastIndex && c.lastIndex++,
-                      (n = t[0]),
-                      (a = t[1] ? n.replace(t[1], '') : n),
-                      (r = M(n)),
-                      l.push({ name: a, args: r })
+                      (a = t[0]),
+                      (n = t[1] ? a.replace(t[1], '') : a),
+                      (r = q(a)),
+                      l.push({ name: n, args: r })
                   return o
                     ? l.reduce(function(e, t) {
                         return (e[t.name] = t.args), e
@@ -27441,7 +27454,7 @@
                 key: '_getComponent',
                 value: function() {
                   var e = this.parseArr.find(function(e) {
-                    return q.indexOf(e.name) >= 0
+                    return U.indexOf(e.name) >= 0
                   })
                   return e ? e.name : null
                 },
@@ -27468,43 +27481,44 @@
             e
           )
         })()
-      function U(e, t) {
-        var n = Object.keys(e)
+      function J(e, t) {
+        var a = Object.keys(e)
         if (Object.getOwnPropertySymbols) {
-          var a = Object.getOwnPropertySymbols(e)
+          var n = Object.getOwnPropertySymbols(e)
           t &&
-            (a = a.filter(function(t) {
+            (n = n.filter(function(t) {
               return Object.getOwnPropertyDescriptor(e, t).enumerable
             })),
-            n.push.apply(n, a)
+            a.push.apply(a, n)
         }
-        return n
+        return a
       }
-      var X = (function() {
+      var $ = (function() {
           function e(t) {
-            Object(R.a)(this, e), (this.structure = t), (this.collections = {}), this.init()
+            Object(V.a)(this, e), (this.structure = t), (this.collections = {}), this.init()
           }
           return (
             Object(A.a)(e, [
               {
                 key: 'init',
                 value: (function() {
-                  var e = Object(z.a)(
-                    L.a.mark(function e() {
+                  var e = Object(L.a)(
+                    T.a.mark(function e() {
                       var t = this
-                      return L.a.wrap(
+                      return T.a.wrap(
                         function(e) {
                           for (;;)
                             switch ((e.prev = e.next)) {
                               case 0:
                                 Object.keys(this.structure).forEach(function(e) {
-                                  var n = t.structure[e],
-                                    a = []
-                                  Object.keys(n).forEach(function(e) {
-                                    var r = n[e]
-                                    a.push(t._generateInfo(e, r))
+                                  var a = t.structure[e],
+                                    n = []
+                                  Object.keys(a).forEach(function(e) {
+                                    var r = B()(e),
+                                      o = a[r]
+                                    n.push(t._generateInfo(r, o))
                                   }),
-                                    (t.collections[e] = { fields: a, data: {} })
+                                    (t.collections[e] = { fields: n, data: {} })
                                 })
                               case 1:
                               case 'end':
@@ -27524,8 +27538,9 @@
               {
                 key: 'getCollectionNames',
                 value: function() {
-                  return Object.keys(this.structure).map(function(e) {
-                    return { name: e }
+                  var e = this
+                  return Object.keys(this.structure).map(function(t) {
+                    return { name: B()(t), isCollection: e._isCollection(t) }
                   })
                 },
               },
@@ -27538,14 +27553,32 @@
                       return e.json()
                     })
                     .then(function(t) {
-                      var n = t.data
-                      return (
-                        Object.keys(e.structure).forEach(function(t) {
-                          e.collections[t].data = n[t] ? n[t] : {}
-                        }),
-                        n
-                      )
+                      return e._normalizeResult(t)
                     })
+                    .catch(function() {
+                      return fetch(window.baseurl + '/?data')
+                        .then(function(e) {
+                          return e.json()
+                        })
+                        .then(function(t) {
+                          return e._normalizeResult(t)
+                        })
+                    })
+                },
+              },
+              {
+                key: '_normalizeResult',
+                value: function(e) {
+                  var t = this,
+                    a = e.data
+                  return (
+                    Object.keys(this.structure).forEach(function(e) {
+                      t._isCollection(e)
+                        ? (t.collections[e].data = a[e] ? a[e] : {})
+                        : (t.collections[e].data = a[e.slice(1)] ? a[e.slice(1)] : {})
+                    }),
+                    a
+                  )
                 },
               },
               {
@@ -27553,38 +27586,50 @@
                 value: function(e, t) {
                   return (function(e) {
                     for (var t = 1; t < arguments.length; t++) {
-                      var n = null != arguments[t] ? arguments[t] : {}
+                      var a = null != arguments[t] ? arguments[t] : {}
                       t % 2
-                        ? U(n, !0).forEach(function(t) {
-                            Object(m.a)(e, t, n[t])
+                        ? J(a, !0).forEach(function(t) {
+                            Object(m.a)(e, t, a[t])
                           })
                         : Object.getOwnPropertyDescriptors
-                        ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(n))
-                        : U(n).forEach(function(t) {
-                            Object.defineProperty(e, t, Object.getOwnPropertyDescriptor(n, t))
+                        ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(a))
+                        : J(a).forEach(function(t) {
+                            Object.defineProperty(e, t, Object.getOwnPropertyDescriptor(a, t))
                           })
                     }
                     return e
-                  })({ name: e }, new J(t).getData())
+                  })({ name: e }, new X(t).getData())
+                },
+              },
+              {
+                key: '_isCollection',
+                value: function(e) {
+                  return '@' !== e.slice(0, 1)
                 },
               },
             ]),
             e
           )
         })(),
-        $ = function() {
+        G = function(e) {
+          return function(t) {
+            return t(e), window.config.autosave && t(Q()), Promise.resolve(e.payload.data)
+          }
+        },
+        Q = function() {
           return function(e, t) {
-            var n = t().collections.items,
-              a = {}
+            var a = t().collections.items,
+              n = {}
             return (
-              e({ type: b }),
-              Object.keys(n).forEach(function(e) {
-                a[e] = n[e].data
+              e({ type: h }),
+              Object.keys(a).forEach(function(e) {
+                var t = '@' === e.slice(0, 1) ? e.slice(1) : e
+                n[t] = a[e].data
               }),
               fetch(window.baseurl + '/index.php', {
                 method: 'POST',
                 headers: { Accept: 'application/json', 'Content-Type': 'application/json' },
-                body: JSON.stringify(a),
+                body: JSON.stringify(n),
                 redirect: 'follow',
               })
                 .then(function(e) {
@@ -27592,7 +27637,7 @@
                 })
                 .then(function(t) {
                   return (
-                    'ok' !== t.status ? e({ type: O, payload: t }) : e({ type: h, payload: t }), t
+                    'ok' !== t.status ? e({ type: O, payload: t }) : e({ type: y, payload: t }), t
                   )
                 })
                 .catch(function(t) {
@@ -27601,11 +27646,11 @@
             )
           }
         },
-        G = {
+        H = {
           collections: {
             all: function() {
               return function(e) {
-                var t = new X(window.schema)
+                var t = new $(window.schema)
                 return t.loadData().then(function() {
                   return (
                     e({
@@ -27618,68 +27663,65 @@
               }
             },
             save: function(e, t) {
-              return function(n) {
-                return (
-                  n({ type: d, payload: { collectionName: e, data: t } }),
-                  window.config.autosave && n($()),
-                  Promise.resolve(t)
-                )
-              }
+              return G({ type: d, payload: { collectionName: e, data: t } })
+            },
+            saveValue: function(e, t) {
+              return G({ type: b, payload: { valueName: e, data: t } })
             },
             delete: function(e, t) {
-              return function(n) {
+              return function(a) {
                 return (
-                  n({ type: f, payload: { collectionName: e, uid: t._uid || t } }),
-                  window.config.autosave && n($()),
+                  a({ type: f, payload: { collectionName: e, uid: t._uid || t } }),
+                  window.config.autosave && a(Q()),
                   Promise.resolve(!0)
                 )
               }
             },
-            saveInJson: $,
+            saveInJson: Q,
           },
         },
-        Q = n(175),
-        H = n(395),
-        Y = n(389),
-        K = n(53),
-        Z = n(410),
-        ee = n(391),
-        te = n(390),
-        ne = n(392),
-        ae = n(393),
-        re = n(176),
-        oe = n.n(re),
-        ce = n(177),
-        le = n.n(ce),
-        ie = n(394),
-        se = r.a.forwardRef(function(e, t) {
-          return r.a.createElement(_.c, Object.assign({ innerRef: t, to: '' }, e))
+        Y = a(175),
+        K = a(395),
+        Z = a(389),
+        ee = a(54),
+        te = a(410),
+        ae = a(391),
+        ne = a(390),
+        re = a(392),
+        oe = a(393),
+        ce = a(176),
+        le = a.n(ce),
+        ie = a(177),
+        se = a.n(ie),
+        ue = a(394),
+        me = r.a.forwardRef(function(e, t) {
+          return r.a.createElement(I.c, Object.assign({ innerRef: t, to: '' }, e))
         }),
-        ue = n(388),
-        me = n(380),
-        pe = n(387),
-        de = n(384),
-        fe = n(386),
-        be = n(383),
-        he = n(385),
-        Oe = function(e) {
+        pe = a(388),
+        de = a(380),
+        fe = a(387),
+        be = a(384),
+        he = a(386),
+        ye = a(383),
+        Oe = a(385),
+        Ee = function(e) {
           var t = e.open,
-            n = e.setOpen,
+            a = e.setOpen,
             o = Object(i.c)(),
-            c = Object(a.useState)(!1),
-            l = Object(N.a)(c, 2),
+            c = Object(n.useState)(!1),
+            l = Object(D.a)(c, 2),
             s = l[0],
             u = l[1],
-            m = Object(a.useState)(null),
-            p = Object(N.a)(m, 2),
+            m = Object(n.useState)(null),
+            p = Object(D.a)(m, 2),
             d = p[0],
             f = p[1],
             b = d ? 'error' : s ? 'saved' : 'saving'
           return (
-            Object(a.useEffect)(
+            Object(n.useEffect)(
               function() {
                 t &&
-                  o(G.collections.saveInJson())
+                  o(H.collections.saveInJson())
                     .then(function(e) {
                       'ok' === e.status && (u(!0), f(null)),
                         'error' === e.status && (console.log(e), u(!1), f(e))
@@ -27694,7 +27736,7 @@
               'div',
               null,
               r.a.createElement(
-                me.a,
+                de.a,
                 {
                   open: t,
                   onClose: null,
@@ -27702,26 +27744,26 @@
                   'aria-describedby': 'alert-dialog-description',
                 },
                 r.a.createElement(
-                  be.a,
+                  ye.a,
                   { id: 'alert-dialog-title' },
                   'saving' === b && 'Saving data',
                   'saved' === b && 'Saved data',
                   'error' === b && 'Error'
                 ),
                 r.a.createElement(
-                  de.a,
+                  be.a,
                   { style: { minWidth: 300 } },
                   'saving' === b &&
                     r.a.createElement(
                       r.a.Fragment,
                       null,
-                      r.a.createElement(he.a, {
+                      r.a.createElement(Oe.a, {
                         size: 14,
                         thickness: 4,
                         style: { marginRight: 16 },
                       }),
                       r.a.createElement(
-                        fe.a,
+                        he.a,
                         { id: 'alert-dialog-description' },
                         'Wait a moment...'
                       )
@@ -27731,7 +27773,7 @@
                       r.a.Fragment,
                       null,
                       r.a.createElement(
-                        fe.a,
+                        he.a,
                         { id: 'alert-dialog-description' },
                         'Saved with success'
                       )
@@ -27741,7 +27783,7 @@
                       r.a.Fragment,
                       null,
                       r.a.createElement(
-                        fe.a,
+                        he.a,
                         { id: 'alert-dialog-description' },
                         'no-loggedin' === d.code &&
                           r.a.createElement(
@@ -27777,13 +27819,13 @@
                     )
                 ),
                 r.a.createElement(
-                  pe.a,
+                  fe.a,
                   null,
                   r.a.createElement(
-                    ue.a,
+                    pe.a,
                     {
                       onClick: function() {
-                        n(!1)
+                        a(!1)
                       },
                       color: 'primary',
                       disabled: 'saving' === b,
@@ -27795,38 +27837,38 @@
             )
           )
         }
-      function ye(e, t) {
-        var n = Object.keys(e)
+      function ve(e, t) {
+        var a = Object.keys(e)
         if (Object.getOwnPropertySymbols) {
-          var a = Object.getOwnPropertySymbols(e)
+          var n = Object.getOwnPropertySymbols(e)
           t &&
-            (a = a.filter(function(t) {
+            (n = n.filter(function(t) {
               return Object.getOwnPropertyDescriptor(e, t).enumerable
             })),
-            n.push.apply(n, a)
+            a.push.apply(a, n)
         }
-        return n
+        return a
       }
-      function Ee(e) {
+      function ge(e) {
         for (var t = 1; t < arguments.length; t++) {
-          var n = null != arguments[t] ? arguments[t] : {}
+          var a = null != arguments[t] ? arguments[t] : {}
           t % 2
-            ? ye(n, !0).forEach(function(t) {
-                Object(m.a)(e, t, n[t])
+            ? ve(a, !0).forEach(function(t) {
+                Object(m.a)(e, t, a[t])
               })
             : Object.getOwnPropertyDescriptors
-            ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(n))
-            : ye(n).forEach(function(t) {
-                Object.defineProperty(e, t, Object.getOwnPropertyDescriptor(n, t))
+            ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(a))
+            : ve(a).forEach(function(t) {
+                Object.defineProperty(e, t, Object.getOwnPropertyDescriptor(a, t))
               })
         }
         return e
       }
-      var ge = Object(Q.a)(function(e) {
+      var je = Object(Y.a)(function(e) {
           return {
             drawer: { zIndex: 1, width: 240, flexShrink: 0 },
             drawerPaper: { width: 240 },
-            toolbar: Ee({}, e.mixins.toolbar),
+            toolbar: ge({}, e.mixins.toolbar),
             modal: {
               position: 'absolute',
               width: 400,
@@ -27837,79 +27879,81 @@
             },
           }
         }),
-        ve = Object(i.b)(function(e) {
+        we = Object(i.b)(function(e) {
           return { collections: e.collections.names, items: e.collections.items }
         })(function(e) {
-          var t = ge(),
-            n = r.a.useState(!1),
-            a = Object(N.a)(n, 2),
-            o = a[0],
-            c = a[1]
+          var t = je(),
+            a = r.a.useState(!1),
+            n = Object(D.a)(a, 2),
+            o = n[0],
+            c = n[1]
           return r.a.createElement(
-            Z.a,
+            te.a,
             {
               className: t.drawer,
               variant: 'permanent',
               classes: { paper: t.drawerPaper },
               anchor: 'left',
             },
-            r.a.createElement(Oe, { open: o, setOpen: c }),
+            r.a.createElement(Ee, { open: o, setOpen: c }),
             r.a.createElement(
               'div',
               { className: t.toolbar },
               r.a.createElement(
-                Y.a,
+                Z.a,
                 null,
                 r.a.createElement(
-                  K.a,
+                  ee.a,
                   { variant: 'h6', noWrap: !0 },
                   r.a.createElement(
-                    _.b,
+                    I.b,
                     { to: '/', style: { textDecoration: 'none', color: 'black' } },
                     'Simplest CMS'
                   )
                 )
               )
             ),
-            r.a.createElement(te.a, null),
+            r.a.createElement(ne.a, null),
             r.a.createElement(
-              ee.a,
+              ae.a,
               null,
               e.collections.map(function(e) {
                 return r.a.createElement(
-                  ne.a,
+                  re.a,
                   {
                     button: !0,
                     key: e.name,
-                    to: '/collections/'.concat(e.name, '/'),
-                    component: se,
+                    to: ''
+                      .concat(e.isCollection ? '/collections' : '/values', '/')
+                      .concat(e.name, '/'),
+                    component: me,
                     activeStyle: { fontWeight: 'bold', color: '#000', backgroundColor: '#dbdbdb' },
                   },
-                  r.a.createElement(ae.a, null, r.a.createElement(oe.a, null)),
-                  r.a.createElement(ie.a, { primary: e.name })
+                  r.a.createElement(oe.a, null, r.a.createElement(le.a, null)),
+                  r.a.createElement(ue.a, { primary: e.name })
                 )
               })
             ),
-            r.a.createElement(te.a, null),
+            r.a.createElement(ne.a, null),
             r.a.createElement(
-              ee.a,
+              ae.a,
               null,
               !window.config.autosave &&
                 r.a.createElement(
-                  ne.a,
+                  re.a,
                   {
                     button: !0,
                     onClick: function() {
                       c(!0)
                     },
                   },
-                  r.a.createElement(ae.a, null, r.a.createElement(le.a, null)),
-                  r.a.createElement(ie.a, { primary: 'Save All Changed' })
+                  r.a.createElement(oe.a, null, r.a.createElement(se.a, null)),
+                  r.a.createElement(ue.a, { primary: 'Save All Changed' })
                 )
             )
           )
         }),
-        je = Object(Q.a)(function(e) {
+        Se = Object(Y.a)(function(e) {
           return {
             root: { zIndex: 1, position: 'relative', display: 'flex' },
             appBar: { width: 'calc(100% - '.concat(240, 'px)'), marginLeft: 240 },
@@ -27921,50 +27965,54 @@
             },
           }
         }),
-        we = function(e) {
-          var t = Object(I.f)(),
-            n = je(),
-            a = (function(e) {
+        ke = function(e) {
+          var t = Object(z.f)(),
+            a = Se(),
+            n = (function(e) {
               var t = e.split('/').reduce(function(e, t) {
-                var n = F()(t)
-                return '' === n ? e : (e.push(B()(n)), e)
+                var a = B()(t)
+                return '' === a ? e : (e.push(F()(a)), e)
               }, [])
               return '' === (t = t.join(' / ')) && (t = 'Dashboard'), t
             })(t.pathname)
           return r.a.createElement(
             'div',
-            { className: n.root },
-            r.a.createElement(ve, null),
+            { className: a.root },
+            r.a.createElement(we, null),
             r.a.createElement(
-              H.a,
-              { position: 'fixed', className: n.appBar },
-              r.a.createElement(Y.a, null, r.a.createElement(K.a, { variant: 'h6', noWrap: !0 }, a))
+              K.a,
+              { position: 'fixed', className: a.appBar },
+              r.a.createElement(
+                Z.a,
+                null,
+                r.a.createElement(ee.a, { variant: 'h6', noWrap: !0 }, n)
+              )
             ),
             r.a.createElement(
               'main',
-              { className: n.content },
-              r.a.createElement('div', { className: n.toolbar }),
+              { className: a.content },
+              r.a.createElement('div', { className: a.toolbar }),
               r.a.createElement('div', null, e.children)
             )
           )
         },
-        Pe = n(396),
-        Se = n(400),
-        ke = n(399),
-        Ce = n(397),
-        De = n(398),
-        xe = n(118),
-        Ne = Object(Q.a)({
+        Pe = a(396),
+        Ce = a(400),
+        _e = a(399),
+        Ne = a(397),
+        xe = a(398),
+        De = a(119),
+        Ie = Object(Y.a)({
           root: { width: '100%', overflowX: 'auto' },
           addbutton: { marginBottom: 16 },
           table: { minWidth: 650 },
         }),
-        _e = { delete: G.collections.delete },
-        Ie = Object(i.b)(function(e, t) {
+        ze = { delete: H.collections.delete },
+        Re = Object(i.b)(function(e, t) {
           return { collection: e.collections.items[t.match.params.collection] }
-        }, _e)(function(e) {
-          var t = Ne(),
-            n = function(t) {
+        }, ze)(function(e) {
+          var t = Ie(),
+            a = function(t) {
               return function() {
                 e.delete(e.match.params.collection, t._uid)
               }
@@ -27973,7 +28021,7 @@
             'div',
             null,
             r.a.createElement(
-              ue.a,
+              pe.a,
               {
                 variant: 'outlined',
                 onClick: function() {
@@ -27984,59 +28032,59 @@
               'add +'
             ),
             r.a.createElement(
-              xe.a,
+              De.a,
               { className: t.root },
               r.a.createElement(
                 Pe.a,
                 { className: t.table, 'aria-label': 'simple table' },
                 r.a.createElement(
-                  Ce.a,
+                  Ne.a,
                   null,
                   r.a.createElement(
-                    De.a,
+                    xe.a,
                     null,
-                    r.a.createElement(ke.a, null, 'UID'),
+                    r.a.createElement(_e.a, null, 'UID'),
                     e.collection.fields.map(function(e) {
-                      return r.a.createElement(ke.a, { key: e.name }, e.name)
+                      return r.a.createElement(_e.a, { key: e.name }, e.name)
                     }),
-                    r.a.createElement(ke.a, { align: 'right' })
+                    r.a.createElement(_e.a, { align: 'right' })
                   )
                 ),
                 r.a.createElement(
-                  Se.a,
+                  Ce.a,
                   null,
                   Object.keys(e.collection.data).map(function(t) {
-                    var a = e.collection.data[t]
+                    var n = e.collection.data[t]
                     return r.a.createElement(
-                      De.a,
-                      { key: a._uid },
-                      r.a.createElement(ke.a, { component: 'th', scope: 'row' }, a._uid),
+                      xe.a,
+                      { key: n._uid },
+                      r.a.createElement(_e.a, { component: 'th', scope: 'row' }, n._uid),
                       e.collection.fields.map(function(e) {
                         return r.a.createElement(
-                          ke.a,
+                          _e.a,
                           { key: e.name, component: 'th', scope: 'row' },
-                          a[e.name]
+                          n[e.name]
                         )
                       }),
                       r.a.createElement(
-                        ke.a,
+                        _e.a,
                         { align: 'right' },
                         r.a.createElement(
-                          ue.a,
+                          pe.a,
                           {
                             size: 'small',
                             variant: 'outlined',
                             to: '/collections/'
                               .concat(e.match.params.collection, '/')
-                              .concat(a._uid),
-                            component: _.b,
+                              .concat(n._uid),
+                            component: I.b,
                             style: { marginRight: 6 },
                           },
                           'Edit'
                         ),
                         r.a.createElement(
-                          ue.a,
-                          { size: 'small', variant: 'outlined', onClick: n(a) },
+                          pe.a,
+                          { size: 'small', variant: 'outlined', onClick: a(n) },
                           'Delete'
                         )
                       )
@@ -28047,23 +28095,23 @@
             )
           )
         }),
-        Te = n(50),
-        Le = n(401),
-        ze = n(409),
-        Re = n(403),
-        Ae = function(e) {
+        Te = a(51),
+        Le = a(401),
+        Ve = a(409),
+        Ae = a(403),
+        We = function(e) {
           var t = Object(Te.c)(),
-            n = t.register,
-            a = t.errors,
+            a = t.register,
+            n = t.errors,
             o = e.info,
             c = e.defaultValue,
-            l = a[o.name]
+            l = n[o.name]
           return r.a.useMemo(
             function() {
               return r.a.createElement(
                 Le.a,
                 { item: !0, xs: 12 },
-                r.a.createElement(ze.a, {
+                r.a.createElement(Ve.a, {
                   variant: 'outlined',
                   type: 'text',
                   fullWidth: !0,
@@ -28071,29 +28119,29 @@
                   name: o.name,
                   label: o.label || o.name,
                   defaultValue: c || o.default,
-                  inputRef: n,
+                  inputRef: a,
                   error: !!l,
                   helperText: o.description,
                 }),
-                r.a.createElement(We, { error: l })
+                r.a.createElement(Be, { error: l })
               )
             },
-            [c, l, o.default, o.description, o.label, o.name, n]
+            [c, l, o.default, o.description, o.label, o.name, a]
           )
         },
-        We = function(e) {
-          var t = e.error
-          return t ? r.a.createElement(Re.a, { error: !0 }, t.message) : null
-        },
         Be = function(e) {
+          var t = e.error
+          return t ? r.a.createElement(Ae.a, { error: !0 }, t.message) : null
+        },
+        Me = function(e) {
           return 'text' === e.info.component
-            ? r.a.createElement(Ae, e)
+            ? r.a.createElement(We, e)
             : r.a.createElement(r.a.Fragment, null, 'Not Found Field')
         },
-        Ve = n(117),
-        Fe = new ((function() {
+        Fe = a(118),
+        qe = new ((function() {
           function e() {
-            Object(R.a)(this, e)
+            Object(V.a)(this, e)
           }
           return (
             Object(A.a)(e, [
@@ -28101,14 +28149,14 @@
                 key: 'getSchema',
                 value: function(e) {
                   var t,
-                    n = {}
+                    a = {}
                   return (
                     e.forEach(function(e) {
                       ;(t = null),
                         e.required &&
-                          ((t = Ve), 'text' === e.component && (n[e.name] = t.string().required()))
+                          ((t = Fe), 'text' === e.component && (a[e.name] = t.string().required()))
                     }),
-                    Ve.object().shape(n)
+                    Fe.object().shape(a)
                   )
                 },
               },
@@ -28116,22 +28164,22 @@
             e
           )
         })())()
-      var Me = Object(Q.a)(function(e) {
+      var Ue = Object(Y.a)(function(e) {
           return { container: { display: 'flex', flexWrap: 'wrap' } }
         }),
-        qe = function(e) {
+        Xe = function(e) {
           var t = e.fields,
-            n = e.initValues,
+            a = e.initValues,
             o = e.onSubmit,
             c = e.onCancel,
-            l = Object(a.useMemo)(
+            l = Object(n.useMemo)(
               function() {
-                return Fe.getSchema(t)
+                return qe.getSchema(t)
               },
               [t]
             ),
             i = Object(Te.b)({ validationSchema: l }),
-            s = Me()
+            s = Ue()
           return r.a.createElement(
             Te.a,
             i,
@@ -28142,14 +28190,14 @@
                 Le.a,
                 { container: !0, spacing: 2 },
                 t.map(function(e, t) {
-                  return r.a.createElement(Be, { key: t, defaultValue: n && n[e.name], info: e })
+                  return r.a.createElement(Me, { key: t, defaultValue: a && a[e.name], info: e })
                 }),
-                r.a.createElement(Le.a, { item: !0, xs: 12 }, r.a.createElement(te.a, null)),
+                r.a.createElement(Le.a, { item: !0, xs: 12 }, r.a.createElement(ne.a, null)),
                 r.a.createElement(
                   Le.a,
                   { item: !0, xs: 12 },
                   r.a.createElement(
-                    ue.a,
+                    pe.a,
                     {
                       type: 'submit',
                       variant: 'outlined',
@@ -28159,7 +28207,7 @@
                     'Save'
                   ),
                   r.a.createElement(
-                    ue.a,
+                    pe.a,
                     { type: 'button', variant: 'outlined', onClick: c },
                     'Cancel'
                   )
@@ -28169,33 +28217,33 @@
           )
         }
       function Je(e, t) {
-        var n = Object.keys(e)
+        var a = Object.keys(e)
         if (Object.getOwnPropertySymbols) {
-          var a = Object.getOwnPropertySymbols(e)
+          var n = Object.getOwnPropertySymbols(e)
           t &&
-            (a = a.filter(function(t) {
+            (n = n.filter(function(t) {
               return Object.getOwnPropertyDescriptor(e, t).enumerable
             })),
-            n.push.apply(n, a)
+            a.push.apply(a, n)
         }
-        return n
+        return a
       }
-      var Ue = Object(Q.a)({ root: { width: '100%', overflowX: 'auto', padding: 16 } }),
-        Xe = { save: G.collections.save },
-        $e = Object(i.b)(function(e, t) {
+      var $e = Object(Y.a)({ root: { width: '100%', overflowX: 'auto', padding: 16 } }),
+        Ge = { save: H.collections.save },
+        Qe = Object(i.b)(function(e, t) {
           return {
             fields: e.collections.items[t.match.params.collection].fields,
             item: e.collections.items[t.match.params.collection].data[t.match.params.uid],
           }
-        }, Xe)(function(e) {
-          var t = Ue()
+        }, Ge)(function(e) {
+          var t = $e()
           return r.a.createElement(
             'div',
             null,
             r.a.createElement(
-              xe.a,
+              De.a,
               { className: t.root },
-              r.a.createElement(qe, {
+              r.a.createElement(Xe, {
                 fields: e.fields,
                 initValues: e.item,
                 onSubmit: function(t) {
@@ -28203,15 +28251,15 @@
                     e.match.params.collection,
                     (function(e) {
                       for (var t = 1; t < arguments.length; t++) {
-                        var n = null != arguments[t] ? arguments[t] : {}
+                        var a = null != arguments[t] ? arguments[t] : {}
                         t % 2
-                          ? Je(n, !0).forEach(function(t) {
-                              Object(m.a)(e, t, n[t])
+                          ? Je(a, !0).forEach(function(t) {
+                              Object(m.a)(e, t, a[t])
                             })
                           : Object.getOwnPropertyDescriptors
-                          ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(n))
-                          : Je(n).forEach(function(t) {
-                              Object.defineProperty(e, t, Object.getOwnPropertyDescriptor(n, t))
+                          ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(a))
+                          : Je(a).forEach(function(t) {
+                              Object.defineProperty(e, t, Object.getOwnPropertyDescriptor(a, t))
                             })
                       }
                       return e
@@ -28227,34 +28275,34 @@
             )
           )
         })
-      function Ge(e, t) {
-        var n = Object.keys(e)
+      function He(e, t) {
+        var a = Object.keys(e)
         if (Object.getOwnPropertySymbols) {
-          var a = Object.getOwnPropertySymbols(e)
+          var n = Object.getOwnPropertySymbols(e)
           t &&
-            (a = a.filter(function(t) {
+            (n = n.filter(function(t) {
               return Object.getOwnPropertyDescriptor(e, t).enumerable
             })),
-            n.push.apply(n, a)
+            a.push.apply(a, n)
         }
-        return n
+        return a
       }
-      var Qe = Object(Q.a)({ root: { width: '100%', overflowX: 'auto', padding: 16 } }),
-        He = { save: G.collections.save },
-        Ye = Object(i.b)(function(e, t) {
+      var Ye = Object(Y.a)({ root: { width: '100%', overflowX: 'auto', padding: 16 } }),
+        Ke = { save: H.collections.save },
+        Ze = Object(i.b)(function(e, t) {
           return {
             fields: e.collections.items[t.match.params.collection].fields,
             item: e.collections.items[t.match.params.collection].data[t.match.params.uid],
           }
-        }, He)(function(e) {
-          var t = Qe()
+        }, Ke)(function(e) {
+          var t = Ye()
           return r.a.createElement(
             'div',
             null,
             r.a.createElement(
-              xe.a,
+              De.a,
               { className: t.root },
-              r.a.createElement(qe, {
+              r.a.createElement(Xe, {
                 fields: e.fields,
                 initValues: e.item,
                 onSubmit: function(t) {
@@ -28262,15 +28310,15 @@
                     e.match.params.collection,
                     (function(e) {
                       for (var t = 1; t < arguments.length; t++) {
-                        var n = null != arguments[t] ? arguments[t] : {}
+                        var a = null != arguments[t] ? arguments[t] : {}
                         t % 2
-                          ? Ge(n, !0).forEach(function(t) {
-                              Object(m.a)(e, t, n[t])
+                          ? He(a, !0).forEach(function(t) {
+                              Object(m.a)(e, t, a[t])
                             })
                           : Object.getOwnPropertyDescriptors
-                          ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(n))
-                          : Ge(n).forEach(function(t) {
-                              Object.defineProperty(e, t, Object.getOwnPropertyDescriptor(n, t))
+                          ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(a))
+                          : He(a).forEach(function(t) {
+                              Object.defineProperty(e, t, Object.getOwnPropertyDescriptor(a, t))
                             })
                       }
                       return e
@@ -28286,32 +28334,62 @@
             )
           )
         }),
-        Ke = Object(i.b)(function(e) {
+        et = Object(Y.a)({ root: { width: '100%', overflowX: 'auto', padding: 16 } }),
+        tt = { save: H.collections.saveValue },
+        at = Object(i.b)(function(e, t) {
+          return {
+            fields: e.collections.items[t.match.params.key].fields,
+            item: e.collections.items[t.match.params.key].data,
+          }
+        }, tt)(function(e) {
+          var t = et()
+          return r.a.createElement(
+            'div',
+            null,
+            r.a.createElement(
+              De.a,
+              { className: t.root },
+              r.a.createElement(Xe, {
+                fields: e.fields,
+                initValues: e.item,
+                onSubmit: function(t) {
+                  e.save(e.match.params.key, t).then(function(t) {
+                    e.history.push('/')
+                  })
+                },
+                onCancel: function() {
+                  e.history.push('/')
+                },
+              })
+            )
+          )
+        }),
+        nt = Object(i.b)(function(e) {
           return { collections: e.collections }
         })(function() {
           return r.a.createElement('div', null, r.a.createElement('h3', null, 'Welcome...'))
         }),
-        Ze = n(404),
-        et = n(411),
-        tt = n(405),
-        nt = n(406),
-        at = n(178),
-        rt = n.n(at),
-        ot = Object(Q.a)(function(e) {
+        rt = a(404),
+        ot = a(411),
+        ct = a(405),
+        lt = a(406),
+        it = a(178),
+        st = a.n(it),
+        ut = Object(Y.a)(function(e) {
           return {
             root: { zIndex: 3, position: 'absolute', top: 0, left: 0, right: 0 },
             error: { backgroundColor: e.palette.error.dark },
           }
         }),
-        ct = function() {
-          var e = Object(a.useState)(!1),
-            t = Object(N.a)(e, 2),
-            n = t[0],
+        mt = function() {
+          var e = Object(n.useState)(!1),
+            t = Object(D.a)(e, 2),
+            a = t[0],
             o = t[1],
             c = Object(i.d)(function(e) {
               return e.app.status.store
             }),
-            l = ot(),
+            l = ut(),
             s = function(e, t) {
               'clickaway' !== t && o(!1)
             }
@@ -28325,20 +28403,20 @@
             r.a.createElement(
               'div',
               { className: l.root },
-              c.saving && r.a.createElement(Ze.a, null),
-              n && r.a.createElement(Ze.a, { color: 'secondary' }),
+              c.saving && r.a.createElement(rt.a, null),
+              a && r.a.createElement(rt.a, { color: 'secondary' }),
               r.a.createElement(
-                et.a,
+                ot.a,
                 {
                   key: 'message-id',
                   anchorOrigin: { vertical: 'bottom', horizontal: 'left' },
-                  open: n,
+                  open: a,
                   autoHideDuration: 6e3,
                   onClose: s,
                   ContentProps: { 'aria-describedby': 'message-id' },
                   disableWindowBlurListener: !1,
                 },
-                r.a.createElement(tt.a, {
+                r.a.createElement(ct.a, {
                   className: l.error,
                   message: r.a.createElement(
                     'span',
@@ -28347,7 +28425,7 @@
                   ),
                   action: [
                     r.a.createElement(
-                      nt.a,
+                      lt.a,
                       {
                         key: 'close',
                         'aria-label': 'close',
@@ -28355,7 +28433,7 @@
                         className: l.close,
                         onClick: s,
                       },
-                      r.a.createElement(rt.a, null)
+                      r.a.createElement(st.a, null)
                     ),
                   ],
                 })
@@ -28363,49 +28441,50 @@
             )
           )
         }
-      var lt = { fetchCollections: G.collections.all },
-        it = Object(i.b)(null, lt)(function(e) {
+      var pt = { fetchCollections: H.collections.all },
+        dt = Object(i.b)(null, pt)(function(e) {
           var t = r.a.useState(!0),
-            n = Object(N.a)(t, 2),
-            a = n[0],
-            o = n[1]
+            a = Object(D.a)(t, 2),
+            n = a[0],
+            o = a[1]
           return (
             r.a.useEffect(function() {
-              a &&
+              n &&
                 e.fetchCollections().then(function() {
                   o(!1)
                 })
             }),
-            a
+            n
               ? r.a.createElement('div', null, 'Loading data...')
               : r.a.createElement(
                   'div',
                   { className: 'app' },
-                  window.config.autosave && r.a.createElement(ct, null),
+                  window.config.autosave && r.a.createElement(mt, null),
                   r.a.createElement(
-                    _.a,
+                    I.a,
                     null,
                     r.a.createElement(
-                      we,
+                      ke,
                       null,
                       r.a.createElement(
-                        I.c,
+                        z.c,
                         null,
-                        r.a.createElement(I.a, { exact: !0, path: '/', component: Ke }),
-                        r.a.createElement(I.a, {
+                        r.a.createElement(z.a, { exact: !0, path: '/', component: nt }),
+                        r.a.createElement(z.a, { exact: !0, path: '/values/:key', component: at }),
+                        r.a.createElement(z.a, {
                           exact: !0,
                           path: '/collections/:collection',
-                          component: Ie,
+                          component: Re,
                         }),
-                        r.a.createElement(I.a, {
+                        r.a.createElement(z.a, {
                           exact: !0,
                           path: '/collections/:collection/new',
-                          component: $e,
+                          component: Qe,
                         }),
-                        r.a.createElement(I.a, {
+                        r.a.createElement(z.a, {
                           exact: !0,
                           path: '/collections/:collection/:uid',
-                          component: Ye,
+                          component: Ze,
                         })
                       )
                     )
@@ -28426,9 +28505,9 @@
                 { theme: x },
                 r.a.createElement(
                   i.a,
-                  { store: k },
-                  r.a.createElement(C.a, null),
-                  r.a.createElement(it, null)
+                  { store: C },
+                  r.a.createElement(_.a, null),
+                  r.a.createElement(dt, null)
                 )
               ),
               document.getElementById('root')

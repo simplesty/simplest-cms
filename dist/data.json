@@ -7,6 +7,10 @@
         "lastname": "Canelas",
         "work": "Web Developer"
       }
+    },
+    "config": {
+      "title": "My Website",
+      "email": "email@domain.com"
     }
   }
 }
