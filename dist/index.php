@@ -27,12 +27,13 @@
 | Constants
 |-----------------------------------------------------------------------------*/
 
-const BACKEND_VERSION = '1.0.0';
+const BACKEND_VERSION = '1.1.0';
 const ACTION_NONE = 'none';
 const ACTION_AUTH_FAILURE = 'auth';
 const ACTION_LOGOUT = 'logout';
 const ACTION_LOGGED = 'logged';
 const ACTION_STORE = 'store';
+const ACTION_DATA = 'data';
 
 /*-----------------------------------------------------------------------------
 | Get config information
@@ -107,6 +108,10 @@ function getAction() {
     $status = ACTION_STORE;
   }
 
+  if(isset($_GET['data'])) {
+    $status = ACTION_DATA;
+  }
+
   return $status;
 }
 
@@ -135,6 +140,9 @@ switch (getAction()) {
     break;
   case ACTION_STORE:
     storeUpdateData();
+    break;
+  case ACTION_DATA:
+    getData();
     break;
   default:
     echo "¯\_(ツ)_/¯";
@@ -196,6 +204,7 @@ function viewApp () {
   ]);
 
   $schema = json_encode($config['schema']);
+  $bundle = isset($config['app_src']) ? $config['app_src'] : './bundle.js';
 
   echo <<<EOD
     <!doctype html>
@@ -211,7 +220,7 @@ function viewApp () {
           window.schema = $schema;
           window.config = '$appconfig';
         </script>
-        <script src="./bundle.js"></script>
+        <script src="$bundle"></script>
       </body>
     </html>
 EOD;
@@ -250,6 +259,17 @@ function storeUpdateData() {
   file_put_contents('data.json', $json_indented_by_2);
 
   echo json_encode([ "status" => "ok", "message" => "Has saved with success!", "code" => "success" ]);
+  exit(0);
+}
+
+/*----------------------------------------------------------------------------
+| Get / Data.json
+|----------------------------------------------------------------------------*/
+
+function getData () {
+  header('Content-type: application/json');
+  $data = json_decode(file_get_contents("data.json"), true);
+  echo json_encode($data);
   exit(0);
 }
 
