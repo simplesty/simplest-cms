@@ -42,4 +42,16 @@ describe('Info', () => {
     info = new Info(`text not-required`)
     expect(info.getData().required).toBe(false)
   })
+
+  it('checks component: text ', () => {
+    let info
+    info = new Info(`text`)
+    expect(info.getData().component).toBe('text')
+  })
+
+  it('checks component: textarea ', () => {
+    let info
+    info = new Info(`textarea`)
+    expect(info.getData().component).toBe('textarea')
+  })
 })
