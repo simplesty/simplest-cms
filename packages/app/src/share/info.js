@@ -6,6 +6,7 @@ class Info {
   constructor(row) {
     this.parseArr = this._parse(row, false)
     this.parse = this._parse(row)
+    this.errors = []
   }
 
   getData() {
@@ -15,7 +16,13 @@ class Info {
     }
 
     // Component
-    data.component = this._getComponent()
+    data.component = this._getComponentName()
+    data.arguments = this._getComponentArgs()
+
+    // Select
+    if (data.component === 'select' && data.arguments === null) {
+      this._addError('select', 'Requires arguments')
+    }
 
     // Label
     if (parse.label) data.label = this._normalizeString(parse.label)
@@ -71,9 +78,21 @@ class Info {
       : words
   }
 
-  _getComponent() {
+  _getComponentName() {
     const comp = this.parseArr.find(item => ComponentNames.indexOf(item.name) >= 0)
     return comp ? comp.name : null
+  }
+
+  _getComponentArgs() {
+    const comp = this._getComponentName()
+    if (comp === null) return null
+    let args = this.parse[comp]
+    if (args === null) return null
+    return args.map(item => this._removeQuote(item))
+  }
+
+  _addError(title, message) {
+    this.errors.push({ title, message })
   }
 
   _normalizeString(str) {
