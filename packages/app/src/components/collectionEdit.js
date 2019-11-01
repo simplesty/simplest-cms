@@ -33,7 +33,7 @@ const CollectionEdit = props => {
       <Paper className={classes.root}>
         <Form
           fields={props.fields}
-          initValues={props.item}
+          initialValues={props.item}
           onSubmit={handleSubmit}
           onCancel={handleCancel}
         />
