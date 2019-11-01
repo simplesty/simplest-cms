@@ -5,13 +5,21 @@
         "_uid": "1571239845637",
         "firstname": "Ricardo",
         "lastname": "Canelas",
-        "work": "Software Developer"
+        "work": "Software Developer",
+        "car": "Volvo"
       },
       "1571239878937": {
         "_uid": "1571239878937",
         "firstname": "Carolina",
         "lastname": "Sartire",
         "work": "Nutritionist"
+      }
+    },
+    "posts": {
+      "1571239846514": {
+        "_uid": "1571239846514",
+        "title": "First Post",
+        "body": "Body of this post"
       }
     },
     "config": {
