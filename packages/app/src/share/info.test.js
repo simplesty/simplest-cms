@@ -54,4 +54,21 @@ describe('Info', () => {
     info = new Info(`textarea`)
     expect(info.getData().component).toBe('textarea')
   })
+
+  it('checks component: select ', () => {
+    let info
+    info = new Info(`select`)
+    expect(info.getData().component).toBe('select')
+    expect(info.getData().arguments).toBe(null)
+
+    info = new Info(`select(x, y, z, w)`)
+    expect(info.getData().component).toBe('select')
+    expect(info.getData().arguments.length).toBe(4)
+    expect(info.getData().arguments[3]).toBe('w')
+
+    info = new Info(`select('Volvo', 'Saab', 'Land Rover', 'Mazda', 'Rolls-Royce')`)
+    expect(info.getData().arguments[0]).toBe('Volvo')
+    expect(info.getData().arguments[2]).toBe('Land Rover')
+    expect(info.getData().arguments.length).toBe(5)
+  })
 })
