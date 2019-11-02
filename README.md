@@ -45,8 +45,8 @@ By standard the file is *data.json*
 **Types**
 
 - [x] text
-- [ ] textarea
-- [ ] select
+- [x] textarea
+- [x] select
 - [ ] checkbox
 - [ ] radio
 - [ ] number
@@ -59,12 +59,12 @@ By standard the file is *data.json*
 - [ ] week
 - [ ] month
 - [ ] year
+- [ ] country
 - [ ] editorhtml
 - [ ] editormarkdown
 - [ ] url
 - [ ] image
-- [ ] created_at
-- [ ] updated_at
+- [ ] timestamp
 - [ ] color
 - [ ] one
 - [ ] many
@@ -84,7 +84,6 @@ By standard the file is *data.json*
 **No Collection**
 
 If don't want the values should be a collection, add '@' before the name. Example:
-
 
 *(in config.php)*
 

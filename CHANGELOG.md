@@ -1,3 +1,20 @@
+## 1.2.0 (2019-11-02)
+
+#### :rocket: New Feature
+
+- New types: textarea and select
+
+#### :house: Internal
+
+- remove react-hooks-form
+- add formik
+- change the form and fields to use formik
+- separe the fields in a file
+- improve Info class
+  - getComponentName
+  - getComponentArgs
+  - addError
+
 ## 1.1.0 (2019-10-29)
 
 #### :rocket: New Feature
