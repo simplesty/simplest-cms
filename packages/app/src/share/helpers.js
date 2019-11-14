@@ -35,6 +35,26 @@ export const extractArguments = str => {
   return null
 }
 
+export const stringToBoolean = function(value) {
+  let temp = value
+  if (Array.isArray(value)) temp = value[0]
+  if (temp && temp.toLowerCase) temp = removeQuote(temp.toLowerCase().trim())
+  switch (temp) {
+    case 'true':
+    case 'yes':
+    case '1':
+      return true
+    case 'false':
+    case 'no':
+    case '0':
+    case undefined:
+    case null:
+      return false
+    default:
+      return Boolean(value)
+  }
+}
+
 /**
  * Removing First and Last Double/Simple Quotes
  *
