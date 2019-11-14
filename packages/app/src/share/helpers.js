@@ -34,3 +34,17 @@ export const extractArguments = str => {
 
   return null
 }
+
+/**
+ * Removing First and Last Double/Simple Quotes
+ *
+ * @param {string} str
+ */
+export const removeQuote = function(str) {
+  if (str[0] === `"`) {
+    str = str.replace(/^"(.+)"$/, '$1')
+  } else if (str[0] === `'`) {
+    str = str.replace(/^'(.+)'$/, '$1')
+  }
+  return str
+}
