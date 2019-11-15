@@ -1,0 +1,15 @@
+version: '3'
+
+# Command-line
+# https://docs.docker.com/compose/reference/
+
+services:
+  php:
+    image: 'php:5.5-apache'
+    restart: always
+    ports:
+      - 3010:80
+    volumes:
+      - ./docker/php/php.conf.ini:/usr/local/etc/php/conf.d/conf.ini
+      - ./docker/apache2/httpd-vhosts.conf:/etc/apache2/sites-enabled/000-default.conf
+      - ./dist:/var/www/html
