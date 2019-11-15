@@ -3,7 +3,7 @@
   "private": true,
   "repository": {
     "type": "git",
-    "url": "https://github.com/FotonTech/golden-stack"
+    "url": "https://github.com/ricardocanelas/simples-csm"
   },
   "bin": {
     "simplest-cms": "./packages/cli/cli.js"
