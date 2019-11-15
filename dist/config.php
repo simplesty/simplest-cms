@@ -22,11 +22,15 @@ return [
   |
   | Here you define username and password to edit the data
   |
+  | !ATTENTION!
+  | If 'hash' is true then...
+  |  * you need to use php version >= 5.5
+  |  * go to: index.php?generate
   */
 
-  "hash" => "",
-  "username" => "admin",
-  "password" => "admin",
+  'hash' => false,
+  'username' => 'admin',
+  'password' => 'admin',
 
   /*
   |--------------------------------------------------------------------------
@@ -37,7 +41,7 @@ return [
   |
   */
 
-  "autosave" => false,
+  'autosave' => false,
 
   /*
   |--------------------------------------------------------------------------
@@ -48,7 +52,7 @@ return [
   |
   */
 
-  "header_allow_origin" => '*',
+  'header_allow_origin' => '*',
 
   /*
   |--------------------------------------------------------------------------
@@ -60,15 +64,15 @@ return [
   |
   */
 
-  "schema" => [
-    "people" => [
-      "firstname" => "text label(Your First Name)",
-      "lastname" => "text not-required",
-      "work" => "text"
+  'schema' => [
+    'people' => [
+      'firstname' => 'text required label(Your First Name)',
+      'lastname' => 'text',
+      'work' => 'text'
     ],
-    "@config" => [
-      "title" => "text label(Title of the website) default(My Website)",
-      "email" => "text",
+    '@config' => [
+      'title' => 'text required label(Title of the website) default(My Website)',
+      'email' => 'text required',
     ]
   ]
 ];
