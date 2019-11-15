@@ -27,13 +27,14 @@
 | Constants
 |-----------------------------------------------------------------------------*/
 
-const BACKEND_VERSION = '1.1.0';
+const BACKEND_VERSION = '1.2.0';
 const ACTION_NONE = 'none';
 const ACTION_AUTH_FAILURE = 'auth';
 const ACTION_LOGOUT = 'logout';
 const ACTION_LOGGED = 'logged';
 const ACTION_STORE = 'store';
 const ACTION_DATA = 'data';
+const ACTION_GENERATE = 'generate-password';
 
 /*-----------------------------------------------------------------------------
 | Get config information
@@ -44,14 +45,13 @@ if(file_exists('config.php'))
 else {
   $config = [
     'name' => 'Simplest CMS',
-    "hash" => "",
-    "username" => "admin", // =TODO in hash
-    "password" => "admin", // =TODO in hash,
+    "hash" => false,
+    "username" => "admin",
+    "password" => "admin",
     "schema" => [
       "people" => [
-        "firstname" => "text",
-        "lastname" => "text not-required",
-        "work" => "text"
+        "firstname" => "text required",
+        "lastname" => "text",
       ],
     ]
   ];
@@ -71,18 +71,37 @@ header('Access-Control-Allow-Headers: Content-Type, Content-Range, Content-Dispo
 | Helper Functions
 |-----------------------------------------------------------------------------*/
 
+function verifyUsername() {
+  global $config;
+  return $_POST['username'] === $config['username'];
+}
+
+function verifyPassword() {
+  global $config;
+  if(hasHash()) {
+   return password_verify($_POST['password'], $config['password']);
+  }
+  return $_POST['password'] === $config['password'];
+}
+
 function verifCredential() {
   global $config;
   $isAuth = false;
   $_SESSION['loggedin'] = false;
 
-  if(isset($_POST['username']) &&
-    isset($_POST['password']) &&
-    $_POST['username'] === $config['username'] &&
-    $_POST['password'] === $config['password']
-  ) {
-    $_SESSION['loggedin'] = true;
-    $isAuth = true;
+  if(isset($_POST['username']) && isset($_POST['password'])) {
+    if(verifyUsername()) {
+      print_r('Username is ok');
+    }
+
+    if(verifyPassword()) {
+      print_r('Password is ok');
+    }
+
+    if(verifyUsername() && verifyPassword()) {
+      $_SESSION['loggedin'] = true;
+      $isAuth = true;
+    }
   }
   return $isAuth;
 }
@@ -112,12 +131,34 @@ function getAction() {
     $status = ACTION_DATA;
   }
 
+  if(isset($_GET['generate'])) {
+    $status = ACTION_GENERATE;
+  }
+
   return $status;
 }
 
 function getCurrentDiretory() {
   $protocol = $_SERVER["HTTPS"] == "on" ? "https://" : "http://";
   return $protocol . $_SERVER['HTTP_HOST'] . substr(dirname(__FILE__), strlen($_SERVER['DOCUMENT_ROOT']));
+}
+
+function style() {
+  return <<<EOD
+  body { font-family: "Source Serif Pro", sans-serif; }
+  form { border: 1px solid #ccc; padding: 16px; box-shadow: 0px 3px 2px #ececec; }
+  input { display: block; margin: 6px 0 15px 0; padding: 6px; width: 100%; box-sizing: border-box;}
+  button { padding: 5px 12px; }
+  a { display: block; font-size: 0.8em; color: #525252; margin-top: 16px;}
+  .center { display: flex; align-items: center; justify-content: center; height: 100vh; }
+  .wrapper { width: 100%;  max-width: 250px }
+  .alert { font-size: 0.8em; margin: 4px 0 12px; background-color: #fff3cd; padding: 8px; color: #856404; border: 1px solid #f9e5a7;}
+EOD;
+}
+
+function hasHash() {
+  global $config;
+  return strtolower($config['hash']) === 'true' || $config['hash'] === true;
 }
 
 /*----------------------------------------------------------------------------
@@ -144,6 +185,9 @@ switch (getAction()) {
   case ACTION_DATA:
     getData();
     break;
+  case ACTION_GENERATE:
+    viewGenerateForm();
+    break;
   default:
     echo "¯\_(ツ)_/¯";
     break;
@@ -157,7 +201,10 @@ function viewAuthForm ($error = false) {
   global $config;
   $baseurl = getCurrentDiretory();
   $title = $config['name'];
-  $alert = $error ? "<div>$error</div>" : "";
+  $alert = $error ? "<div class='alert'>$error</div>" : "";
+  $hasHash = hasHash();
+  $style = style();
+  $showGenerateLink = $hasHash ? '<a href="?generate">Generate password using hash</a>' : '';
 
   echo <<<EOD
     <!doctype html>
@@ -166,20 +213,27 @@ function viewAuthForm ($error = false) {
         <meta charset="utf-8"/><link rel="icon" href="/favicon.ico"/>
         <meta name="viewport" content="width=device-width,initial-scale=1"/>
         <title>$title</title>
+        <style>
+          $style
+        </style>
       </head>
-      <body>
-        {$alert}
-        <form action="" method="post">
-          <label>
-            Username:
-            <input placeholder="username" name="username" type="text">
-          </label>
-          <label>
-            Password:
-            <input placeholder="password" name="password" type="password">
-          </label>
-          <button type="submit">Log in</button>
-        </form>
+      <body class="center">
+        <div class="wrapper">
+          <h2>Login</h2>
+          <form action="" method="post">
+            <label>
+              Username:
+              <input placeholder="username" name="username" type="text" value="admin">
+            </label>
+            <label>
+              Password:
+              <input placeholder="password" name="password" type="password" value="admin">
+            </label>
+            {$alert}
+            <button type="submit">Log in</button>
+          </form>
+          $showGenerateLink
+        </div>
       </body>
     </html>
 EOD;
@@ -228,7 +282,6 @@ EOD;
   exit(0);
 }
 
-
 /*----------------------------------------------------------------------------
 | Store / Updating data.json
 |----------------------------------------------------------------------------*/
@@ -270,6 +323,57 @@ function getData () {
   header('Content-type: application/json');
   $data = json_decode(file_get_contents("data.json"), true);
   echo json_encode($data);
+  exit(0);
+}
+
+/*----------------------------------------------------------------------------
+| View / Generate Password
+|----------------------------------------------------------------------------*/
+
+function viewGenerateForm () {
+  global $config;
+  $baseurl = getCurrentDiretory();
+  $title = $config['name'];
+  $style = style();
+  $width = '250px';
+  $alert = "";
+  $pw = $_POST['generate'];
+  $newPw = false;
+  if(trim($pw) !== '') {
+    $newPw = password_hash($pw, PASSWORD_DEFAULT);
+    $alert = "<div class='alert'>$newPw</div>";
+    $width = '500px';
+  }
+
+  echo <<<EOD
+    <!doctype html>
+    <html lang="en">
+      <head>
+        <meta charset="utf-8"/><link rel="icon" href="/favicon.ico"/>
+        <meta name="viewport" content="width=device-width,initial-scale=1"/>
+        <title>$title</title>
+        <style>
+          $style
+          .wrapper { max-width: $width }
+        </style>
+      </head>
+      <body class="center">
+        <div class="wrapper">
+          <h2>Generate Password with Hash</h2>
+          <form action="" method="post">
+            <label>
+              Password:
+              <input placeholder="password" name="generate" type="password">
+            </label>
+            {$alert}
+            <button type="submit">Generate</button>
+          </form>
+          <a href="?">Login page</a>
+        </div>
+      </body>
+    </html>
+EOD;
+
   exit(0);
 }
 
