@@ -115,12 +115,12 @@ function getAction() {
     verifCredential();
   }
 
-  if(isset($_GET['logout']) || isset($_POST['logout'])) {
-    $status = ACTION_LOGOUT;
-  }
-
   if($_SESSION['loggedin'] === true) {
     $status = ACTION_LOGGED;
+  }
+
+  if(isset($_GET['logout']) || isset($_POST['logout'])) {
+    $status = ACTION_LOGOUT;
   }
 
   if ($contentType === "application/json") {
