@@ -9,6 +9,7 @@ import ListItem from '@material-ui/core/ListItem'
 import ListItemIcon from '@material-ui/core/ListItemIcon'
 import LabelIcon from '@material-ui/icons/Label'
 import SaveIcon from '@material-ui/icons/Save'
+import LogoutIcon from '@material-ui/icons/ExitToApp'
 import ListItemText from '@material-ui/core/ListItemText'
 import Toolbar from '@material-ui/core/Toolbar'
 import Typography from '@material-ui/core/Typography'
@@ -45,6 +46,10 @@ const Menu = props => {
 
   const handleOpen = () => {
     setOpen(true)
+  }
+
+  const handleLogout = () => {
+    window.location.href = window.baseurl + '?logout'
   }
 
   return (
@@ -98,6 +103,12 @@ const Menu = props => {
             <ListItemText primary="Save All Changed" />
           </ListItem>
         )}
+        <ListItem button onClick={handleLogout}>
+          <ListItemIcon>
+            <LogoutIcon />
+          </ListItemIcon>
+          <ListItemText primary="Logout" />
+        </ListItem>
       </List>
     </Drawer>
   )
