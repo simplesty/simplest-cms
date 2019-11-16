@@ -1,3 +1,26 @@
+## 1.3.0 (2019-11-16)
+
+#### :rocket: New Feature
+
+- New type: checkbox
+- Sytled the login form
+- Generate and verify hash password
+- Add a logout button
+
+#### :house: Internal
+
+- add function: stringToBoolean
+- add tests: stringToBoolean, checkbox,
+- update material-ui dependency to v4.6.1
+- add docker-compose: php 5.5
+- update backend file to v1.2
+  - add style to forms
+  - add hash functionality
+  - remove double quotes in the config file
+  - small improvements
+  - fix logout functionality
+- fix: when default value is a boolean value
+
 ## 1.2.0 (2019-11-02)
 
 #### :rocket: New Feature
