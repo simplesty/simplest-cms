@@ -223,11 +223,11 @@ function viewAuthForm ($error = false) {
           <form action="" method="post">
             <label>
               Username:
-              <input placeholder="username" name="username" type="text" value="admin">
+              <input placeholder="username" name="username" type="text">
             </label>
             <label>
               Password:
-              <input placeholder="password" name="password" type="password" value="admin">
+              <input placeholder="password" name="password" type="password">
             </label>
             {$alert}
             <button type="submit">Log in</button>
