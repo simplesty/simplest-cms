@@ -47,7 +47,7 @@ By standard the file is *data.json*
 - [x] text
 - [x] textarea
 - [x] select
-- [ ] checkbox
+- [x] checkbox
 - [ ] radio
 - [ ] number
 - [ ] email
@@ -121,15 +121,17 @@ In config.php
 ```php
 // ...
 
-"schema" => [
-  "people" => [
-    "firstname" => "text",
-    "lastname" => "text not-required",
-    "work" => "text"
+'schema' => [
+  'people' => [
+    'firstname' => 'text required',
+    'lastname' => 'text',
+    'bio' => 'textarea',
+    'civil_status' => 'select(married, single, divorced, widowed)',
+    'customer' => 'checkbox default(1)'
   ],
-  "@config" => [
-    "title" => "text default(Inc Company)",
-    "email" => "text default(myemail@domain.com)",
+  '@config' => [
+    'title' => 'text default(Inc Company)',
+    'email' => 'text default(myemail@domain.com)',
   ],
 ]
 ```
