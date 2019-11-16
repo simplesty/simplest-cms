@@ -1,6 +1,7 @@
-import { extractArguments } from './helpers'
+import { extractArguments, stringToBoolean, removeQuote } from './helpers'
+import { isBoolean } from 'lodash'
 
-const ComponentNames = ['text', 'textarea', 'select']
+const ComponentNames = ['text', 'textarea', 'select', 'checkbox']
 
 class Info {
   constructor(row) {
@@ -11,17 +12,21 @@ class Info {
 
   getData() {
     const parse = this.parse
-    const data = {
-      required: true,
-    }
+    const data = { required: false }
 
     // Component
     data.component = this._getComponentName()
     data.arguments = this._getComponentArgs()
 
     // Select
-    if (data.component === 'select' && data.arguments === null) {
-      this._addError('select', 'Requires arguments')
+    if (data.component === 'select') {
+      if (data.arguments === null) this._addError('select', 'Requires arguments')
+    }
+
+    // Checkbox
+    if (data.component === 'checkbox') {
+      parse['not-required'] = true
+      parse.default = stringToBoolean(parse.default)
     }
 
     // Label
@@ -88,7 +93,7 @@ class Info {
     if (comp === null) return null
     let args = this.parse[comp]
     if (args === null) return null
-    return args.map(item => this._removeQuote(item))
+    return args.map(item => removeQuote(item))
   }
 
   _addError(title, message) {
@@ -97,22 +102,9 @@ class Info {
 
   _normalizeString(str) {
     let temp = str
+    if (isBoolean(temp)) return temp
     if (Array.isArray(str)) temp = str[0]
-    return this._removeQuote(temp.trim())
-  }
-
-  /**
-   * Removing First and Last Double/Simple Quotes
-   *
-   * @param {string} str
-   */
-  _removeQuote(str) {
-    if (str[0] === '"') {
-      str = str.replace(/^"(.+)"$/, '$1')
-    } else if (str[0] === "'") {
-      str = str.replace(/^'(.+)'$/, '$1')
-    }
-    return str
+    return removeQuote(temp.trim())
   }
 }
 
