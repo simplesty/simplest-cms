@@ -6,6 +6,7 @@ import Grid from '@material-ui/core/Grid'
 import { useFormik, FormikProvider } from 'formik'
 import Validation from '../share/validation'
 import { Field } from './fields/helper'
+import { isBoolean } from 'lodash'
 
 const useStyles = makeStyles(theme => ({
   container: {
@@ -20,7 +21,7 @@ const Form = ({ fields, initialValues, onSubmit, onCancel }) => {
   const _initialValues = useMemo(() => {
     return {
       ...fields.reduce((acc, cur) => {
-        acc[cur.name] = cur.default ? cur.default : ''
+        acc[cur.name] = cur.default || isBoolean(cur.default) ? cur.default : ''
         return acc
       }, {}),
       ...initialValues,
