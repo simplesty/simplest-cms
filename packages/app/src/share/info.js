@@ -28,6 +28,8 @@ class Info {
     // Select
     if (data.component === 'select') {
       if (data.arguments === null) this._addError('select', 'Requires arguments')
+      data.multiple = parse.hasOwnProperty('multiple') ? true : false
+      if (data.multiple) data.default = []
     }
 
     // Checkbox
