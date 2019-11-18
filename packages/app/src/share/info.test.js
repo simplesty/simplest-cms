@@ -175,4 +175,21 @@ describe('Info', () => {
     info = new Info('one(categories, title) not-required')
     expect(info.getData().required).toBe(false)
   })
+
+  it('checks component: many ', () => {
+    let info
+    info = new Info(`many`)
+    expect(info.hasError()).toBe(true)
+    expect(info.getData().arguments).toBe(null)
+    expect(info.getData().required).toBe(false)
+
+    info = new Info(`many(categories)`)
+    expect(info.hasError()).toBe(true)
+
+    info = new Info('many(categories, title) required')
+    expect(info.getData().required).toBe(true)
+
+    info = new Info('many(categories, title) not-required')
+    expect(info.getData().required).toBe(false)
+  })
 })
