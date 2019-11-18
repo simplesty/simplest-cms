@@ -41,7 +41,7 @@ return [
   |
   */
 
-  'autosave' => false,
+  'autosave' => true,
 
   /*
   |--------------------------------------------------------------------------
@@ -65,15 +65,16 @@ return [
   */
 
   'schema' => [
-    'people' => [
-      'firstname' => 'text required label(Your First Name)',
-      'lastname' => 'text',
-      'work' => 'text'
+    'posts' => [
+      'title' => 'text required',
+      'body' => 'textarea',
+      'category' => 'select(article, project, experimental, talk, code)',
+      'featured' => 'checkbox default(1)'
     ],
     '@config' => [
-      'title' => 'text required label(Title of the website) default(My Website)',
-      'email' => 'text required',
-    ]
+      'title' => 'text default(Inc Company)',
+      'email' => 'text default(myemail@domain.com)',
+    ],
   ]
 ];
 
