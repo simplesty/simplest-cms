@@ -1,14 +1,26 @@
+## 1.5.0 (2019-11-18)
+
+#### :rocket: New Feature
+
+- New types: one and many
+
+#### :house: Internal
+
+- improve the select compoent to accept multiple selects
+- add tests: one and many info
+- update example-dev data
+
 ## 1.4.0 (2019-11-18)
 
 #### :rocket: New Feature
 
-- New type: date and datetime
+- New types: date and datetime
 
 #### :house: Internal
 
 - update screencast
 - update example
-- add tests: date and datetime components
+- add tests: date and datetime info
 - decrease the menu width
 - display boolean value on the list page
 - add dependencies:

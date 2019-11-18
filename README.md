@@ -63,8 +63,8 @@ By standard the file is *data.json*
 - [ ] image
 - [ ] timestamp
 - [ ] color
-- [ ] one
-- [ ] many
+- [x] one
+- [x] many
 - [ ] slug
 
 **Options**
