@@ -54,11 +54,8 @@ By standard the file is *data.json*
 - [ ] range
 - [ ] search
 - [ ] time
-- [ ] datetime
-- [ ] datetimelocal
-- [ ] week
-- [ ] month
-- [ ] year
+- [x] datetime
+- [x] date
 - [ ] country
 - [ ] editorhtml
 - [ ] editormarkdown

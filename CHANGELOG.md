@@ -1,3 +1,29 @@
+## 1.4.0 (2019-11-18)
+
+#### :rocket: New Feature
+
+- New type: date and datetime
+
+#### :house: Internal
+
+- update screencast
+- update example
+- add tests: date and datetime components
+- decrease the menu width
+- display boolean value on the list page
+- add dependencies:
+  - @data-io/date-fns 1.3.11
+  - @material-ui/pickers 3.2.8
+  - date-fns 2.7.0
+- update dependencies:
+  - react and react-dom 16.12
+  - formik 2.0.4
+  - react-redux 7.1.3
+- update backend file to v1.2.1
+  - fix remove debug message
+  - fix logout and login redirection
+  - fix config value
+
 ## 1.3.0 (2019-11-16)
 
 #### :rocket: New Feature
