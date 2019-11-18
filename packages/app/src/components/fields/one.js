@@ -1,37 +1,18 @@
 import React from 'react'
-import { useField } from 'formik'
-import Grid from '@material-ui/core/Grid'
-import TextFieldUI from '@material-ui/core/TextField'
-import MenuItem from '@material-ui/core/MenuItem'
-import { ErrorMessage, hasError } from './helper'
 import { useSelector } from 'react-redux'
+import Select from './select'
 
 const RelationToOne = ({ info, ...props }) => {
-  const [field, meta] = useField({ name: info.name })
-  const options = useSelector(state => state.collections.items[info.relation.collection].data)
+  const data = useSelector(state => state.collections.items[info.relation.collection].data)
+  const options = Object.keys(data).reduce((acc, key) => {
+    acc.push({
+      value: data[key]._uid,
+      label: data[key][info.relation.label_field],
+    })
+    return acc
+  }, [])
 
-  return (
-    <Grid item xs={12}>
-      <TextFieldUI
-        select
-        fullWidth
-        variant="outlined"
-        id={info.name}
-        label={info.label || info.name}
-        helperText={info.description}
-        error={hasError(meta)}
-        {...field}
-        {...props}
-      >
-        {Object.keys(options).map(key => (
-          <MenuItem key={key} value={key}>
-            {options[key][info.relation.label_field]}
-          </MenuItem>
-        ))}
-      </TextFieldUI>
-      <ErrorMessage meta={meta} />
-    </Grid>
-  )
+  return <Select info={{ ...info, options }} {...props} />
 }
 
 export default RelationToOne
