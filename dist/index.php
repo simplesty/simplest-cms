@@ -27,7 +27,7 @@
 | Constants
 |-----------------------------------------------------------------------------*/
 
-const BACKEND_VERSION = '1.2.0';
+const BACKEND_VERSION = '1.2.1';
 const ACTION_NONE = 'none';
 const ACTION_AUTH_FAILURE = 'auth';
 const ACTION_LOGOUT = 'logout';
@@ -90,14 +90,6 @@ function verifCredential() {
   $_SESSION['loggedin'] = false;
 
   if(isset($_POST['username']) && isset($_POST['password'])) {
-    if(verifyUsername()) {
-      print_r('Username is ok');
-    }
-
-    if(verifyPassword()) {
-      print_r('Password is ok');
-    }
-
     if(verifyUsername() && verifyPassword()) {
       $_SESSION['loggedin'] = true;
       $isAuth = true;
@@ -220,10 +212,10 @@ function viewAuthForm ($error = false) {
       <body class="center">
         <div class="wrapper">
           <h2>Login</h2>
-          <form action="" method="post">
+          <form action="$baseurl" method="post">
             <label>
               Username:
-              <input placeholder="username" name="username" type="text">
+              <input placeholder="username" name="username" type="text" autocomplete="off">
             </label>
             <label>
               Password:
@@ -272,7 +264,7 @@ function viewApp () {
         <script>
           window.baseurl = "$baseurl";
           window.schema = $schema;
-          window.config = '$appconfig';
+          window.config = $appconfig;
         </script>
         <script src="$bundle"></script>
       </body>
