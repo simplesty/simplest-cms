@@ -2,16 +2,22 @@ import { extractArguments, stringToBoolean, removeQuote } from './helpers'
 import { isBoolean } from 'lodash'
 import { format } from 'date-fns'
 
-const ComponentNames = ['text', 'textarea', 'select', 'checkbox', 'datetime', 'date']
+const ComponentNames = ['text', 'textarea', 'select', 'checkbox', 'datetime', 'date', 'one']
 
 class Info {
   constructor(row) {
     this.parseArr = this._parse(row, false)
     this.parse = this._parse(row)
     this.errors = []
+    this.data = {}
+    this.refreshData()
   }
 
   getData() {
+    return this.data
+  }
+
+  refreshData() {
     const parse = this.parse
     const data = { required: false }
 
@@ -56,6 +62,18 @@ class Info {
       parse.default = format(new Date(), data.formatSave)
     }
 
+    // One
+    if (data.component === 'one') {
+      if (parse.one && parse.one.length === 2) {
+        data.relation = {
+          collection: parse.one[0],
+          label_field: parse.one[1],
+        }
+      } else {
+        this._addError('one', 'Requires two arguments')
+      }
+    }
+
     // Label
     if (parse.label) data.label = this._normalizeString(parse.label)
 
@@ -69,7 +87,12 @@ class Info {
     // Default
     if (parse.hasOwnProperty('default')) data.default = this._normalizeString(parse.default)
 
+    this.data = data
     return data
+  }
+
+  hasError() {
+    return this.errors.length >= 1
   }
 
   /**

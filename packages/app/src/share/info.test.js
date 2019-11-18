@@ -158,4 +158,21 @@ describe('Info', () => {
     info = new Info('date format(MDY)')
     expect(info.getData().format).toBe('MM/dd/yyyy')
   })
+
+  it('checks component: one ', () => {
+    let info
+    info = new Info(`one`)
+    expect(info.hasError()).toBe(true)
+    expect(info.getData().arguments).toBe(null)
+    expect(info.getData().required).toBe(false)
+
+    info = new Info(`one(categories)`)
+    expect(info.hasError()).toBe(true)
+
+    info = new Info('one(categories, title) required')
+    expect(info.getData().required).toBe(true)
+
+    info = new Info('one(categories, title) not-required')
+    expect(info.getData().required).toBe(false)
+  })
 })
