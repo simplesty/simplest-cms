@@ -1,7 +1,8 @@
 import { extractArguments, stringToBoolean, removeQuote } from './helpers'
 import { isBoolean } from 'lodash'
+import { format } from 'date-fns'
 
-const ComponentNames = ['text', 'textarea', 'select', 'checkbox']
+const ComponentNames = ['text', 'textarea', 'select', 'checkbox', 'datetime', 'date']
 
 class Info {
   constructor(row) {
@@ -27,6 +28,32 @@ class Info {
     if (data.component === 'checkbox') {
       parse['not-required'] = true
       parse.default = stringToBoolean(parse.default)
+    }
+
+    // Datetime
+    if (data.component === 'datetime') {
+      data.formatSave = parse.formatSave
+        ? this._normalizeString(parse.formatSave)
+        : 'yyyy-MM-dd HH:mm:ss'
+      data.format = parse.format ? this._normalizeString(parse.format) : 'DMY'
+
+      if (data.format === 'YMD') data.format = 'yyyy/MM/dd HH:mm:ss'
+      if (data.format === 'DMY') data.format = 'dd/MM/yyyy HH:mm:ss'
+      if (data.format === 'MDY') data.format = 'MM/dd/yyyy HH:mm:ss'
+
+      parse.default = format(new Date(), data.formatSave)
+    }
+
+    // Date
+    if (data.component === 'date') {
+      data.formatSave = parse.formatSave ? this._normalizeString(parse.formatSave) : 'yyyy-MM-dd'
+      data.format = parse.format ? this._normalizeString(parse.format) : 'DMY'
+
+      if (data.format === 'YMD') data.format = 'yyyy/MM/dd'
+      if (data.format === 'DMY') data.format = 'dd/MM/yyyy'
+      if (data.format === 'MDY') data.format = 'MM/dd/yyyy'
+
+      parse.default = format(new Date(), data.formatSave)
     }
 
     // Label
@@ -104,7 +131,10 @@ class Info {
     let temp = str
     if (isBoolean(temp)) return temp
     if (Array.isArray(str)) temp = str[0]
-    return removeQuote(temp.trim())
+    if (temp.trim) {
+      return removeQuote(temp.trim())
+    }
+    return temp
   }
 }
 

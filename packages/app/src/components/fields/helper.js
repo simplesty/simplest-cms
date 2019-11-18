@@ -3,6 +3,8 @@ import TextField from './text'
 import TextareaField from './textarea'
 import SelectField from './select'
 import CheckboxField from './checkbox'
+import DateTimeField from './datetime'
+import DateField from './date'
 
 /*-----------------------------------------------------------------------------
 | Field
@@ -14,6 +16,8 @@ export const Field = props => {
   if (component === 'textarea') return <TextareaField {...props} />
   if (component === 'select') return <SelectField {...props} />
   if (component === 'checkbox') return <CheckboxField {...props} />
+  if (component === 'datetime') return <DateTimeField {...props} />
+  if (component === 'date') return <DateField {...props} />
   return <>Not Found Field</>
 }
 

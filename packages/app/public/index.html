@@ -37,22 +37,17 @@
         loggedin: undefined,
       }
       window.schema = {
-        "people": {
-          "firstname": "text label('First Name')",
-          "lastname": "text not-required",
-          "work": "text not-required",
-          "experiences": "text default('developer')",
-          "bio": "textarea label('Add a bio')",
-          "car": "select('Volvo', 'Saab', 'Land Rover', 'Mazda', 'Rolls-Royce') label('Select a car') default(Saab)",
+        'posts': {
+          'title': 'text required',
+          'body': 'textarea',
+          'category': 'select(article, project, experimental, talk, code)',
+          'featured': 'checkbox default(1)',
+          'published_at': 'date required',
         },
-        "posts": {
-          "title": "text default(My Title)",
-          "body": "textarea label(Body of the Post)",
+        '@config': {
+          'title': 'text default(Inc Company)',
+          'email': 'text default(myemail@domain.com)',
         },
-        "@config": {
-          "title": "text default(Title of my website)",
-          "email": "text default(mymail@domain.com)",
-        }
       }
     </script>
     <noscript>You need to enable JavaScript to run this app.</noscript>

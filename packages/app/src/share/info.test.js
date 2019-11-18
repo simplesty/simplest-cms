@@ -110,4 +110,52 @@ describe('Info', () => {
     info = new Info('checkbox default("no")')
     expect(info.getData().default).toBe(false)
   })
+
+  it('checks component: datetime ', () => {
+    let info
+    info = new Info(`datetime`)
+    expect(info.getData().component).toBe('datetime')
+    expect(info.getData().arguments).toBe(null)
+    expect(info.getData().required).toBe(false)
+    expect(info.getData().default.length).toBe(19)
+
+    info = new Info('datetime required')
+    expect(info.getData().required).toBe(true)
+
+    info = new Info('datetime not-required')
+    expect(info.getData().required).toBe(false)
+
+    info = new Info('datetime format(YMD)')
+    expect(info.getData().format).toBe('yyyy/MM/dd HH:mm:ss')
+
+    info = new Info('datetime format(DMY)')
+    expect(info.getData().format).toBe('dd/MM/yyyy HH:mm:ss')
+
+    info = new Info('datetime format(MDY)')
+    expect(info.getData().format).toBe('MM/dd/yyyy HH:mm:ss')
+  })
+
+  it('checks component: date ', () => {
+    let info
+    info = new Info(`date`)
+    expect(info.getData().component).toBe('date')
+    expect(info.getData().arguments).toBe(null)
+    expect(info.getData().required).toBe(false)
+    expect(info.getData().default.length).toBe(10)
+
+    info = new Info('date required')
+    expect(info.getData().required).toBe(true)
+
+    info = new Info('date not-required')
+    expect(info.getData().required).toBe(false)
+
+    info = new Info('date format(YMD)')
+    expect(info.getData().format).toBe('yyyy/MM/dd')
+
+    info = new Info('date format(DMY)')
+    expect(info.getData().format).toBe('dd/MM/yyyy')
+
+    info = new Info('date format(MDY)')
+    expect(info.getData().format).toBe('MM/dd/yyyy')
+  })
 })
