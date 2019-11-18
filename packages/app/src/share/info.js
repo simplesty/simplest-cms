@@ -2,7 +2,7 @@ import { extractArguments, stringToBoolean, removeQuote } from './helpers'
 import { isBoolean } from 'lodash'
 import { format } from 'date-fns'
 
-const ComponentNames = ['text', 'textarea', 'select', 'checkbox', 'datetime', 'date', 'one']
+const ComponentNames = ['text', 'textarea', 'select', 'checkbox', 'datetime', 'date', 'one', 'many']
 
 class Info {
   constructor(row) {
@@ -73,6 +73,20 @@ class Info {
         }
       } else {
         this._addError('one', 'Requires two arguments')
+      }
+    }
+
+    // Many
+    if (data.component === 'many') {
+      if (parse.many && parse.many.length === 2) {
+        data.relation = {
+          collection: parse.many[0],
+          label_field: parse.many[1],
+        }
+        data.multiple = true
+        data.default = []
+      } else {
+        this._addError('many', 'Requires two arguments')
       }
     }
 
