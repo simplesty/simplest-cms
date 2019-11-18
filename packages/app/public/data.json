@@ -1,30 +1,58 @@
 {
   "data": {
-    "people": {
-      "1571239845637": {
-        "_uid": "1571239845637",
-        "firstname": "Ricardo",
-        "lastname": "Canelas",
-        "work": "Software Developer",
-        "car": "Volvo"
+    "tags": {
+      "5632": {
+        "title": "2019",
+        "_uid": "5632"
       },
-      "1571239878937": {
-        "_uid": "1571239878937",
-        "firstname": "Carolina",
-        "lastname": "Sartire",
-        "work": "Nutritionist"
+      "5633": {
+        "title": "coding",
+        "_uid": "5633"
+      },
+      "5634": {
+        "title": "conference",
+        "_uid": "5634"
+      }
+    },
+    "categories": {
+      "100": {
+        "title": "Laravel",
+        "_uid": "100"
+      },
+      "101": {
+        "title": "React",
+        "_uid": "101"
+      },
+      "102": {
+        "title": "PHP",
+        "_uid": "102"
+      },
+      "103": {
+        "title": "JavaScript",
+        "_uid": "103"
       }
     },
     "posts": {
-      "1571239846514": {
-        "_uid": "1571239846514",
-        "title": "First Post",
-        "body": "Body of this post"
+      "1574036767351": {
+        "title": "Build your own React",
+        "body": "We are going to rewrite React from scratch...",
+        "type": ["article", "code"],
+        "category_id": "101",
+        "tag_ids": ["5632", "5634"],
+        "featured": true,
+        "_uid": "1574036767351"
+      },
+      "1574036873816": {
+        "title": "React Hooks TL;DR",
+        "body": "If you want to know what React Hooks are about but don\u2019t want to learn them yet, this is for you...",
+        "type": ["code"],
+        "featured": false,
+        "_uid": "1574036873816"
       }
     },
     "config": {
-      "site": "text default(My Blog)",
-      "email": "text default(myemail@domain.com)"
+      "title": "My Website",
+      "email": "email@domain.com"
     }
   }
 }

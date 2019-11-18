@@ -37,12 +37,20 @@
         loggedin: undefined,
       }
       window.schema = {
+        'tags': {
+          'title': 'text required',
+        },
+        'categories': {
+          'title': 'text required',
+        },
         'posts': {
           'title': 'text required',
           'body': 'textarea',
-          'category': 'select(article, project, experimental, talk, code)',
+          'type': 'select(article, project, experimental, talk, code) multiple',
           'featured': 'checkbox default(1)',
           'published_at': 'date required',
+          'category_id': 'one(categories, title)',
+          'tag_ids': 'many(tags, title)'
         },
         '@config': {
           'title': 'text default(Inc Company)',
