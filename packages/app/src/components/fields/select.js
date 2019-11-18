@@ -25,6 +25,18 @@ const SelectField = ({ info, ...props }) => {
     setLabelWidth(inputLabel.current.offsetWidth)
   }, [])
 
+  const options = React.useMemo(() => {
+    return info.options && Array.isArray(info.options)
+      ? info.options
+      : info.arguments.reduce((acc, key) => {
+          acc.push({
+            value: key,
+            label: key,
+          })
+          return acc
+        }, [])
+  }, [info.arguments, info.options])
+
   return (
     <Grid item xs={12}>
       <FormControl variant="outlined" className={classes.formControl}>
@@ -41,9 +53,9 @@ const SelectField = ({ info, ...props }) => {
           {...props}
           labelWidth={labelWidth}
         >
-          {info.arguments.map((item, index) => (
-            <MenuItem key={index} value={item}>
-              {item}
+          {options.map((item, index) => (
+            <MenuItem key={index} value={item.value}>
+              {item.label}
             </MenuItem>
           ))}
         </Select>
