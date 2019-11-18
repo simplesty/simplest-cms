@@ -5,7 +5,7 @@ import SelectField from './select'
 import CheckboxField from './checkbox'
 import DateTimeField from './datetime'
 import DateField from './date'
-import RelationOne from './one'
+import Relation from './relation'
 
 /*-----------------------------------------------------------------------------
 | Field
@@ -19,7 +19,8 @@ export const Field = props => {
   if (component === 'checkbox') return <CheckboxField {...props} />
   if (component === 'datetime') return <DateTimeField {...props} />
   if (component === 'date') return <DateField {...props} />
-  if (component === 'one') return <RelationOne {...props} />
+  if (component === 'one') return <Relation {...props} />
+  if (component === 'many') return <Relation {...props} />
   return <>Not Found Field</>
 }
 

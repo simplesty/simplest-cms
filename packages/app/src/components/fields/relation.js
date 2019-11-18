@@ -2,7 +2,7 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import Select from './select'
 
-const RelationToOne = ({ info, ...props }) => {
+const Relation = ({ info, ...props }) => {
   const data = useSelector(state => state.collections.items[info.relation.collection].data)
   const options = Object.keys(data).reduce((acc, key) => {
     acc.push({
@@ -15,4 +15,4 @@ const RelationToOne = ({ info, ...props }) => {
   return <Select info={{ ...info, options }} {...props} />
 }
 
-export default RelationToOne
+export default Relation
