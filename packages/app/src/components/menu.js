@@ -16,7 +16,7 @@ import Typography from '@material-ui/core/Typography'
 import NavLinkMui from './navlinkMui'
 import SaveModal from './saveModal'
 
-const drawerWidth = 240
+const drawerWidth = 200
 
 const useStyles = makeStyles(theme => ({
   drawer: {
@@ -86,8 +86,8 @@ const Menu = props => {
               backgroundColor: '#dbdbdb',
             }}
           >
-            <ListItemIcon>
-              <LabelIcon />
+            <ListItemIcon style={{ minWidth: 24 }}>
+              <LabelIcon style={{ width: 16 }} />
             </ListItemIcon>
             <ListItemText primary={item.name} />
           </ListItem>
@@ -97,15 +97,15 @@ const Menu = props => {
       <List>
         {!window.config.autosave && (
           <ListItem button onClick={handleOpen}>
-            <ListItemIcon>
-              <SaveIcon />
+            <ListItemIcon style={{ minWidth: 24 }}>
+              <SaveIcon style={{ width: 16 }} />
             </ListItemIcon>
             <ListItemText primary="Save All Changed" />
           </ListItem>
         )}
         <ListItem button onClick={handleLogout}>
-          <ListItemIcon>
-            <LogoutIcon />
+          <ListItemIcon style={{ minWidth: 24 }}>
+            <LogoutIcon style={{ width: 16 }} />
           </ListItemIcon>
           <ListItemText primary="Logout" />
         </ListItem>

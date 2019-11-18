@@ -7,7 +7,7 @@ import Typography from '@material-ui/core/Typography'
 import Menu from './menu'
 import { pathnameToTitle } from '../share/helpers'
 
-const drawerWidth = 240
+const drawerWidth = 200
 
 const useStyles = makeStyles(theme => ({
   root: {
