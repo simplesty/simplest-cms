@@ -1,3 +1,9 @@
+## 1.6.0 (2019-11-19)
+
+#### :rocket: New Feature
+
+- Optimize final bundle.js (1.33 MB to 630KB)
+
 ## 1.5.0 (2019-11-18)
 
 #### :rocket: New Feature
