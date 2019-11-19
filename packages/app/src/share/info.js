@@ -1,5 +1,5 @@
 import { extractArguments, stringToBoolean, removeQuote } from './helpers'
-import { isBoolean } from 'lodash'
+import isBoolean from 'lodash/isBoolean'
 import { format } from 'date-fns'
 
 const ComponentNames = ['text', 'textarea', 'select', 'checkbox', 'datetime', 'date', 'one', 'many']

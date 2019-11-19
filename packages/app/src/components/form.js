@@ -6,7 +6,7 @@ import Grid from '@material-ui/core/Grid'
 import { useFormik, FormikProvider } from 'formik'
 import Validation from '../share/validation'
 import { Field } from './fields/helper'
-import { isBoolean } from 'lodash'
+import isBoolean from 'lodash/isBoolean'
 
 const useStyles = makeStyles(theme => ({
   container: {
