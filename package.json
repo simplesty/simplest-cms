@@ -3,7 +3,7 @@
   "private": true,
   "repository": {
     "type": "git",
-    "url": "https://github.com/ricardocanelas/simples-csm"
+    "url": "https://github.com/simplest-cms/simplest-cms"
   },
   "bin": {
     "simplest-cms": "./packages/cli/cli.js"

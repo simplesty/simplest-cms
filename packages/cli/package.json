@@ -3,7 +3,7 @@
   "version": "0.1.2",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ricardocanelas/simplest-cms.git",
+    "url": "https://github.com/simplest-cms/simplest-cms.git",
     "directory": "packages/cli"
   },
   "license": "MIT",
