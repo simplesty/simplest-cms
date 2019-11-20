@@ -18,6 +18,7 @@
   },
   "scripts": {
     "build": "yarn workspace @simplest-cms/app build:bundle",
+    "doc:start": "npx http-server docs -o -p 3002",
     "docker:bash": "docker exec -i -t simplest-cms_php_1 /bin/bash",
     "docker:build": "docker-compose build",
     "docker:down": "docker-compose down",
