@@ -16,33 +16,27 @@ You will need to make sure your server meets the following requirements:
 
 ![](screencast.gif)
 
-## 🔹 Get Started
+# Get Started
 
-### Install
+### Install or Download
 
 ```
-npx github:ricardocanelas/simplest-cms <your-directory>
+npx github:simplest-cms/simplest-cms <your-directory>
 ```
 
-or copy [these files](https://github.com/ricardocanelas/simplest-cms/tree/master/dist) from the `/dist` directory.
+or copy [these files](https://github.com/simplest-cms/simplest-cms/tree/master/dist) from the `/dist` directory.
 
 ### Config
 
 After install/copy, you need to edit the file "**config.php**".
 
-### To Access
+### Data
 
 By standard the file is *data.json*
 
----
+# API
 
-## 🔹 API
-
-⚠️ *Working...*
-
-### Fields
-
-**Types**
+### Types
 
 - [x] text
 - [x] textarea
@@ -67,7 +61,7 @@ By standard the file is *data.json*
 - [x] many
 - [ ] slug
 
-**Options**
+### Options
 
 - [ ] unique
 - [x] required
@@ -76,9 +70,7 @@ By standard the file is *data.json*
 - [x] label
 - [x] description
 
-### Schema
-
-**No Collection**
+### Fixed Data
 
 If don't want the values should be a collection, add '@' before the name. Example:
 
@@ -95,23 +87,8 @@ If don't want the values should be a collection, add '@' before the name. Exampl
 ]
 ```
 
-then will be *(in data.json)*
 
-```
-{
-  "data": {
-    ...
-    "config": {
-      "title": "Inc Company",
-      "email": "myemail@domain.com"
-    }
-  }
-}
-```
-
----
-
-## 🔹 Example
+# Example
 
 In config.php
 
@@ -119,24 +96,32 @@ In config.php
 // ...
 
 'schema' => [
-  'people' => [
-    'firstname' => 'text required',
-    'lastname' => 'text',
-    'bio' => 'textarea',
-    'civil_status' => 'select(married, single, divorced, widowed)',
-    'customer' => 'checkbox default(1)'
+  'tags'=>[
+    'title'=> 'text required',
   ],
-  '@config' => [
-    'title' => 'text default(Inc Company)',
-    'email' => 'text default(myemail@domain.com)',
+  'categories'=>[
+    'title'=> 'text required',
+  ],
+  'posts'=>[
+    'title'=> 'text required',
+    'body'=> 'textarea',
+    'type'=> 'select(article, project, experimental) multiple',
+    'featured'=> 'checkbox default(1)',
+    'published_at'=> 'date required',
+    'category_id'=> 'one(categories, title)',
+    'tag_ids'=> 'many(tags, title)'
+  ],
+  '@config'=>[
+    'title'=> 'text default(Inc Company)',
+    'email'=> 'text default(myemail@domain.com)',
   ],
 ]
 ```
 
-In JavaScript:
+To access the data via JavaScript
 
 ```js
-const getData = fetch(`./data.json`)
+const getData = fetch(`./<cms-directory>/data.json`)
  .then(res => res.json())
 
 getData().then(data) => {
