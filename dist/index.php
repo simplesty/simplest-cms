@@ -16,7 +16,7 @@
  * This file must work on PHP 5.4+
  *
  * If you find any issues, please report them here:
- * https://github.com/ricardocanelas/simplest-cms/issues
+ * https://github.com/simplest-cms/simplest-cms/issues
  *
  * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  *   /!\ DO NOT MODIFY THIS FILE /!\
@@ -27,7 +27,7 @@
 | Constants
 |-----------------------------------------------------------------------------*/
 
-const BACKEND_VERSION = '1.2.1';
+const BACKEND_VERSION = '1.2.2';
 const ACTION_NONE = 'none';
 const ACTION_AUTH_FAILURE = 'auth';
 const ACTION_LOGOUT = 'logout';
