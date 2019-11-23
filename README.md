@@ -96,22 +96,22 @@ In config.php
 // ...
 
 'schema' => [
-  'tags'=>[
+  'tags'=> [
     'title'=> 'text required',
   ],
-  'categories'=>[
+  'categories'=> [
     'title'=> 'text required',
   ],
-  'posts'=>[
+  'posts'=> [
     'title'=> 'text required',
     'body'=> 'textarea',
     'type'=> 'select(article, project, experimental) multiple',
     'featured'=> 'checkbox default(1)',
     'published_at'=> 'date required',
     'category_id'=> 'one(categories, title)',
-    'tag_ids'=> 'many(tags, title)'
+    'tag_ids'=> 'many(tags, title)',
   ],
-  '@config'=>[
+  '@config'=> [
     'title'=> 'text default(Inc Company)',
     'email'=> 'text default(myemail@domain.com)',
   ],
