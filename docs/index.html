@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Simplest CMS</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="description" content="Description">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/vue.css">
+  <style>
+    main aside.sidebar h1{
+      text-align: left;
+      padding-left: 15px;
+      padding-top: 15px;
+      border-top: 1px solid #ededed;
+    }
+    main aside .search { margin-bottom: 0; }
+    main aside .results-panel.show { border-top: 1px solid #42b9830a; }
+    ul.app-sub-sidebar {
+      background-color: #f3eeee;
+      border-left: 2px solid #ccc;
+    }
+    .sidebar-nav li p a {padding-left: 15px }
+    p.active a {
+      background-color: #f4f4f4;
+      font-weight: bold !important;
+      border-right: 2px solid rgba(0,0,0,.07);
+    }
+  </style>
+</head>
+<body>
+  <div id="app">Please wait..</div>
+  <script>
+    window.$docsify = {
+      name: "Simplest CMS",
+      repo: 'simplest-cms/simplest-cms',
+      loadNavbar: false,
+      loadSidebar: '_sidebar.md',
+      subMaxLevel: 0,
+      homepage: 'introduction.md',
+      search: {
+        maxAge: 86400000, // Expiration time, the default one day
+        placeholder: 'Type to search',
+        noData: 'No Results!',
+        depth: 1
+      }
+    }
+  </script>
+  <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
+  <script src="//unpkg.com/docsify/lib/plugins/search.min.js"></script>
+  <script src="//unpkg.com/docsify/lib/plugins/emoji.min.js"></script>
+  <!-- LIST OF EMOJI https://gist.github.com/rxaviers/7360908 -->
+
+  <!-- <script src="//unpkg.com/docsify/lib/plugins/external-script.min.js"></script>
+  <script src="//unpkg.com/prismjs/components/prism-bash.min.js"></script>
+  <script src="//unpkg.com/prismjs/components/prism-javascript.min.js"></script>
+  <script src="//unpkg.com/prismjs/components/prism-markup.min.js"></script>
+  <script src="//unpkg.com/prismjs/components/prism-json.min.js"></script> -->
+</body>
+</html>
